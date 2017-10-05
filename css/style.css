@@ -1,13 +1,194 @@
-/* Makes images fully responsive */
+/* Eléments principaux de la page */
 
-.img-responsive,
-.thumbnail > img,
-.thumbnail a > img,
-.carousel-inner > .item > img,
-.carousel-inner > .item > a > img {
-  display: block;
+body
+{
+  font-family:
+  color: black;
+}
+
+h1 {
+
+}
+
+h2 {
+
+}
+
+.important {
+  font-weight: bold;
+  font-style: italic;
+}
+
+/* Surlignage personnalisé
+
+::selection{
+  background-color: #444;
+  color: white;
+}
+
+::-moz-selection {
+  background-color: #444;
+  color: white;
+} */
+
+/* Barre de navigation */
+
+#navbar {
   width: 100%;
-  height: auto;
+  position: fixed;
+  background-color: #344560;
+  padding: 12px;
+}
+
+#navbar a, #navbar ul {
+  margin-bottom: 0px;
+}
+
+#logo {
+  font-weight: bold;
+  font-size: 1.8em;
+  color: white;
+  text-decoration: none;
+}
+
+#logo a {
+  color: white;
+  text-decoration: none;
+}
+
+#navbar ul {
+  padding-top: 6px;
+}
+
+#navbar ul li a {
+  font-size: 1.1em;
+  margin-left: 20px;
+  margin-right: 20px;
+  padding-bottom: 8px;
+  color: white;
+  text-decoration: none;
+}
+
+#navbar ul a:hover {
+  transition: .6s ease;
+  padding-bottom: 4px;
+  border-bottom: white 1.1px solid;
+}
+
+/* Barre défilante */
+
+#navbar_social {
+  width: 100%;
+  background-color: #949ba8;
+  position: fixed;
+  top: 300px;
+  padding: 8px;
+  display: none;
+}
+
+#navbar_social a i {
+  margin-right: 6px;
+}
+
+#navbar_social a {
+  color: white;
+  text-decoration: none;
+}
+
+#navbar_social a:hover {
+  opacity: 0.6;
+  transition: .6s ease;
+}
+
+/* Burger menu */
+
+#burger_icon {
+  visibility: hidden;
+  color: white;
+  position: fixed;
+  top: 26px;
+  right: 26px;
+  padding: 10px;
+}
+
+#burger_icon i {
+  font-size: 1.4em;
+}
+
+.menuburger {
+  background-color: #949ba8;
+  height: 100vh;
+  position : fixed;
+  width: 200px;
+  right: -200px;
+  top: 0;
+  transition: right .5s ease;
+}
+
+.links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.links a i {
+  font-size: 1.6em;
+}
+
+.menuburger ul {
+  padding : 15px;
+}
+
+.menuburger li {
+  list-style-type: none;
+  height: 40px;
+}
+
+.menuburger li a {
+  color: white;
+  font-size: 1em;
+  text-decoration: none;
+}
+
+.menuburger li:hover {
+  font-weight: bold;
+  transition: .5s ease;
+}
+
+.menuburger.open {
+  right: 0; 
+}
+
+.menuburger li a.close {
+  position: relative;
+  top: 0;
+  right: 0;
+  font-size: 15px;
+  color: white;
+}
+
+/* Media Queries burger menu */
+
+@media screen and (max-width: 768px) {
+  
+  #navbar_part2, #navbar_social {
+    display:none;
+  }
+  
+  #burger_icon {
+    visibility: visible;
+  }
+  
+  #burger_icon:hover {
+  cursor:pointer;
+  }
+
+}
+
+@media screen and (min-width: 768px) {
+  .menuburger {
+    display: none;
+  }
 }
 
 /* ------------------- Carousel Styling ------------------- */
@@ -71,4 +252,17 @@
     max-width: 930px;
   }
 
+}
+
+
+/* Makes Carousel images fully responsive */
+
+.img-responsive,
+.thumbnail > img,
+.thumbnail a > img,
+.carousel-inner > .item > img,
+.carousel-inner > .item > a > img {
+  display: block;
+  width: 100%;
+  height: auto;
 }
