@@ -38,6 +38,7 @@ h2 {
   position: fixed;
   background-color: #344560;
   padding: 12px;
+  z-index: 16;
 }
 
 #navbar a, #navbar ul {
@@ -48,7 +49,6 @@ h2 {
   font-weight: bold;
   font-size: 1.8em;
   color: white;
-  text-decoration: none;
 }
 
 #logo a {
@@ -71,8 +71,8 @@ h2 {
 
 #navbar ul a:hover {
   transition: .6s ease;
-  padding-bottom: 4px;
-  border-bottom: white 1.1px solid;
+  padding-bottom: 5px;
+  border-bottom: white 1.2px solid;
 }
 
 /* Barre défilante */
@@ -81,9 +81,10 @@ h2 {
   width: 100%;
   background-color: #949ba8;
   position: fixed;
-  top: 300px;
+  top: 59px;
   padding: 8px;
   display: none;
+  z-index: 16;
 }
 
 #navbar_social a i {
@@ -96,8 +97,8 @@ h2 {
 }
 
 #navbar_social a:hover {
-  opacity: 0.6;
-  transition: .6s ease;
+  opacity: 0.4;
+  transition: .8s ease;
 }
 
 /* Burger menu */
@@ -109,6 +110,7 @@ h2 {
   top: 26px;
   right: 26px;
   padding: 10px;
+  z-index: 16;
 }
 
 #burger_icon i {
@@ -123,6 +125,7 @@ h2 {
   right: -200px;
   top: 0;
   transition: right .5s ease;
+  z-index: 17;
 }
 
 .links {
@@ -174,7 +177,8 @@ h2 {
   #navbar_part2, #navbar_social {
     display:none;
   }
-  
+
+
   #burger_icon {
     visibility: visible;
   }
@@ -182,7 +186,6 @@ h2 {
   #burger_icon:hover {
   cursor:pointer;
   }
-
 }
 
 @media screen and (min-width: 768px) {
@@ -192,6 +195,10 @@ h2 {
 }
 
 /* ------------------- Carousel Styling ------------------- */
+
+#carousel-example-generic {
+  padding-top: 100px;
+}
 
 .carousel-inner {
   border-radius: 15px;
@@ -221,11 +228,9 @@ h2 {
   text-align: right;
 }
 
-.carousel-control.left,
-.carousel-control.right {
+.carousel-control.left, .carousel-control.right {
   background-image: none;
 }
-
 
 /* ------------------- Section Styling - Not needed for carousel styling ------------------- */
 
@@ -254,7 +259,6 @@ h2 {
 
 }
 
-
 /* Makes Carousel images fully responsive */
 
 .img-responsive,
@@ -265,4 +269,9 @@ h2 {
   display: block;
   width: 100%;
   height: auto;
+}
+
+/* Actus */
+#actus {
+  padding-top: 30px;
 }
