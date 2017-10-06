@@ -38,6 +38,7 @@ h2 {
   position: fixed;
   background-color: #344560;
   padding: 12px;
+  z-index: 21;
 }
 
 #navbar a, #navbar ul {
@@ -81,9 +82,10 @@ h2 {
   width: 100%;
   background-color: #949ba8;
   position: fixed;
-  top: 300px;
+  top: 55px;
   padding: 8px;
   display: none;
+  z-index: 20;
 }
 
 #navbar_social a i {
@@ -193,6 +195,10 @@ h2 {
 
 /* ------------------- Carousel Styling ------------------- */
 
+#carousel-example-generic {
+  padding-top: 100px;
+}
+
 .carousel-inner {
   border-radius: 15px;
 }
@@ -265,4 +271,9 @@ h2 {
   display: block;
   width: 100%;
   height: auto;
+}
+
+/* Actus */
+#actus {
+  padding-top: 30px;
 }
