@@ -159,7 +159,7 @@ h2 {
 }
 
 .menuburger.open {
-  right: 0; 
+  right: 0;
 }
 
 .menuburger li a.close {
@@ -173,7 +173,7 @@ h2 {
 /* Media Queries burger menu */
 
 @media screen and (max-width: 768px) {
-  
+
   #navbar_part2, #navbar_social {
     display:none;
   }
@@ -182,7 +182,7 @@ h2 {
   #burger_icon {
     visibility: visible;
   }
-  
+
   #burger_icon:hover {
   cursor:pointer;
   }
@@ -274,4 +274,44 @@ h2 {
 /* Actus */
 #actus {
   padding-top: 30px;
+}
+
+
+
+/* Contact Page: styles */
+
+.contact-section h2 {
+  padding-top: 30px;
+  padding-bottom: 10px;
+}
+
+.contact-image {
+  padding-top: 175px;
+}
+
+.name-form-input input {
+  height: 50px;
+}
+
+.surname-form-input input {
+  height: 50px;
+}
+
+textarea.form-control {
+  height: 170px;
+  margin-bottom: 20px;
+}
+
+.form-button {
+  color: #000000;
+  background-color: #ffffff;
+  border-color: #000000;
+  text-transform: uppercase;
+  padding: 5px;
+}
+
+.form-button:hover {
+  color: #ffffff;
+  background-color: #000000;
+  border-color: #ffffff;
 }
