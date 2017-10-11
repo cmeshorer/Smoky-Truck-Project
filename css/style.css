@@ -11,7 +11,7 @@ h1 {
 }
 
 h2 {
-
+  padding: 30px 0 30px 0;
 }
 
 .important {
@@ -274,9 +274,36 @@ h2 {
 /* Actus */
 #actus {
   padding-top: 30px;
+  padding-bottom: 50px;
+}
+
+.card-title,
+.card-text {
+  width: 270px;
+  margin: 10px;
+}
+
+.card-block a {
+  width: 270px;
+  margin: 10px;
 }
 
 
+/* Story Section */
+
+#story-section {
+  padding-bottom: 30px;
+}
+
+/* Intermediary section*/
+
+.menu-text {
+  padding: 35px 5px 20px 0;
+}
+
+.intermediaire button {
+  width: 150px;
+}
 
 /* Contact Page: styles */
 
