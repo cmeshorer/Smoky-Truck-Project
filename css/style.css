@@ -277,7 +277,23 @@ h2 {
   padding-bottom: 50px;
 }
 
+.card-title,
+.card-text {
+  width: 270px;
+  margin: 10px;
+}
 
+.card-block a {
+  width: 270px;
+  margin: 10px;
+}
+
+
+/* Story Section */
+
+#story-section {
+  padding-bottom: 30px;
+}
 
 /* Contact Page: styles */
 
