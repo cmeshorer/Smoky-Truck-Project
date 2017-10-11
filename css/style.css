@@ -81,6 +81,7 @@ h2 {
   width: 100%;
   background-color: #bc1229;
   position: fixed;
+  top : 541px;
   padding: 8px;
   z-index: 16;
   -webkit-animation: mymove 2s; /* Safari 4.0 - 8.0 */
