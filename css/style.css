@@ -295,6 +295,16 @@ h2 {
   padding-bottom: 30px;
 }
 
+/* Intermediary section*/
+
+.menu-text {
+  padding: 35px 5px 20px 0;
+}
+
+.intermediaire button {
+  width: 150px;
+}
+
 /* Contact Page: styles */
 
 .contact-section h2 {
