@@ -283,6 +283,10 @@ h2 {
   margin: 10px;
 }
 
+.card {
+  width: 290px;
+}
+
 .card-block a {
   width: 270px;
   margin: 10px;
