@@ -318,21 +318,40 @@ textarea.form-control {
 
 /* Lieux et horraires */
 
+.noustrouver {
+  margin-top: 100px;
+}
+
+.noustrouver h2 {
+  padding-bottom: 30px;
+}
+
+.table-style {
+  padding-bottom: 30px;
+}
+
 .jours {
-  background-color: black;
+  background-color: #4e535b;
+  color: white;
+  margin-top: 10px;
+  padding-top: 10px;
 }
 
-.jours li {
-  list-style-type: none;
-  display: inline;
+.evenements {
+  margin-top: 70px;
+  margin-bottom: 30px;
 }
 
-.midi li {
-  list-style-type: none;
-  display: inline;  
+.evenements h2 {
+  margin-bottom: 30px;
 }
 
-.soir li {
+.evenements li {
   list-style-type: none;
-  display: inline;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+.responsive {
+  width: 100%;
 }
