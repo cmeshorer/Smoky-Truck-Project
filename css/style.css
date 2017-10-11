@@ -36,7 +36,7 @@ h2 {
 #navbar {
   width: 100%;
   position: fixed;
-  background-color: #344560;
+  background-color: #021738;
   padding: 12px;
   z-index: 16;
 }
@@ -79,13 +79,26 @@ h2 {
 
 #navbar_social {
   width: 100%;
-  background-color: #949ba8;
+  background-color: #bc1229;
   position: fixed;
-  top: 59px;
+  top : 59px;
   padding: 8px;
-  display: none;
   z-index: 16;
+  /*-webkit-animation: mymove 2s; /* Safari 4.0 - 8.0 */
+  /*animation: mymove 2s;
+  transition : all .8s; */
 }
+
+/*@keyframes mymove {
+    0%   {top: 0px; background: #021738;}
+    100% {top: 541px; background: #bc1229;}
+}
+
+/* Safari 4.0 - 8.0 */
+/*@-webkit-keyframes mymove {
+    0%   {top: 0px; background: #021738;}
+    100% {top: 541px; background: #bc1229;}
+} */
 
 #navbar_social a i {
   margin-right: 6px;
@@ -194,78 +207,92 @@ h2 {
   }
 }
 
-/* ------------------- Carousel Styling ------------------- */
+/* Carousel */
 
-#carousel-example-generic {
-  padding-top: 100px;
+.main-slider {
+  padding-top: 95px;
 }
 
-.carousel-inner {
-  border-radius: 15px;
+.carousel-fade .carousel-inner { background: #000; }
+.carousel-fade .carousel-control { z-index: 2; }  
+.carousel-fade .item {
+  opacity: 0;
+  -webkit-transition-property: opacity;
+  -moz-transition-property: opacity;
+  -o-transition-property: opacity;
+  transition-property: opacity;
 }
 
-.carousel-caption {
-  background-color: rgba(0,0,0,.5);
-  position: absolute;
+.carousel-fade .next.left,
+.carousel-fade .prev.right,
+.carousel-fade .item.active { opacity: 1; }
+
+.carousel-fade .active.left,
+.carousel-fade .active.right {
   left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 10;
-  padding: 0 0 10px 25px;
-  color: #fff;
-  text-align: left;
+  opacity: 0;
+  z-index: 1;
 }
 
-.carousel-indicators {
+/* Safari Fix */
+@media all and (transform-3d), (-webkit-transform-3d) {
+  .carousel-fade .carousel-inner > .item.next,
+  .carousel-fade .carousel-inner > .item.active.right {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+  .carousel-fade .carousel-inner > .item.prev,
+  .carousel-fade .carousel-inner > .item.active.left {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+  .carousel-fade .carousel-inner > .item.next.left,
+  .carousel-fade .carousel-inner > .item.prev.right,
+  .carousel-fade .carousel-inner > .item.active {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+/* Carousel Control custom */
+.carousel-control .control-icon {
+  font-size: 48px;
+  height: 30px;
+  margin-top: -15px;
+  width: 30px;
+  display: inline-block;
   position: absolute;
-  bottom: 0;
-  right: 0;
-  left: 0;
-  width: 100%;
-  z-index: 15;
-  margin: 0;
-  padding: 0 25px 25px 0;
-  text-align: right;
+  top: 50%;
+  z-index: 5;
 }
+.carousel-control .prev { margin-left:  -15px;  left: 50%; } /* Prev */
+.carousel-control .next { margin-right: -15px; right: 50%; } /* Next */
 
-.carousel-control.left, .carousel-control.right {
-  background-image: none;
-}
+/* Removing BS background */
+.carousel .control-box { opacity: 0; }
+a.carousel-control.left  { left: 0; background: none; border: 0;}
+a.carousel-control.right { right: 0; background: none; border: 0;}
 
-/* ------------------- Section Styling - Not needed for carousel styling ------------------- */
+/* Animation */
+.control-box, a.carousel-control, .carousel-indicators li {
+  -webkit-transition: all 300ms ease;
+  -moz-transition: all 300ms ease;
+  -ms-transition: all 300ms ease;
+  -o-transition: all 300ms ease;
+  transition: all 300ms ease;   
+  /* hardware acceleration causes Bootstrap carousel controlbox margin error in webkit */
+  /* Assigning animation to indicator li will make slides flicker */
+} 
 
-.section-white {
-   padding: 10px 0;
-}
+/* Hover animation */
+.carousel:hover .control-box { opacity: 1; }
+.carousel:hover a.carousel-control.left { left: 15px; }
+.carousel:hover a.carousel-control.right { right: 15px; }  
 
-.section-white {
-  background-color: #fff;
-  color: #555;
-}
-
-@media screen and (min-width: 768px) {
-
-  .section-white {
-     padding: 1.5em 0;
-  }
-
-}
-
-@media screen and (min-width: 992px) {
-
-  .container {
-    max-width: 930px;
-  }
-
-}
-
-/* Makes Carousel images fully responsive */
-
-.img-responsive,
-.thumbnail > img,
-.thumbnail a > img,
-.carousel-inner > .item > img,
-.carousel-inner > .item > a > img {
+.carousel-inner>.item>a>img, .carousel-inner>.item>img, .img-responsive, .thumbnail a>img, .thumbnail>img {
   display: block;
   width: 100%;
   height: auto;
