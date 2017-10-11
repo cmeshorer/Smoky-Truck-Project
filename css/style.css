@@ -315,3 +315,24 @@ textarea.form-control {
   background-color: #000000;
   border-color: #ffffff;
 }
+
+/* Lieux et horraires */
+
+.jours {
+  background-color: black;
+}
+
+.jours li {
+  list-style-type: none;
+  display: inline;
+}
+
+.midi li {
+  list-style-type: none;
+  display: inline;  
+}
+
+.soir li {
+  list-style-type: none;
+  display: inline;
+}
