@@ -342,3 +342,93 @@ textarea.form-control {
   background-color: #000000;
   border-color: #ffffff;
 }
+
+
+/* Menu Page: styles */
+
+
+.menu-section {
+  margin-top: 90px;
+}
+
+.menu-section .line{
+  width: 100%;
+  background-color:rgba(147, 154, 168, 0.4);
+    width:100%;
+    border-radius: 4px;
+    padding-bottom: 30px;
+}
+
+.menu-section h2{
+  padding-top: 30px;
+  padding-bottom: 10px;
+}
+
+.menu-section p {
+  text-align: justify;
+  margin: 20px;
+  opacity: 0.75;
+}
+
+.menu-section .row {
+    margin-top:20px;
+}
+
+
+.card .img-menu {
+    width:100%;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+}
+
+.card {
+    background-color: #FFFFFF;
+    padding:0;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius:4px;
+    box-shadow: 0 4px 5px 0 rgba(0,0,0,0.14), 0 1px 10px 0 rgba(0,0,0,0.12), 0 2px 4px -1px rgba(0,0,0,0.3);
+    margin-bottom: 50px;
+    margin-top: 25px;
+    text-align: center;
+}
+
+.card .info-all {
+  margin-left: auto;
+  margin-right: auto;
+  display: inline;
+  margin-bottom: 20px;
+}
+
+/* FOOTER styles */
+
+footer {
+  background-color:#344560;
+}
+
+
+footer .logol {
+  margin: 25px;
+}
+
+footer .text-footer{
+  margin: 30px;
+  padding: 20px;
+  text-align:right;
+}
+
+footer #mentions{
+  text-decoration: none;
+  color: white;
+
+}
+
+footer .three{
+  background-color:#344560;
+
+}
+
+footer p{
+  line-height: 20px;
+  color: white;
+}
