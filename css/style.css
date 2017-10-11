@@ -11,7 +11,7 @@ h1 {
 }
 
 h2 {
-
+  padding: 30px 0 30px 0;
 }
 
 .important {
@@ -81,24 +81,24 @@ h2 {
   width: 100%;
   background-color: #bc1229;
   position: fixed;
-  top : 541px;
+  top : 59px;
   padding: 8px;
   z-index: 16;
-  -webkit-animation: mymove 2s; /* Safari 4.0 - 8.0 */
-  animation: mymove 2s;
-  transition : all .8s;
+  /*-webkit-animation: mymove 2s; /* Safari 4.0 - 8.0 */
+  /*animation: mymove 2s;
+  transition : all .8s; */
 }
 
-@keyframes mymove {
+/*@keyframes mymove {
     0%   {top: 0px; background: #021738;}
     100% {top: 541px; background: #bc1229;}
 }
 
 /* Safari 4.0 - 8.0 */
-@-webkit-keyframes mymove {
+/*@-webkit-keyframes mymove {
     0%   {top: 0px; background: #021738;}
     100% {top: 541px; background: #bc1229;}
-}
+} */
 
 #navbar_social a i {
   margin-right: 6px;
@@ -210,7 +210,7 @@ h2 {
 /* Carousel */
 
 .main-slider {
-  padding-top: 59px;
+  padding-top: 95px;
 }
 
 .carousel-fade .carousel-inner { background: #000; }
@@ -298,9 +298,44 @@ a.carousel-control.right { right: 0; background: none; border: 0;}
   height: auto;
 }
 
+
+
 /* Actus */
 #actus {
   padding-top: 30px;
+  padding-bottom: 50px;
+}
+
+.card-title,
+.card-text {
+  width: 270px;
+  margin: 10px;
+}
+
+.card {
+  width: 290px;
+}
+
+.card-block a {
+  width: 270px;
+  margin: 10px;
+}
+
+
+/* Story Section */
+
+#story-section {
+  padding-bottom: 30px;
+}
+
+/* Intermediary section*/
+
+.menu-text {
+  padding: 35px 5px 20px 0;
+}
+
+.intermediaire button {
+  width: 150px;
 }
 
 /* Contact Page: styles */
@@ -339,4 +374,160 @@ textarea.form-control {
   color: #ffffff;
   background-color: #000000;
   border-color: #ffffff;
+}
+
+/* Lieux et horraires */
+
+.noustrouver {
+  margin-top: 100px;
+}
+
+.noustrouver h2 {
+  padding-bottom: 30px;
+}
+
+.table-style {
+  padding-bottom: 30px;
+}
+
+.jours {
+  background-color: #4e535b;
+  color: white;
+  margin-top: 10px;
+  padding-top: 10px;
+}
+
+.evenements {
+  margin-top: 70px;
+  margin-bottom: 30px;
+}
+
+.evenements h2 {
+  margin-bottom: 30px;
+}
+
+.evenements li {
+  list-style-type: none;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+.responsive {
+  width: 100%;
+}
+
+/* Menu Page: styles */
+
+.menu-section {
+  margin-top: 90px;
+}
+
+.menu-section .line{
+  width: 100%;
+  background-color:rgba(147, 154, 168, 0.4);
+    width:100%;
+    border-radius: 4px;
+    padding-bottom: 30px;
+}
+
+.menu-section h2{
+  padding-top: 30px;
+  padding-bottom: 10px;
+}
+
+.menu-section p {
+  text-align: justify;
+  margin: 20px;
+  opacity: 0.75;
+}
+
+.menu-section .row {
+    margin-top:20px;
+}
+
+
+.card-menu .img-menu {
+    width:100%;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+}
+
+.card-menu {
+    background-color: #FFFFFF;
+    padding:0;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius:4px;
+    box-shadow: 0 4px 5px 0 rgba(0,0,0,0.14), 0 1px 10px 0 rgba(0,0,0,0.12), 0 2px 4px -1px rgba(0,0,0,0.3);
+    margin-bottom: 50px;
+    margin-top: 25px;
+    text-align: center;
+   transition: all 0.5s ease;
+}
+
+.card-menu:hover {
+  background: rgba(237,237,237, 0.5);
+  padding: 20px;
+}
+
+.card-menu .info-all {
+  margin-left: auto;
+  margin-right: auto;
+  display: inline;
+  margin-bottom: 20px;
+}
+/* Media queries: Menu; */
+
+@media screen and (min-width: 450px) and (max-width: 990px) {
+  .card-menu .img-menu {
+    margin-top: 50px;
+    width: 50%;
+  }
+  .menu-section p {
+  text-align: center;
+
+  }
+
+  .card-menu{
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+/* FOOTER styles */
+
+footer {
+  background-color:#344560;
+}
+
+footer .container-fluid{
+  margin-right: -15px;
+  margin-left: -15px;
+}
+
+footer .logol {
+  margin: 25px;
+}
+
+footer .text-footer{
+  margin: 30px;
+  padding: 20px;
+  text-align:right;
+}
+
+footer #mentions{
+  text-decoration: none;
+  color: white;
+
+}
+
+footer .three{
+  background-color:#344560;
+
+}
+
+footer p{
+  line-height: 20px;
+  color: white;
 }

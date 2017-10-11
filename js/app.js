@@ -4,7 +4,7 @@ $('#burger_icon, .close').on('click',function(){
 }); 
 
 // Effet barre défilante
-$(function() {
+/*$(function() {
     var header = $("#navbar_social");
     $(window).scroll(function() {    
         var scroll = $(window).scrollTop();
@@ -15,7 +15,7 @@ $(function() {
             header.css('top', '541px');
         }
     });
-});
+}); */
 
 // Carousel
  $(document).ready(function() {
