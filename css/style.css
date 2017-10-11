@@ -271,6 +271,8 @@ h2 {
   height: auto;
 }
 
+
+
 /* Actus */
 #actus {
   padding-top: 30px;
@@ -379,13 +381,13 @@ textarea.form-control {
 }
 
 
-.card .img-menu {
+.card-menu .img-menu {
     width:100%;
     border-top-left-radius: 4px;
     border-top-right-radius: 4px;
 }
 
-.card {
+.card-menu {
     background-color: #FFFFFF;
     padding:0;
     -webkit-border-radius: 4px;
@@ -395,13 +397,37 @@ textarea.form-control {
     margin-bottom: 50px;
     margin-top: 25px;
     text-align: center;
+   transition: all 0.5s ease;
 }
 
-.card .info-all {
+.card-menu:hover {
+  background: rgba(237,237,237, 0.5);
+  padding: 20px;
+}
+
+.card-menu .info-all {
   margin-left: auto;
   margin-right: auto;
   display: inline;
   margin-bottom: 20px;
+}
+/* Media queries: Menu; */
+
+@media screen and (min-width: 450px) and (max-width: 990px) {
+  .card-menu .img-menu {
+    margin-top: 50px;
+    width: 50%;
+  }
+  .menu-section p {
+  text-align: center;
+
+  }
+
+  .card-menu{
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 
 /* FOOTER styles */
@@ -410,6 +436,10 @@ footer {
   background-color:#344560;
 }
 
+footer .container-fluid{
+  margin-right: -15px;
+  margin-left: -15px;
+}
 
 footer .logol {
   margin: 25px;
