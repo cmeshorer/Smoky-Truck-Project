@@ -214,7 +214,7 @@ h2 {
 }
 
 .carousel-fade .carousel-inner { background: #000; }
-.carousel-fade .carousel-control { z-index: 2; }  
+.carousel-fade .carousel-control { z-index: 2; }
 .carousel-fade .item {
   opacity: 0;
   -webkit-transition-property: opacity;
@@ -282,15 +282,15 @@ a.carousel-control.right { right: 0; background: none; border: 0;}
   -moz-transition: all 300ms ease;
   -ms-transition: all 300ms ease;
   -o-transition: all 300ms ease;
-  transition: all 300ms ease;   
+  transition: all 300ms ease;
   /* hardware acceleration causes Bootstrap carousel controlbox margin error in webkit */
   /* Assigning animation to indicator li will make slides flicker */
-} 
+}
 
 /* Hover animation */
 .carousel:hover .control-box { opacity: 1; }
 .carousel:hover a.carousel-control.left { left: 15px; }
-.carousel:hover a.carousel-control.right { right: 15px; }  
+.carousel:hover a.carousel-control.right { right: 15px; }
 
 .carousel-inner>.item>a>img, .carousel-inner>.item>img, .img-responsive, .thumbnail a>img, .thumbnail>img {
   display: block;
@@ -308,16 +308,16 @@ a.carousel-control.right { right: 0; background: none; border: 0;}
 
 .card-title,
 .card-text {
-  width: 270px;
+  width: auto;
   margin: 10px;
 }
 
 .card {
-  width: 290px;
+  width: auto;
 }
 
 .card-block a {
-  width: 270px;
+  width: auto;
   margin: 10px;
 }
 
