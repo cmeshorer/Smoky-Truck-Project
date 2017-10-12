@@ -33,6 +33,11 @@ h2 {
 
 /* Barre de navigation */
 
+#logo {
+  width: 35%;
+  height: 35%;
+}
+
 #navbar {
   width: 100%;
   position: fixed;
@@ -43,12 +48,6 @@ h2 {
 
 #navbar a, #navbar ul {
   margin-bottom: 0px;
-}
-
-#logo {
-  font-weight: bold;
-  font-size: 1.8em;
-  color: white;
 }
 
 #logo a {
