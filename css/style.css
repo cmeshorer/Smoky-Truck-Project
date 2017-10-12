@@ -577,3 +577,53 @@ footer p{
 
   }
 
+/* Editor WYSIWYG */
+div#textEditor{
+  margin: auto;
+  margin-top: 30px;
+  border: 2px solid rgb(40,110,89);
+  width: 750px;
+  height: 300px;
+}
+
+div#thePanel{
+  border-bottom: none;
+  padding: 10px;
+  background-color: rgb(40,110,89);
+  color: white;
+  
+}
+
+div #richTextArea{
+  height: 100%;
+  width: 100%;
+}
+
+iframe#theWYSIWYG{
+  position: absolute;
+  height: 100%;
+  width:100%;
+}
+
+div#thePanel > button {
+  color: white;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+div#thePanel > button:hover{
+  background-color: rgb(20,90,70);
+  transition: all 0.3s linear 0s;
+}
+
+input[type="color"]{
+  border:none;
+  outline: none;
+  background-color: transparent;
+}
+
+#fontChanger, #fontSizeChanger{
+  background-color: inherit;
+}
