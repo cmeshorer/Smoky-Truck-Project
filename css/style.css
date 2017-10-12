@@ -423,11 +423,21 @@ textarea.form-control {
 }
 
 .menu-section .line{
-  width: 100%;
-  background-color:rgba(147, 154, 168, 0.4);
-    width:100%;
+    width: 100%;
     border-radius: 4px;
     padding-bottom: 30px;
+}
+
+.line-entree{
+  background-color:rgba(2, 19, 58, 0.5);
+}
+
+.line-plats{
+  background-color:rgba(203, 0, 16, 0.5);
+}
+
+.line-desserts{
+  background-color:rgba(2, 19, 58, 0.5);
 }
 
 .menu-section h2{
@@ -495,10 +505,28 @@ textarea.form-control {
   }
 }
 
+/* Site-Mentions styles */
+.div-mentions{
+  margin-right: -15px;
+  margin-left: -15px;
+}
+.site-mentions{
+  margin-top: 25px;
+  line-height: 20px;
+  padding: 20px;
+  text-align: justify;
+}
+
+.img-mentions{
+  width: 100%;
+  height: 500px;
+}
+
+
 /* FOOTER styles */
 
 footer {
-  background-color:#344560;
+  background-color:#021738;
 }
 
 footer .container-fluid{
@@ -522,12 +550,30 @@ footer #mentions{
 
 }
 
-footer .three{
-  background-color:#344560;
+footer a{
+  font-weight: bold;
+}
 
+footer a:hover {
+  transition: .6s ease;
+  padding-bottom: 5px;
+  border-bottom: white 1.2px solid;
 }
 
 footer p{
-  line-height: 20px;
+  line-height: 30px;
   color: white;
 }
+
+@media screen and (max-width: 991px) {
+  footer .logol{
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  footer .text-footer{
+    text-align: center;
+  }
+
+  }
+
