@@ -33,85 +33,70 @@ h2 {
 
 /* Barre de navigation */
 
-#navbar {
+header {
   width: 100%;
   position: fixed;
-  background-color: #021738;
-  padding: 12px;
+  background-color: white;
+  line-height: 0;
   z-index: 16;
 }
 
-#navbar a, #navbar ul {
-  margin-bottom: 0px;
+nav img {
+  width: 40%;
+  height: 40%;
 }
 
-#logo {
-  font-weight: bold;
-  font-size: 1.8em;
-  color: white;
+.list-inline {
+  margin-left: 0;
 }
 
-#logo a {
-  color: white;
-  text-decoration: none;
+#links, #menu {
+  margin-bottom : 0;
 }
 
-#navbar ul {
-  padding-top: 6px;
+#links li a i {
+  font-size: 1.5em;
+  color: #b3b3b3;
+  margin-right: 10px;
+  margin-left: 10px
 }
 
-#navbar ul li a {
-  font-size: 1.1em;
-  margin-left: 20px;
-  margin-right: 20px;
-  padding-bottom: 8px;
-  color: white;
-  text-decoration: none;
-}
-
-#navbar ul a:hover {
-  transition: .6s ease;
-  padding-bottom: 5px;
-  border-bottom: white 1.2px solid;
-}
-
-/* Barre défilante */
-
-#navbar_social {
-  width: 100%;
-  background-color: #bc1229;
-  position: fixed;
-  top : 59px;
-  padding: 8px;
-  z-index: 16;
-  /*-webkit-animation: mymove 2s; /* Safari 4.0 - 8.0 */
-  /*animation: mymove 2s;
-  transition : all .8s; */
-}
-
-/*@keyframes mymove {
-    0%   {top: 0px; background: #021738;}
-    100% {top: 541px; background: #bc1229;}
-}
-
-/* Safari 4.0 - 8.0 */
-/*@-webkit-keyframes mymove {
-    0%   {top: 0px; background: #021738;}
-    100% {top: 541px; background: #bc1229;}
-} */
-
-#navbar_social a i {
-  margin-right: 6px;
-}
-
-#navbar_social a {
-  color: white;
-  text-decoration: none;
-}
-
-#navbar_social a:hover {
-  opacity: 0.4;
+#links li:hover {
+  opacity: 0.7;
   transition: .8s ease;
+}
+
+#links {
+  padding-top: 24px;
+}
+
+#menu {
+  margin-top: 12px;
+}
+
+#menu li {
+  padding-top: 24px;
+  height: 40px;
+  margin-left: 15px;
+  margin-right: 15px;
+}
+
+#menu li a {
+  color: #012051;
+  font-size: 1.1em;
+  font-weight: bold;
+  text-decoration: none;
+  height: 40px;
+  padding-left: 12px;
+}
+
+#menu li a:hover {
+  background: url("../img/puce.svg") center left no-repeat;
+  transition: .8s ease;
+}
+
+.navactive {
+  background: url("../img/puce.svg") center left no-repeat;
 }
 
 /* Burger menu */
@@ -210,7 +195,7 @@ h2 {
 /* Carousel */
 
 .main-slider {
-  padding-top: 95px;
+  padding-top: 78px;
 }
 
 .carousel-fade .carousel-inner { background: #000; }
@@ -462,7 +447,7 @@ textarea.form-control {
 /* Lieux et horraires */
 
 .noustrouver {
-  margin-top: 100px;
+  margin-top: 50px;
 }
 
 .noustrouver h2 {
@@ -502,7 +487,7 @@ textarea.form-control {
 /* Menu Page: styles */
 
 .menu-section {
-  margin-top: 90px;
+  margin-top: 50px;
 }
 
 .menu-section .line{
