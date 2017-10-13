@@ -38,79 +38,70 @@ h2 {
   height: 35%;
 }
 
-#navbar {
+header {
   width: 100%;
   position: fixed;
-  background-color: #021738;
-  padding: 12px;
+  background-color: white;
+  line-height: 0;
   z-index: 16;
 }
 
-#navbar a, #navbar ul {
-  margin-bottom: 0px;
+nav img {
+  width: 40%;
+  height: 40%;
 }
 
-#logo a {
-  color: white;
-  text-decoration: none;
+.list-inline {
+  margin-left: 0;
 }
 
-#navbar ul {
-  padding-top: 6px;
+#links, #menu {
+  margin-bottom : 0;
 }
 
-#navbar ul li a {
-  font-size: 1.1em;
-  margin-left: 20px;
-  margin-right: 20px;
-  padding-bottom: 8px;
-  color: white;
-  text-decoration: none;
+#links li a i {
+  font-size: 1.5em;
+  color: #b3b3b3;
+  margin-right: 10px;
+  margin-left: 10px
 }
 
-#navbar ul a:hover {
-  transition: .6s ease;
-  padding-bottom: 5px;
-  border-bottom: white 1.2px solid;
-}
-
-/* Barre défilante */
-
-#navbar_social {
-  width: 100%;
-  background-color: #bc1229;
-  position: fixed;
-  top : 59px;
-  padding: 8px;
-  z-index: 16;
-  /*-webkit-animation: mymove 2s; /* Safari 4.0 - 8.0 */
-  /*animation: mymove 2s;
-  transition : all .8s; */
-}
-
-/*@keyframes mymove {
-    0%   {top: 0px; background: #021738;}
-    100% {top: 541px; background: #bc1229;}
-}
-
-/* Safari 4.0 - 8.0 */
-/*@-webkit-keyframes mymove {
-    0%   {top: 0px; background: #021738;}
-    100% {top: 541px; background: #bc1229;}
-} */
-
-#navbar_social a i {
-  margin-right: 6px;
-}
-
-#navbar_social a {
-  color: white;
-  text-decoration: none;
-}
-
-#navbar_social a:hover {
-  opacity: 0.4;
+#links li:hover {
+  opacity: 0.7;
   transition: .8s ease;
+}
+
+#links {
+  padding-top: 24px;
+}
+
+#menu {
+  margin-top: 12px;
+}
+
+#menu li {
+  padding-top: 24px;
+  height: 40px;
+  margin-left: 15px;
+  margin-right: 15px;
+}
+
+#menu li a {
+  color: #012051;
+  font-size: 1.1em;
+  font-weight: bold;
+  text-decoration: none;
+  height: 40px;
+  padding-left: 12px;
+}
+
+#menu li a:hover {
+  background: url("../img/puce.svg") center left no-repeat;
+  transition: .8s ease;
+}
+
+.navactive {
+  background: url("../img/puce.svg") center left no-repeat;
 }
 
 /* Burger menu */
@@ -209,7 +200,7 @@ h2 {
 /* Carousel */
 
 .main-slider {
-  padding-top: 95px;
+  padding-top: 78px;
 }
 
 .carousel-fade .carousel-inner { background: #000; }
@@ -305,37 +296,98 @@ a.carousel-control.right { right: 0; background: none; border: 0;}
   padding-bottom: 50px;
 }
 
-.card-title,
+.card-title {
+  margin: 30px;
+  text-align:center;
+
+  }
+
 .card-text {
   width: auto;
-  margin: 10px;
 }
+
+div.card-block.card-holder{
+  margin: 15px;
+}
+
 
 .card {
   width: auto;
+  padding: 10px;
+  margin: 20px;
 }
 
-.card-block a {
-  width: auto;
+/*.card-block a {
   margin: 10px;
+  padding: 10px;
+  text-transform: uppercase;
+  color: #000000;
+  background-color: #ffffff;
+  border-color: #000000;
+  border-radius: 0;
 }
 
+.card-block a:hover {
+  color: #ffffff;
+  color: #000000;
+  background-color: #ffffff;
+  border-color: #000000;
+  transform: scale(1.2);
+  transition: all 900ms;
+  letter-spacing: 2px;
+}*/
 
 /* Story Section */
 
-#story-section {
-  padding-bottom: 30px;
+section#story-section {
+  margin: 0;
+  padding-top: 60px;
+  padding-bottom: 100px;
+}
+
+div.col-md-10.text-center{
+  padding-bottom: 20px;
+  text-align: right;
+}
+
+.histo-text{
+  padding-left: 55px;
 }
 
 /* Intermediary section*/
 
+section#menu-horaires.intermediaire{
+  background-color: #e4e4e4;
+  margin: 0;
+  padding: 90px;
+}
+
 .menu-text {
-  padding: 35px 5px 20px 0;
+  margin-top: 35px;
+  margin-bottom: 60px;
+  padding: 35px 35px 20px 0;
 }
 
 .intermediaire button {
   width: 150px;
+  margin: 10px;
+  text-transform: uppercase;
+  color: #000000;
+  background-color: transparent;
+  border-color: #000000;
+  border-radius: 0;
 }
+
+.intermediaire button:hover {
+  color: #ffffff;
+  color: black;
+  background-color: transparent;
+  border-color: #000000;
+  transform: scale(1.2);
+  transition: all 900ms;
+  letter-spacing: 0.5px;
+}
+
 
 /* Contact Page: styles */
 
@@ -362,23 +414,45 @@ textarea.form-control {
 }
 
 .form-button {
-  color: #000000;
+/*  color: #000000;
   background-color: #ffffff;
-  border-color: #000000;
+  border-color: #000000;*/
   text-transform: uppercase;
-  padding: 5px;
+  /*padding: 5px;*/
+}
+
+.form-button:hover {
+/*  color: #ffffff;
+  background-color: #000000;
+  border-color: #ffffff;*/
+}
+
+.form-button {
+  width: 100px;
+  margin: 10px;
+  text-transform: uppercase;
+  color: #000000;
+  background-color: transparent;
+  border-color: #000000;
+  border-radius: 0;
+  padding: 3px;
 }
 
 .form-button:hover {
   color: #ffffff;
-  background-color: #000000;
-  border-color: #ffffff;
+  color: black;
+  background-color: transparent;
+  border-color: #000000;
+  transform: scale(1.2);
+  transition: all 600ms;
+  letter-spacing: 0.5px;
 }
+
 
 /* Lieux et horraires */
 
 .noustrouver {
-  margin-top: 100px;
+  margin-top: 50px;
 }
 
 .noustrouver h2 {
@@ -418,7 +492,7 @@ textarea.form-control {
 /* Menu Page: styles */
 
 .menu-section {
-  margin-top: 90px;
+  margin-top: 50px;
 }
 
 .menu-section .line{

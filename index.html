@@ -42,24 +42,21 @@
         <div class="container-fluid">
           <!-- Barre de navigation -->
           <nav class="row" id="navbar">
-            <div class="col-xs-3 text-center"><a href="index.html"><img id="logo" src="img/smoky_logo.svg" alt="Logo Smoky Truck"></a></div>
-            <div class="col-xs-9" id="navbar_part2">
-              <div class="row">
-                <ul class="list-inline text-center">
-                  <li class="list-inline-item"><a href="index.html">Accueil</a></li>
-                  <li class="list-inline-item"><a href="menu.html">Notre Menu</a></li>
-                  <li class="list-inline-item"><a href="lieux-horraires.html">Nous trouver</a></li>
-                  <li class="list-inline-item"><a href="contact.html">Nous contacter</a></li>
-                </ul>
-              </div>
-              <div class="row" id="navbar_social">
-                <ul class="list-inline text-center">
-                  <li class="list-inline-item"><a href=#><i class="fa fa-map-marker" aria-hidden="true"></i>Nos points de vente</a></li>
-                  <li class="list-inline-item"><a href=#><i class="fa fa-instagram" aria-hidden="true"></i>Smoky Truck en photos</a></li>
-                  <li class="list-inline-item"><a href=#><i class="fa fa-facebook-official" aria-hidden="true"></i>Rejoignez-nous</a></li>
-                </div>
-              </div>
-            </nav>
+            <div class="col-xs-3 text-center">
+              <a href="index.html"><img src="img/smoky_logo.svg" alt="Logo Smoky Truck"></a>
+            </div>
+            <ul id="links" class="col-xs-2 list-inline text-center">
+              <li class="list-inline-item"><a href=#><i class="fa fa-map-marker" aria-hidden="true"></i></a></li>
+              <li class="list-inline-item"><a href="index.html"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+              <li class="list-inline-item"><a href="index.html"><i class="fa fa-facebook-official" aria-hidden="true"></i></a></li>
+            </ul>
+            <ul id="menu" class="list-inline col-xs-7 text-center">
+              <li class="list-inline-item"><a href="index.html" class="navactive">Accueil</a></li>
+              <li class="list-inline-item"><a href="menu.html">Notre Menu</a></li>
+              <li class="list-inline-item"><a href="lieux-horraires.html">Nous trouver</a></li>
+              <li class="list-inline-item"><a href="contact.html">Nous contacter</a></li>
+            </ul>
+          </nav>
           <!-- /. Barre de navigation -->
           <!-- Burger menu -->
           <div class="text-center" id="burger_icon">
@@ -69,9 +66,9 @@
             <ul>
               <li><a href="#" class="close">x</a></li>
               <li><p class="text-center"><a href="index.html">Accueil</a></p></li>
-              <li><p class="text-center"><a href=#>Notre menu</a></p></li>
-              <li><p class="text-center"><a href=#>Nous trouver</a></p></li>
-              <li><p class="text-center"><a href=#>Nous contacter</a></p></li>
+              <li><p class="text-center"><a href="menu.html">Notre menu</a></p></li>
+              <li><p class="text-center"><a href="lieux-horraires.html">Nous trouver</a></p></li>
+              <li><p class="text-center"><a href="contact.html">Nous contacter</a></p></li>
               <li class="links">
                 <a href=#><i class="fa fa-instagram" aria-hidden="true"></i></a>
                 <a href="#"><i class="fa fa-facebook-official" aria-hidden="true"></i></a>
@@ -142,7 +139,7 @@
                         <div class="card-block card-holder">
                           <h4 class="card-title">Card title</h4>
                           <p class="card-text text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sapien velit, consectetur nec dapibus ac lectus.</p>
-                          <a href="#" class="btn btn-primary">Read More</a>
+                          <!-- <a href="#" class="btn btn-primary">Read More</a>-->
                         </div>
                       </div>
                   </div>
@@ -152,7 +149,7 @@
                         <div class="card-block">
                           <h4 class="card-title">Card title</h4>
                           <p class="card-text text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sapien velit, consectetur nec dapibus ac lectus.</p>
-                          <a href="#" class="btn btn-primary">Read More</a>
+                          <!-- <a href="#" class="btn btn-primary">Read More</a>-->
                         </div>
                       </div>
                   </div>
@@ -162,7 +159,7 @@
                         <div class="card-block">
                           <h4 class="card-title">Card title</h4>
                           <p class="card-text text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sapien velit, consectetur nec dapibus ac lectus.</p>
-                          <a href="#" class="btn btn-primary">Read More</a>
+                         <!--  <a href="#" class="btn btn-primary">Read More</a>-->
                         </div>
                       </div>
                   </div>
@@ -185,10 +182,10 @@
               </div>
               <div class="row">
                 <div class="col-md-5 col-md-offset-1 col-xs-12">
-                  <button class="btn btn-primary" type="button">Notre menu</button>
+                  <button class="btn btn-primary inter-button" type="button">Notre menu</button>
                 </div>
                 <div class="col-md-5 col-md-offset-1 col-xs-12">
-                  <button class="btn btn-primary" type="button">Lieux &amp; horaires</button>
+                  <button class="btn btn-primary inter-button" type="button">Lieux/Horaires</button>
                 </div>
               </div>
             </div>
@@ -203,7 +200,7 @@
       <section id="story-section">
           <div class="container">
               <div class="row">
-                  <div class="col-md-12 text-center">
+                  <div class="col-md-10 text-center">
                       <h2>Notre Histoire</h2>
                   </div>
                   <div class="col-md-12">
@@ -212,7 +209,7 @@
                               <img class="img-responsive" src="http://via.placeholder.com/1500x844" alt="canva-placeholder">
                           </div>
                           <div class="col-md-6">
-                              <p class="text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec non velit et metus consectetur mollis a ut quam. Aenean ut nunc quis ipsum cursus ultricies. Vestibulum tincidunt ipsum mi, eget porttitor ante tincidunt eget. Pellentesque et quam eget leo suscipit hendrerit et sit amet lacus. Nullam at consequat ipsum, a vulputate diam. Sed ac sollicitudin libero, eget consectetur nisl. Etiam odio ligula, iaculis non ex vel, posuere sodales neque. Suspendisse sollicitudin semper augue, vel sollicitudin erat semper in. In imperdiet felis sit amet nibh sagittis, convallis vulputate ante porta. Curabitur non nulla posuere, tempor massa id, tincidunt justo. Phasellus consequat porttitor facilisis. Suspendisse potenti. Integer varius posuere nulla vitae viverra. Sed consequat erat non eros convallis lobortis.</p>
+                              <p class="text-justify histo-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec non velit et metus consectetur mollis a ut quam. Aenean ut nunc quis ipsum cursus ultricies. Vestibulum tincidunt ipsum mi, eget porttitor ante tincidunt eget. Pellentesque et quam eget leo suscipit hendrerit et sit amet lacus. Nullam at consequat ipsum, a vulputate diam. Sed ac sollicitudin libero, eget consectetur nisl. Etiam odio ligula, iaculis non ex vel, posuere sodales neque. Suspendisse sollicitudin semper augue, vel sollicitudin erat semper in. In imperdiet felis sit amet nibh sagittis, convallis vulputate ante porta. Curabitur non nulla posuere, tempor massa id, tincidunt justo. Phasellus consequat porttitor facilisis. Suspendisse potenti. Integer varius posuere nulla vitae viverra. Sed consequat erat non eros convallis lobortis.</p>
                           </div>
                       </div>
                   </div>
@@ -229,7 +226,7 @@
         <div class="row three">
 
           <div class="col-md-2 col-md-offset-1 two">
-            <img class ="logol" src= http://via.placeholder.com/80x80 alt="Logo"> 
+            <img class ="logol" src= http://via.placeholder.com/80x80 alt="Logo">
           </div>
 
           <div class="col-md-8 col-md-offset-2 text-footer">
