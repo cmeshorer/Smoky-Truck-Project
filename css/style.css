@@ -96,12 +96,9 @@ nav img {
 }
 
 #menu li a:hover {
+  padding-top: 24px;
   background: url("../img/puce.svg") center left no-repeat;
   transition: .8s ease;
-}
-
-.navactive {
-  background: url("../img/puce.svg") center left no-repeat;
 }
 
 /* Burger menu */
