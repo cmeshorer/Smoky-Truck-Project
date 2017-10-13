@@ -607,12 +607,12 @@ footer .container-fluid{
   margin-left: -15px;
 }
 
-footer .logol {
-  margin: 25px;
+#logo-footer {
+  width: 40%;
+  height: 40%;
 }
 
 footer .text-footer{
-  margin: 30px;
   padding: 20px;
   text-align:right;
 }
