@@ -15,15 +15,13 @@
           pizza is at the center of our creative work. Click to discover
           some pizza fusion...">
 
-      <!-- Favicon -->
+      <!-- Favicon, Font Awesome & Google fonts -->
       <link rel="smokey icon" href="img/lettre.ico">
+      <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 
     	<!-- Bootstrap & CSS -->
     	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     	<link rel="stylesheet" type="text/css" href="css/style.css">
-
-    	<!-- Font Awesome -->
-    	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 
     	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -42,16 +40,16 @@
         <div class="container-fluid">
           <!-- Barre de navigation -->
           <nav class="row" id="navbar">
-            <div class="col-xs-3 text-center">
-              <a href="index.html"><img src="img/smoky_logo.svg" alt="Logo Smoky Truck"></a>
+            <div class="col-xs-2 text-center">
+              <a href="index.html"><img src="img/smoky_logo.svg" alt="Logo Smoky Truck" id="logo"></a>
             </div>
             <ul id="links" class="col-xs-2 list-inline text-center">
-              <li class="list-inline-item"><a href=#><i class="fa fa-map-marker" aria-hidden="true"></i></a></li>
+              <li class="list-inline-item"><a href="#""><i class="fa fa-map-marker" aria-hidden="true"></i></a></li>
               <li class="list-inline-item"><a href="index.html"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
               <li class="list-inline-item"><a href="index.html"><i class="fa fa-facebook-official" aria-hidden="true"></i></a></li>
             </ul>
-            <ul id="menu" class="list-inline col-xs-7 text-center">
-              <li class="list-inline-item"><a href="index.html">Accueil</a></li>
+            <ul id="menu" class="list-inline col-xs-8 text-right">
+              <li class="list-inline-item"><a href="index.html" class="navactive">Accueil</a></li>
               <li class="list-inline-item"><a href="menu.html">Notre Menu</a></li>
               <li class="list-inline-item"><a href="lieux-horraires.html">Nous trouver</a></li>
               <li class="list-inline-item"><a href="contact.html">Nous contacter</a></li>
@@ -63,15 +61,18 @@
             <i class="fa fa-bars" aria-hidden="true"></i>
           </div>
           <div class="menuburger">
-            <ul>
-              <li><a href="#" class="close">x</a></li>
-              <li><p class="text-center"><a href="index.html">Accueil</a></p></li>
+            <li><a href="#" class="close">x</a></li>
+            <ul id="burgernav">
+              <li><p class="text-center"><a href="index.html" class="navactive">Accueil</a></p></li>
               <li><p class="text-center"><a href="menu.html">Notre menu</a></p></li>
               <li><p class="text-center"><a href="lieux-horraires.html">Nous trouver</a></p></li>
               <li><p class="text-center"><a href="contact.html">Nous contacter</a></p></li>
-              <li class="links">
-                <a href=#><i class="fa fa-instagram" aria-hidden="true"></i></a>
-                <a href="#"><i class="fa fa-facebook-official" aria-hidden="true"></i></a>
+            </ul>
+            <ul>
+              <li id="links_burger">
+                <a href="#""><i class="fa fa-map-marker" aria-hidden="true"></i></a>
+                <a href="index.html"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+                <a href="index.html"><i class="fa fa-facebook-official" aria-hidden="true"></i></a>
               </li>
             </ul>
           </div>

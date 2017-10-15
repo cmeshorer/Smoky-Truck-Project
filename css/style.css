@@ -31,11 +31,11 @@ h2 {
   color: white;
 } */
 
-/* Barre de navigation */
+/* Header */
 
 #logo {
-  width: 35%;
-  height: 35%;
+  width: 48%;
+  height: 48%;
 }
 
 header {
@@ -46,24 +46,19 @@ header {
   z-index: 16;
 }
 
-nav img {
-  width: 40%;
-  height: 40%;
-}
-
 .list-inline {
   margin-left: 0;
 }
 
-#links, #menu {
-  margin-bottom : 0;
+#links {
+  padding-top: 22px;
 }
 
 #links li a i {
-  font-size: 1.5em;
+  font-size: 1.6em;
   color: #b3b3b3;
-  margin-right: 10px;
-  margin-left: 10px
+  margin-right: 6px;
+  margin-left: 6px;
 }
 
 #links li:hover {
@@ -71,54 +66,54 @@ nav img {
   transition: .8s ease;
 }
 
-#links {
-  padding-top: 24px;
-}
-
 #menu {
-  margin-top: 12px;
+  margin-top: 10px;
 }
 
 #menu li {
   padding-top: 24px;
   height: 40px;
-  margin-left: 15px;
-  margin-right: 15px;
+  padding-right: 25px;
+  padding-left: 25px;
 }
 
 #menu li a {
+  font-size: 1.05em;
   color: #012051;
-  font-size: 1.1em;
   font-weight: bold;
   text-decoration: none;
   height: 40px;
-  padding-left: 12px;
+  padding-left: 6px;
 }
 
 #menu li a:hover {
   padding-top: 24px;
   background: url("../img/puce.svg") center left no-repeat;
-  transition: .8s ease;
+  transition: 1s ease;
+}
+
+#menu .navactive {
+  color : #b3b3b3;
 }
 
 /* Burger menu */
 
 #burger_icon {
   visibility: hidden;
-  color: white;
   position: fixed;
-  top: 26px;
-  right: 26px;
-  padding: 10px;
+  top: 8px;
+  right: 8px;
+  padding: 8px;
   z-index: 16;
+  color: #b3b3b3;
 }
 
 #burger_icon i {
-  font-size: 1.4em;
+  font-size: 1.5em;
 }
 
 .menuburger {
-  background-color: #949ba8;
+  background-color: white;
   height: 100vh;
   position : fixed;
   width: 200px;
@@ -128,18 +123,20 @@ nav img {
   z-index: 17;
 }
 
-.links {
+#links_burger {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
 }
 
-.links a i {
-  font-size: 1.6em;
+#links_burger a i {
+  font-size: 1.7em;
+  color: #b3b3b3;
 }
 
 .menuburger ul {
   padding : 15px;
+  margin-bottom: 0px;
 }
 
 .menuburger li {
@@ -148,14 +145,28 @@ nav img {
 }
 
 .menuburger li a {
-  color: white;
+  color: #012051;
+  font-weight: bold;
+  text-decoration: none
   font-size: 1em;
+  padding-left: 6px;
+}
+
+#burgernav li a:hover {
+  padding-top: 24px;
+  background: url("../img/puce.svg") center left no-repeat;
+  transition: 1s ease;
   text-decoration: none;
 }
 
-.menuburger li:hover {
-  font-weight: bold;
-  transition: .5s ease;
+#burgernav .navactive {
+  color : #b3b3b3;
+}
+
+#links_burger a i:hover {
+  opacity: 0.7;
+  transition: .8s ease;
+  text-decoration: none;
 }
 
 .menuburger.open {
@@ -164,20 +175,58 @@ nav img {
 
 .menuburger li a.close {
   position: relative;
-  top: 0;
-  right: 0;
+  top: 10;
+  right: 10;
   font-size: 15px;
-  color: white;
+  color: #012051;
 }
 
-/* Media Queries burger menu */
+/* Media Queries header */
+
+@media screen and (max-width: 992px) {
+  #links {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  }
+
+  #links li a i {
+  font-size: 1.2em;
+  padding-top: 4px;
+  }
+
+  #links {
+  padding-top: 0;
+  }
+}
+
+@media screen and (max-width: 911px) {
+  #menu li {
+    padding-right: 20px;
+    padding-left: 20px;
+  }
+}
+
+@media screen and (max-width: 852px) {
+  #menu li {
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+}
+
+@media screen and (max-width: 791px) {
+  #menu li {
+    padding-right: 10px;
+    padding-left: 10px;
+  }
+}
 
 @media screen and (max-width: 768px) {
 
-  #navbar_part2, #navbar_social {
+  #navbar ul {
     display:none;
   }
-
 
   #burger_icon {
     visibility: visible;
@@ -186,18 +235,24 @@ nav img {
   #burger_icon:hover {
   cursor:pointer;
   }
+
 }
 
 @media screen and (min-width: 768px) {
   .menuburger {
     display: none;
   }
+
+  .scrolled-nav {
+  background-color : #012051;
+  }
+
 }
 
 /* Carousel */
 
 .main-slider {
-  padding-top: 78px;
+  padding-top: 66px;
 }
 
 .carousel-fade .carousel-inner { background: #000; }
@@ -285,8 +340,6 @@ a.carousel-control.right { right: 0; background: none; border: 0;}
   height: auto;
 }
 
-
-
 /* Actus */
 #actus {
   padding-top: 30px;
@@ -306,7 +359,6 @@ a.carousel-control.right { right: 0; background: none; border: 0;}
 div.card-block.card-holder{
   margin: 15px;
 }
-
 
 .card {
   width: auto;
@@ -385,7 +437,6 @@ section#menu-horaires.intermediaire{
   letter-spacing: 0.5px;
 }
 
-
 /* Contact Page: styles */
 
 .contact-section h2 {
@@ -394,7 +445,7 @@ section#menu-horaires.intermediaire{
 }
 
 .contact-image {
-  padding-top: 175px;
+  padding-top: 66px;
 }
 
 .name-form-input input {
@@ -444,7 +495,6 @@ textarea.form-control {
   transition: all 600ms;
   letter-spacing: 0.5px;
 }
-
 
 /* Lieux et horraires */
 
@@ -524,7 +574,6 @@ textarea.form-control {
 .menu-section .row {
     margin-top:20px;
 }
-
 
 .card-menu .img-menu {
     width:100%;
@@ -646,4 +695,3 @@ footer p{
   }
 
   }
-
