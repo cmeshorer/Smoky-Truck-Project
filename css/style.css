@@ -2,7 +2,7 @@
 
 body
 {
-  font-family:
+  font-family: 'Open Sans', sans-serif;
   color: black;
 }
 
@@ -12,10 +12,12 @@ h1 {
 
 h2 {
   padding: 30px 0 30px 0;
+  color: #012051;
+  font-weight: 700;
 }
 
 .important {
-  font-weight: bold;
+  font-weight: 700;
   font-style: italic;
 }
 
@@ -80,7 +82,7 @@ header {
 #menu li a {
   font-size: 1.05em;
   color: #012051;
-  font-weight: bold;
+  font-weight: 700;
   text-decoration: none;
   height: 40px;
   padding-left: 6px;
@@ -146,7 +148,7 @@ header {
 
 .menuburger li a {
   color: #012051;
-  font-weight: bold;
+  font-weight: 700;
   text-decoration: none
   font-size: 1em;
   padding-left: 6px;
@@ -349,7 +351,6 @@ a.carousel-control.right { right: 0; background: none; border: 0;}
 .card-title {
   margin: 30px;
   text-align:center;
-
   }
 
 .card-text {
@@ -405,6 +406,10 @@ div.col-md-10.text-center{
 
 /* Intermediary section*/
 
+.intermediaire {
+  background : url('7011.svg');
+}
+
 section#menu-horaires.intermediaire{
   background-color: #e4e4e4;
   margin: 0;
@@ -425,6 +430,7 @@ section#menu-horaires.intermediaire{
   background-color: transparent;
   border-color: #000000;
   border-radius: 0;
+  background-color: white;
 }
 
 .intermediaire button:hover {
@@ -435,6 +441,7 @@ section#menu-horaires.intermediaire{
   transform: scale(1.2);
   transition: all 900ms;
   letter-spacing: 0.5px;
+  background-color: white;
 }
 
 /* Contact Page: styles */
@@ -678,7 +685,7 @@ footer p a:hover, footer li a:hover {
 }
 
 #mentions a {
-  font-weight: bold;
+  font-weight: 700;
 }
 
 @media screen and (max-width: 768px) {
