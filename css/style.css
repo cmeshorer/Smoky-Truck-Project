@@ -645,53 +645,47 @@ textarea.form-control {
 /* FOOTER styles */
 
 footer {
-  background-color:#021738;
+  background-color:white;
+  color: #021738;
+  padding-top: 6px;
+  padding-bottom: 6px;
 }
 
-footer .container-fluid{
-  margin-right: -15px;
-  margin-left: -15px;
+footer a {
+  color: #021738;
 }
 
-#logo-footer {
+footer img {
   width: 40%;
   height: 40%;
+  padding-top: 15px;
 }
 
-footer .text-footer{
-  padding: 20px;
-  text-align:right;
+footer ul {
+  list-style-type: none;
+  margin-bottom: 0px;
 }
 
-footer #mentions{
+footer p a:hover, footer li a:hover {
+  color: #021738;
+  opacity: 0.6;
   text-decoration: none;
-  color: white;
-
+  transition: .8s ease;
 }
 
-footer a{
+#mentions {
+  padding-top: 30px;
+}
+
+#mentions a {
   font-weight: bold;
 }
 
-footer a:hover {
-  transition: .6s ease;
-  padding-bottom: 5px;
-  border-bottom: white 1.2px solid;
+@media screen and (max-width: 768px) {
+  footer .row {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items :center;
+  }
 }
-
-footer p{
-  line-height: 30px;
-  color: white;
-}
-
-@media screen and (max-width: 991px) {
-  footer .logol{
-    display: block;
-    margin-right: auto;
-    margin-left: auto;
-  }
-  footer .text-footer{
-    text-align: center;
-  }
-
-  }
