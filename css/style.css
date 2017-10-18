@@ -13,13 +13,30 @@ h1 {
 }
 
 h2 {
-  padding: 15px 0 15px 0;
+  padding: 20px 0 20px 0;
   color: #b3b3b3;
   font-weight: 700;
+  margin: auto;
+}
+
+h3 {
+  color: #012051;
+  font-weight: 700;
+  font-size: 1.6em;
+}
+
+h4 {
+  color: #b3b3b3;
+  font-size: 1.4em;
 }
 
 .important {
   font-weight: 700;
+}
+
+.petit {
+  color: #b3b3b3;
+  font-size: 0.8em;
 }
 
 /* Surlignage personnalisé
@@ -256,7 +273,7 @@ header {
 
 footer {
   margin-top : 40px;
-  background-color:white;
+  background-color: #f2f2f2 ;
   color: #021738;
   padding-top: 6px;
   padding-bottom: 6px;
@@ -266,23 +283,21 @@ footer a {
   color: #021738;
 }
 
-footer img {
-  width: 40%;
-  height: 40%;
-  padding-top: 15px;
+footer .trylogo{
+  display: block;
+  text-indent: -9999px;
+  width: 100px;
+  height: 82px;
+  background: url(../img/smoky_logo.svg);
+  background-size: contain;
 }
+
 
 footer ul {
   list-style-type: none;
   margin-bottom: 0px;
 }
 
-footer p a:hover, footer li a:hover {
-  color: #021738;
-  opacity: 0.6;
-  text-decoration: none;
-  transition: .8s ease;
-}
 
 #mentions {
   padding-top: 30px;
@@ -509,40 +524,23 @@ div.col-md-10.text-center{
 /* Menu Page: styles */
 
 .menu-section {
-  margin-top: 50px;
+  margin-top: 80px;
+}
+
+.menu-section .row {
+  margin-top:10px;
+  margin-bottom: 10px;
 }
 
 .menu-section .line{
     width: 100%;
     border-radius: 4px;
-    padding-bottom: 30px;
-}
-
-.line-entree{
-  background-color:rgba(2, 19, 58, 0.5);
-}
-
-.line-plats{
-  background-color:rgba(203, 0, 16, 0.5);
-}
-
-.line-desserts{
-  background-color:rgba(2, 19, 58, 0.5);
-}
-
-.menu-section h2{
-  padding-top: 30px;
-  padding-bottom: 10px;
 }
 
 .menu-section p {
   text-align: justify;
-  margin: 20px;
+  margin: 15px;
   opacity: 0.75;
-}
-
-.menu-section .row {
-    margin-top:20px;
 }
 
 .card-menu .img-menu {
@@ -558,16 +556,16 @@ div.col-md-10.text-center{
   -moz-border-radius: 4px;
   border-radius:4px;
   box-shadow: 0 4px 5px 0 rgba(0,0,0,0.14), 0 1px 10px 0 rgba(0,0,0,0.12), 0 2px 4px -1px rgba(0,0,0,0.3);
-  margin-bottom: 50px;
-  margin-top: 25px;
+  margin-top: 10px;
+  margin-bottom: 10px;
   text-align: center;
  transition: all 0.5s ease;
 }
 
-.card-menu:hover {
+/*.card-menu:hover {
   background: rgba(237,237,237, 0.5);
   padding: 20px;
-}
+} */
 
 .card-menu .info-all {
   margin-left: auto;
@@ -575,6 +573,7 @@ div.col-md-10.text-center{
   display: inline;
   margin-bottom: 20px;
 }
+
 /* Media queries: Menu; */
 
 @media screen and (min-width: 450px) and (max-width: 990px) {
