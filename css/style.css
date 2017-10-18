@@ -2,7 +2,7 @@
 
 body
 {
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Comfortaa', cursive;
   color: black;
 }
 
@@ -14,7 +14,9 @@ h1 {
 
 h2 {
   padding: 15px 0 15px 0;
-  color: #b3b3b3;
+  /*color: #143b6b;*/
+  /*color: #04122a;*/
+  color: #1a265d;
   font-weight: 700;
 }
 
@@ -260,6 +262,7 @@ footer {
   color: #021738;
   padding-top: 6px;
   padding-bottom: 6px;
+  background-color: #f5fbff;
 }
 
 footer a {
@@ -419,6 +422,8 @@ a.carousel-control.right { right: 0; background: none; border: 0;}
 .card-title {
   margin: 30px;
   text-align:center;
+  /*color: #1a265d;*/
+  color: #1946a6;
   }
 
 .card-text {
@@ -458,7 +463,8 @@ div.card-block.card-holder{
 /* Intermediary section*/
 
 .intermediaire {
-  background : url('7011.svg');
+  background : url('../img/gridme.png');
+  background-attachment: fixed;
 }
 
 section#menu-horaires.intermediaire{
@@ -477,22 +483,25 @@ section#menu-horaires.intermediaire{
   width: 150px;
   margin: 10px;
   text-transform: uppercase;
-  color: #000000;
-  background-color: transparent;
+  /*color: #000000;*/
+  color: #ffffff;
+  /*background-color: transparent;*/
+  background-color: #1946a6;
   border-color: #000000;
+  /*border-color: #1a265d;*/
   border-radius: 0;
-  background-color: white;
+  /*background-color: white;*/
 }
 
 .intermediaire button:hover {
   color: #ffffff;
-  color: black;
-  background-color: transparent;
-  border-color: #000000;
+  /*color: black;*/
+  /*background-color: transparent;*/
   transform: scale(1.2);
   transition: all 900ms;
   letter-spacing: 0.5px;
-  background-color: white;
+  /*background-color: white;*/
+  background-color: #1946a6;
 }
 
 /* Story Section */
@@ -503,7 +512,7 @@ div.col-md-10.text-center{
 }
 
 .histo-text{
-  padding-left: 55px;
+  padding: 40px 37px 0 70px;
 }
 
 /* Menu Page: styles */
