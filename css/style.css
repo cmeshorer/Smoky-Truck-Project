@@ -283,12 +283,14 @@ footer a {
   color: #021738;
 }
 
-footer .trylogo{
-  display: block;
-  text-indent: -9999px;
+.divlogol{
+  padding-top: 15px;
+}
+
+.trylogo{
   width: 100px;
-  height: 82px;
-  background: url(../img/smoky_logo.svg);
+  height: 100px;
+  background: url(../img/smoky_logo.svg) no-repeat;
   background-size: contain;
 }
 
