@@ -273,7 +273,7 @@ header {
 
 footer {
   margin-top : 40px;
-  background-color:white;
+  background-color: #f2f2f2 ;
   color: #021738;
   padding-top: 6px;
   padding-bottom: 6px;
@@ -283,23 +283,21 @@ footer a {
   color: #021738;
 }
 
-footer img {
-  width: 40%;
-  height: 40%;
-  padding-top: 15px;
+footer .trylogo{
+  display: block;
+  text-indent: -9999px;
+  width: 100px;
+  height: 82px;
+  background: url(../img/smoky_logo.svg);
+  background-size: contain;
 }
+
 
 footer ul {
   list-style-type: none;
   margin-bottom: 0px;
 }
 
-footer p a:hover, footer li a:hover {
-  color: #021738;
-  opacity: 0.6;
-  text-decoration: none;
-  transition: .8s ease;
-}
 
 #mentions {
   padding-top: 30px;
