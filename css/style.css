@@ -53,17 +53,55 @@ h4 {
 
 /* Header */
 
-#logo {
-  width: 48%;
-  height: 48%;
-}
-
 header {
   width: 100%;
   position: fixed;
   background-color: white;
   line-height: 0;
   z-index: 16;
+}
+
+#smoky_riding {
+  display: flex;
+  flex-direction: column;
+}
+
+#logo1 {
+  width: 48%;
+  height: 48%;
+  position: relative;
+  top : 7px;
+  -webkit-animation: mymove 2s; /* Safari 4.0 - 8.0 */
+  animation: mymove 2s;
+}
+
+@keyframes mymove {
+  from {left: -180px;}
+  to {left: 0px;}
+}
+
+/* Safari 4.0 - 8.0 */
+@-webkit-keyframes mymove {
+  from {left: -180px;}
+  to {left: 0px;}
+} 
+
+#logo2 {
+  width: 48%;
+  height: 48%;
+}
+
+#scrolled_logo {
+  display: none;
+  position: fixed;
+  top : 0px;
+  left: 0px;
+}
+
+#scrolled_logo img {
+  width: 20%;
+  height: 20%;
+  
 }
 
 .list-inline {
