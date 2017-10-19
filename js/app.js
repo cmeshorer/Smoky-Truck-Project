@@ -4,7 +4,7 @@ $('#burger_icon, .close').on('click',function(){
 }); 
 
 // Effet menu scroll
-var scrollTop = 0;
+/*var scrollTop = 0;
 $(window).scroll(function(){
   scrollTop = $(window).scrollTop();
   if (scrollTop >= 200) {
@@ -22,7 +22,15 @@ $(window).scroll(function(){
     $("#scrolled_logo").css("display", "none");
     $('#menu .navactive').css('color', '#b3b3b3');
   } 
-}); 
+}); */
+
+$(window).scroll(function(){
+  scrollTop = $(window).scrollTop();
+  if (scrollTop >= 200) {
+    $('header').css('opacity', 0.8);
+  } else if (scrollTop < 200) {
+
+  }
 
 // Carousel
  $(document).ready(function() {
