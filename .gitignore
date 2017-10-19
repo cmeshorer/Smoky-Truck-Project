@@ -98,5 +98,6 @@ GitHub.sublime-settings
 # Optional REPL history
 .node_repl_history
 
-
+#NODE MODULES: 
+node_modules/
 # End of https://www.gitignore.io/api/linux,macos,sublimetext
