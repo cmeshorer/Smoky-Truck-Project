@@ -601,8 +601,6 @@ div #richTextArea{
 
 iframe#theWYSIWYG{
   position: absolute;
-  height: 100%;
-  width:100%;
 }
 
 div#thePanel > button {
