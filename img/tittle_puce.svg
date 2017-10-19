@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="34"
+   height="80"
+   viewBox="0 0 34 79.999999"
+   id="svg4192"
+   version="1.1"
+   inkscape:version="0.91 r13725"
+   sodipodi:docname="tittle_puce.svg"
+   inkscape:export-filename="/home/anne-laure/Documents/Smoky-Truck-Project/img/puce.svg.png"
+   inkscape:export-xdpi="90"
+   inkscape:export-ydpi="90">
+  <defs
+     id="defs4194" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.82"
+     inkscape:cx="-380.63415"
+     inkscape:cy="139.91889"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="1301"
+     inkscape:window-height="744"
+     inkscape:window-x="65"
+     inkscape:window-y="24"
+     inkscape:window-maximized="1"
+     units="px" />
+  <metadata
+     id="metadata4197">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Calque 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(0,-972.36)">
+    <path
+       inkscape:connector-curvature="0"
+       id="path6036-7-9"
+       style="display:inline;opacity:0.75;fill:#b3b3b3;fill-opacity:1;fill-rule:nonzero;stroke:none"
+       d="m 13.245025,1010.3252 c -5.9056964,-0.3434 -9.1459366,-2.3915 -8.8643904,-4.6483 0.484017,-3.8726 11.0092764,-6.7197 14.4531334,-10.12421 2.668946,-2.63869 -3.769503,-4.35855 -6.512309,-6.52706 -2.4637965,-1.94831 -3.2939516,-4.14405 -2.5159416,-6.28862 0.9528056,-2.62704 3.7790786,-5.16081 9.2255706,-6.81531 1.368414,-0.41647 3.322979,0.0437 2.386303,0.71128 -4.433867,3.1571 -6.234216,6.56736 -2.164818,9.92456 2.813229,2.32012 8.640457,3.87467 10.068955,6.48983 1.370787,2.50647 -1.718289,5.09143 -6.251241,6.82063 -2.668247,1.019 -6.146354,1.4415 -9.051599,2.3366 -4.7076895,1.4508 -9.6407305,5.8935 0.222001,6.7754 2.034397,0.1805 0.912204,1.4563 -0.995661,1.3452 l 0,0" />
+  </g>
+</svg>
