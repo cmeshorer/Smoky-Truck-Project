@@ -1,22 +1,8 @@
 
 # Created by https://www.gitignore.io/api/linux,macos,sublimetext
 
-/Gruntfile.js
-/package.json
-/package-lock.json
-
 ### Linux ###
 *~
-
-### grunt ###
-# Grunt usually compiles files inside this directory
-dist/
-
-# Grunt usually preprocesses files such as coffeescript, compass... inside the .tmp directory
-.tmp/
-
-# Grunt intermediate storage (http://gruntjs.com/creating-plugins#storing-task-files)
-.grunt
 
 # temporary files which can be created if a process still has a handle open of a deleted file
 .fuse_hidden*
@@ -89,6 +75,7 @@ bh_unicode_properties.cache
 # https://packagecontrol.io/packages/sublime-github
 GitHub.sublime-settings
 
+<<<<<<< HEAD
 # Optional npm cache directory
 .npm
 
@@ -100,4 +87,6 @@ GitHub.sublime-settings
 
 #NODE MODULES: 
 node_modules/
+=======
+>>>>>>> 9e0a063bcff72183789b81d06071417b98a7bd96
 # End of https://www.gitignore.io/api/linux,macos,sublimetext
