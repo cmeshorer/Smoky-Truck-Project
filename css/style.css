@@ -666,6 +666,11 @@ textarea.form-control {
   margin-bottom: 20px;
 }
 
+.form-control:focus { 
+    border-color: black;
+    box-shadow: 0;
+}
+
 .form-button {
 /*  color: #000000;
   background-color: #ffffff;
@@ -699,4 +704,13 @@ textarea.form-control {
   transform: scale(1.2);
   transition: all 600ms;
   letter-spacing: 0.5px;
+}
+
+.g-recaptcha {
+  margin: auto;
+}
+
+.rc-anchor {
+  margin-left: 400px;
+
 }
