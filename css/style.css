@@ -625,3 +625,8 @@ input[type="color"]{
 #fontChanger, #fontSizeChanger{
   background-color: inherit;
 }
+
+
+.theboat{
+  margin-top: 20px;
+}

@@ -3,10 +3,6 @@ window.addEventListener("load", function(){
   editor.designMode = "on";
 
 
-  boldButton.addEventListener("click", function(){
-    editor.execCommand("Bold", false, null);
-  }, false);
-
   italicButton.addEventListener("click", function(){
     editor.execCommand("Italic", false, null);
   }, false);
