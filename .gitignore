@@ -75,4 +75,21 @@ bh_unicode_properties.cache
 # https://packagecontrol.io/packages/sublime-github
 GitHub.sublime-settings
 
+<<<<<<< HEAD
+# Optional npm cache directory
+.npm
+
+# Optional eslint cache
+.eslintcache
+
+# Optional REPL history
+.node_repl_history
+
+#NODE MODULES:
+ 
+node_modules
+package_lock.json
+Gruntfile.js
+=======
+>>>>>>> 9e0a063bcff72183789b81d06071417b98a7bd96
 # End of https://www.gitignore.io/api/linux,macos,sublimetext
