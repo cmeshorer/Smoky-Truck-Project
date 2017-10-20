@@ -673,18 +673,29 @@ textarea.form-control {
 
 
 
-.form-button {
-/*  color: #000000;
-  background-color: #ffffff;
-  border-color: #000000;*/
+button.form-button {
+  width: 150px;
+  margin: 10px;
   text-transform: uppercase;
-  /*padding: 5px;*/
+  text-transform: uppercase;
+  color: #ffffff;
+  /*background-color: transparent;*/
+  background-color: #1946a6;
+  border-color: #000000;
+  /*border-color: #1a265d;*/
+  border-radius: 0;
+  /*background-color: white;*/
 }
 
-.form-button:hover {
-/*  color: #ffffff;
-  background-color: #000000;
-  border-color: #ffffff;*/
+button.form-button:hover {
+  color: #ffffff;
+  /*color: black;*/
+  /*background-color: transparent;*/
+  transform: scale(1.2);
+  transition: all 900ms;
+  letter-spacing: 0.5px;
+  /*background-color: white;*/
+  background-color: #1946a6;
 }
 
 .form-button {
@@ -747,7 +758,7 @@ div#thePanel{
   padding: 10px;
   background-color: rgb(40,110,89);
   color: white;
-  
+
 }
 
 div #richTextArea{
