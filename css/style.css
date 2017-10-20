@@ -284,6 +284,10 @@ footer a {
   color: #021738;
 }
 
+footer .row{
+  margin-right: 0;
+  margin-left: 0;
+}
 .divlogol{
   padding-top: 15px;
 }
@@ -666,6 +670,8 @@ textarea.form-control {
   margin-bottom: 20px;
 }
 
+
+
 .form-button {
 /*  color: #000000;
   background-color: #ffffff;
@@ -701,6 +707,7 @@ textarea.form-control {
   letter-spacing: 0.5px;
 }
 
+
 textarea {
     resize: none;
 }
@@ -724,3 +731,4 @@ textarea {
     padding-top: 40px;
   }
 }
+
