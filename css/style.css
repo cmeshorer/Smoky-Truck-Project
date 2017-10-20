@@ -284,6 +284,10 @@ footer a {
   color: #021738;
 }
 
+footer .row{
+  margin-right: 0;
+  margin-left: 0;
+}
 .divlogol{
   padding-top: 15px;
 }
@@ -666,10 +670,7 @@ textarea.form-control {
   margin-bottom: 20px;
 }
 
-.form-control:focus { 
-    border-color: black;
-    box-shadow: 0;
-}
+
 
 .form-button {
 /*  color: #000000;
@@ -706,11 +707,22 @@ textarea.form-control {
   letter-spacing: 0.5px;
 }
 
-.g-recaptcha {
-  margin: auto;
+/* .error{
+  display: none;
+  margin-left: 10px;
+}   
+
+.error_show{
+  color: red;
+  margin-left: 10px;
 }
 
-.rc-anchor {
-  margin-left: 400px;
-
+input.invalid, textarea.invalid{
+  border: 2px solid red;
 }
+
+input.valid, textarea.valid{
+  border: 2px solid blue;
+}
+*/
+
