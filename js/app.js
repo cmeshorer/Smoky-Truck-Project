@@ -28,6 +28,3 @@ $(window).scroll(function(){
   });
 
 
- 
-
-
