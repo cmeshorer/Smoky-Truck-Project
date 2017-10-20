@@ -620,7 +620,7 @@ div.col-md-10.text-center{
   padding-bottom: 30px;
 }
 
-.jours {
+.hauttableau{
   background-color: #4e535b;
   color: white;
   margin-top: 10px;
@@ -708,4 +708,27 @@ textarea.form-control {
 }
 
 
+textarea {
+    resize: none;
+}
+
+/* Media Query Story */
+
+@media screen and (max-width: 992px) {
+  .histo-text {
+    padding-top: 30px;
+    padding-left: 0px;
+  }
+}
+
+/* Media Query Intermédiaire */
+
+@media screen and (max-width: 991px) {
+  section#menu-horaires.intermediaire{
+    padding: 0px;
+  }
+  section#menu-horaires.intermediaire .img-responsive{
+    padding-top: 40px;
+  }
+}
 
