@@ -3,17 +3,17 @@ header
 		// Barre de navigation
 		nav#navbar.row
 			.col-xs-2.text-center
-				a(href='index.html')
+				a(href='/')
 					img#logo(src='/images/smoky_logo.svg', alt='Logo Smoky Truck')
 			ul#links.col-xs-2.list-inline.text-center
 				li.list-inline-item
-					a(href='#')
+					a(href='/')
 						i.fa.fa-map-marker(aria-hidden='true')
 				li.list-inline-item
-					a(href='index.html')
+					a(href='/')
 						i.fa.fa-instagram(aria-hidden='true')
 				li.list-inline-item
-					a(href='index.html')
+					a(href='/')
 						i.fa.fa-facebook-official(aria-hidden='true')
 			ul#menu.list-inline.col-xs-8.text-right
 				li.list-inline-item
@@ -23,19 +23,19 @@ header
 						a(href='/') Accueil
 				li.list-inline-item
 					- if (page =='menu')
-						a.navactive(href='menu.html') Notre Menu
+						a.navactive(href='/menu') Notre Menu
 					- else
-						a(href='menu.html') Notre Menu
+						a(href='/menu') Notre Menu
 				li.list-inline-item
-					- if (page =='lieux')
-						a.navactive(href='lieux-horraires.html') Nous trouver
+					- if (page =='lieux-hor')
+						a.navactive(href='/lieux-hor') Nous trouver
 					- else
-						a(href='lieux-horraires.html') Nous trouver
+						a(href='/lieux-hor') Nous trouver
 				li.list-inline-item
 					- if (page == 'contact')
-						a.navactive(href='contact.html') Nous contacter
+						a.navactive(href='/contact') Nous contacter
 					- else
-						a(href='contact.html') Nous contacter
+						a(href='/contact') Nous contacter
 		// Burger menu
 		#burger_icon.text-center
 			i.fa.fa-bars(aria-hidden='true')
@@ -45,21 +45,21 @@ header
 			ul#burgernav
 				li
 					p.text-center
-						a.navactive(href='index.html') Accueil
+						a.navactive(href='/') Accueil
 				li
 					p.text-center
-						a(href='menu.html') Notre menu
+						a(href='/menu') Notre menu
 				li
 					p.text-center
-						a(href='lieux-horraires.html') Nous trouver
+						a(href='lieux-hor') Nous trouver
 				li
 					p.text-center
-						a(href='contact.html') Nous contacter
+						a(href='/contact') Nous contacter
 			ul
 				li#links_burger
-					a(href='#')
+					a(href='/')
 						i.fa.fa-map-marker(aria-hidden='true')
-					a(href='index.html')
+					a(href='/')
 						i.fa.fa-instagram(aria-hidden='true')
-					a(href='index.html')
+					a(href='/')
 						i.fa.fa-facebook-official(aria-hidden='true')
