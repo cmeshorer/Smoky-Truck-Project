@@ -6,3 +6,112 @@ block css
 	link(rel='stylesheet', type='text/css', href='/stylesheets/index_style.css')
 
 block content
+  //
+    Caroussel
+    ==================================================
+  section.main-slider
+    #myCarousel.carousel.slide.carousel-fade(data-ride='carousel')
+      // Carousel items
+      .carousel-inner
+        .item.active
+          img(src='images/carousel1.jpg', alt='')
+        .item
+          img(src='images/carousel2.jpg', alt='')
+        .item
+          img(src='images/carousel3.jpg', alt='')
+        .item
+          img(src='images/carousel4.jpg', alt='')
+      // Controls
+      .control-box
+        a.left.carousel-control(href='#myCarousel', role='button', data-slide='prev')
+          span.control-icon.prev.fa.fa-chevron-left(aria-hidden='true')
+          span.sr-only Previous
+        a.right.carousel-control(href='#myCarousel', role='button', data-slide='next')
+          span.control-icon.next.fa.fa-chevron-right(aria-hidden='true')
+          span.sr-only Next
+  // /. Carousel
+  //
+    Intro Smoky
+    ==================================================
+  section#intro
+    .container
+      .row
+        h1.text-center
+          | Embarquez à bord du
+          span.important Smoky Truck !
+      .row
+        .col-xs-10.col-xs-offset-1
+          p#text-intro.text-justify
+            | Depuis 2017, notre food truck "enfumé" sillone les rues de la capitale pour vous proposer des pizzas fraîches aux inspirations puisées aux 4 coins du monde. Pizza au houmous, pizza teriyaki, pizza kebab... venez déguster nos réalisations cuisinées à partir de produits frais et de qualité.
+  // /. Actualités
+  //
+    Actualités
+    ==================================================
+  section#actus
+    .container
+      .row
+        .col-md-12.text-center
+          h2 Nos Actualités
+      .row
+        .col-md-4
+          .card
+            img.card-img-top.img-responsive(src='images/news-1.jpg', alt='Card image cap')
+            .card-block.card-holder
+              h4.card-title Card title
+              p.card-text.text-justify
+                | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sapien velit, consectetur nec dapibus ac lectus.
+              // <a href="#" class="btn btn-primary">Read More</a>
+        .col-md-4
+          .card
+            img.card-img-top.img-responsive(src='images/news-2.jpg', alt='Card image cap')
+            .card-block
+              h4.card-title Card title
+              p.card-text.text-justify
+                | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sapien velit, consectetur nec dapibus ac lectus.
+              // <a href="#" class="btn btn-primary">Read More</a>
+        .col-md-4
+          .card
+            img.card-img-top.img-responsive(src='images/news-3.jpg', alt='Card image cap')
+            .card-block
+              h4.card-title Card title
+              p.card-text.text-justify
+                | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sapien velit, consectetur nec dapibus ac lectus.
+              // <a href="#" class="btn btn-primary">Read More</a>
+  // /. Actualités
+  //
+    Section intermédiaire
+    ==================================================
+  section#menu-horaires.intermediaire
+    .container
+      .row
+        .col-md-5
+          img.img-responsive(src='images/chef.jpg', alt='Our Smoky Truck chef cooking')
+        .col-md-6.col-md-offset-1.col-xs-12
+          .row
+            .col-md-12.col-xs-12
+              p.text-justify.menu-text
+                | Nec minus feminae quoque calamitatum participes fuere similium. nam ex hoc quoque sexu peremptae sunt originis altae conplures, adulteriorum flagitiis obnoxiae vel stuprorum. inter quas notiores...
+          .row
+            .col-md-5.col-md-offset-1.col-xs-12.text-center
+              a(href='menu.html')
+                button.btn.btn-primary.inter-button(type='button') Notre menu
+            .col-md-5.col-md-offset-1.col-xs-12.text-center
+              a(href='lieux-horraires.html')
+                button.btn.btn-primary.inter-button(type='button') Lieux/Horaires
+  // /. Section intermédiaire
+  //
+    Notre histoire
+    ==================================================
+  section#story-section
+    .container
+      .row
+        .col-md-12.text-center
+          h2 Notre Histoire
+        .col-md-12
+          .row
+            .col-md-4
+              img.img-responsive(src='images/story.jpg', alt='')
+            .col-md-8
+              p.text-justify.histo-text
+                | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec non velit et metus consectetur mollis a ut quam. Aenean ut nunc quis ipsum cursus ultricies. Vestibulum tincidunt ipsum mi, eget porttitor ante tincidunt eget. Pellentesque et quam eget leo suscipit hendrerit et sit amet lacus. Nullam at consequat ipsum, a vulputate diam. Sed ac sollicitudin libero, eget consectetur nisl. Etiam odio ligula, iaculis non ex vel, posuere sodales neque. Suspendisse sollicitudin semper augue, vel sollicitudin erat semper in. In imperdiet felis sit amet nibh sagittis, convallis vulputate ante porta. Curabitur non nulla posuere, tempor massa id, tincidunt justo. Phasellus consequat porttitor facilisis. Suspendisse potenti. Integer varius posuere nulla vitae viverra. Sed consequat erat non eros convallis lobortis.
+  // /. Notre histoire
