@@ -1,7 +1,7 @@
 extends layout
 
 block css
-	link(rel='stylesheet', type='text/css', href='/stylesheets/lieux-hor_style.css')
+	link(rel='stylesheet', type='text/css' href='/stylesheets/lieux-hor_style.css')
 
 block content
 
@@ -16,6 +16,7 @@ block content
 					table.table.table-striped.table-responsive.hidden-xs
 						thead
 							tr.hauttableau
+
 								th
 								th
 									| Lundi
@@ -29,31 +30,37 @@ block content
 									| Vendredi
 						tbody
 							tr
+								- var Adresse1 = "Adresse 1"
+								- var Adresse2 = "Adresse 2"
+								- var Adresse3 = "Adresse 3"
+								- var Adresse4 = "Adresse 4"
+								- var Adresse5 = "Adresse 5"  
 								td
 									| Midi (11h-15h)
 								td
-									| Adresse 2
+									| #{Adresse2}
 								td
-									| Adresse 1
+									| #{Adresse1}
 								td
-									| Adresse 3
+									| #{Adresse3}
 								td
-									| Adresse 1
+									| #{Adresse1}
 								td
-									| Adresse 2
+									| #{Adresse2}
 							tr
 								td
 									| Soir (18h-22h)
 								td
-									| Adresse 1
+									| #{Adresse1}
 								td
-									| Adresse 2
+									| #{Adresse2}
 								td
-									| Adresse 1
+									| #{Adresse1}
 								td
-									| Adresse 4
+									| #{Adresse4}
 								td
-									| Adresse 1
+									| #{Adresse1}
+									
 					table.table.table-striped.table-responsive.visible-xs
 						thead
 							tr.hauttableau
@@ -100,7 +107,8 @@ block content
 									| Adresse 1
 			.row
 				.col-md-10.col-xs-12.col-md-offset-1
-					img.img-responsive(src='/images/find-us-map.gif', alt='map')
+					img.img-responsive(src='images/find-us-map.gif', alt='map')
+		// /. Nous Trouver
 		// Événements
 		section.evenements
 			.container
@@ -118,4 +126,5 @@ block content
 								li
 									a(href='') Pizza-sur-Seine (3/12-5/12)
 					.col-md-3.col-md-offset-2
-						img.responsive(src='/images/events-2.jpg', alt='image-events')
+						img.responsive(src='images/events-2.jpg', alt='image-events')
+		// /. Événements
