@@ -40,7 +40,7 @@ router.get('/contact', function(req, res, next) {
 /* GET mentions */
 router.get('/mentions', function(req, res, next) {
 	res.render('mentions', { 
-		title: 'Smoky Truck - Mentions légales',
+		title: 'Mentions légales - Smoky Truck',
 		meta: 'Mentions légales du site Smoky Truck.' 
 	} );
 });
