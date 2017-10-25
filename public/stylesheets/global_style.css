@@ -1,0 +1,50 @@
+body
+{
+	font-family: 'Comfortaa', cursive;
+	color: black;
+}
+
+h1 {
+	padding: 20px 0 20px 0;
+	color: #012051;
+	font-weight: 700;
+}
+
+h2 {
+	padding: 15px 0 15px 0;
+	color: #1a265d;
+	font-weight: 700;
+	margin: auto;
+}
+
+h3 {
+	color: #012051;
+	font-weight: 700;
+	font-size: 1.6em;
+}
+
+h4 {
+	color: #b3b3b3;
+	font-size: 1.4em;
+}
+
+.important {
+	font-weight: 700;
+}
+
+.petit {
+	color: #b3b3b3;
+	font-size: 0.8em;
+}
+
+/* Surlignage personnalisé */
+
+::selection{
+	background-color: #012051;
+	color: white;
+}
+
+::-moz-selection {
+	background-color: #012051;
+	color: white;
+}
