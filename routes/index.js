@@ -19,5 +19,13 @@ router.get('/noustrouver', function(req, res, next) {
   res.render('lieux-hor');
 });
 
+router.get('/contact', function(req, res, next) {
+  res.render('contact');
+});
+
+router.get('/noustrouver', function(req, res, next) {
+  res.render('lieux-hor');
+});
+
 module.exports = router;
 
