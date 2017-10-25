@@ -1,5 +1,10 @@
 extends layout
 
+block css
+	link(rel='stylesheet', type='text/css', href='/stylesheets/header_style.css')
+	link(rel='stylesheet', type='text/css', href='/stylesheets/footer_style.css')
+	link(rel='stylesheet', type='text/css', href='/stylesheets/lieux-hor_style.css')
+
 block content
 
 	// Nous Trouver
@@ -97,8 +102,7 @@ block content
 									| Adresse 1
 			.row
 				.col-md-10.col-xs-12.col-md-offset-1
-					img.img-responsive(src='images/find-us-map.gif', alt='map')
-		// /. Nous Trouver
+					img.img-responsive(src='/images/find-us-map.gif', alt='map')
 		// Événements
 		section.evenements
 			.container
@@ -116,5 +120,4 @@ block content
 								li
 									a(href='') Pizza-sur-Seine (3/12-5/12)
 					.col-md-3.col-md-offset-2
-						img.responsive(src='images/events-2.jpg', alt='image-events')
-		// /. Événements
+						img.responsive(src='/images/events-2.jpg', alt='image-events')
