@@ -3,8 +3,13 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
+  res.render('index', { 
+  	title: 'Bienvenue sur le site Smoky Truck !',
+  	meta: 'Smoky Truck is a foodtruck located in Paris since 2017. It embraces cuisine fusion where pizza is at the center of our creative work. Click to discover some pizza fusion...',
+  	page: 'accueil'
+  } );
 });
+
 
 router.get('/contact', function(req, res, next) {
   res.render('contact');
@@ -15,3 +20,4 @@ router.get('/noustrouver', function(req, res, next) {
 });
 
 module.exports = router;
+
