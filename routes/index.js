@@ -6,4 +6,9 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
 
+/* GET Menu. */
+router.get('/menu', function(req, res, next) {
+  res.render('Menu');
+});
+
 module.exports = router;
