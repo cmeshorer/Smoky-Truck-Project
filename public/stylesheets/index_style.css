@@ -140,7 +140,7 @@ div.card-block.card-holder{
 /* Intermediary section*/
 
 .intermediaire {
-	background : url('../img/gridme.png');
+	background : url('/images/gridme.png');
 	background-attachment: fixed;
 }
 
