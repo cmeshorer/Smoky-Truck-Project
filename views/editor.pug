@@ -1,0 +1,48 @@
+extends layout-admin
+
+block css
+	link(rel='stylesheet', type='text/css', href='/stylesheets/WYSIWYG_style.css')
+		
+	body
+		#textEditor
+			#thePanel
+				select#fontSizeChanger
+					option(value='4') 4
+					option(value='6') 6
+					option(value='8') 8
+					option(value='10') 10
+					option(value='12') 12
+					option(value='14') 14
+					option(value='16') 16
+					option(value='18') 18
+				input#fontColorButton(type='color', title='Change Font Color')
+				button#boldButton(title='Bold')
+					i.fa.fa-bold(aria-hidden='true')
+				button#italicButton(title='Italic')
+					i.fa.fa-italic(aria-hidden='true')
+				button#underlinedButton(title='Underlined')
+					i.fa.fa-underline(aria-hidden='true')
+				button#orderedListButton(title='Numbered list')
+					i.fa.fa-list-ol(aria-hidden='true')
+				button#unorderedListButton(title='Bulleted list')
+					i.fa.fa-list-ul(aria-hidden='true')
+				button#centerButton(title='Align Center')
+					i.fa.fa-align-center(aria-hidden='true')
+				button#justifyButton(title='Align justify')
+					i.fa.fa-align-justify(aria-hidden='true')
+				button#leftButton(title='Align left')
+					i.fa.fa-align-left(aria-hidden='true')
+				button#rightButton(title='Align right')
+					i.fa.fa-align-right(aria-hidden='true')
+				button#undoButton(title='Undo')
+					i.fa.fa-undo(aria-hidden='true')
+				button#redoButton(title='Redo')
+					i.fa.fa-repeat(aria-hidden='true')
+				button#fileButton(title='Files')
+					i.fa.fa-file(aria-hidden='true')
+			#richTextArea
+				iframe#theWYIWYG(name='theWYSIWYG', width='745', height='250')
+		.row.theboat
+			.col-md-4.col-md-offset-8
+				button#singlebutton.form-button(name='singlebutton') Modifier
+		script(src='/javascripts/editor.js')
