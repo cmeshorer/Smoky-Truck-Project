@@ -1,0 +1,15 @@
+mixin pizza(image1, alt1, name, price1, price2, image2, alt2)
+	- var path = "/images/"
+	.col-md-4
+		.card-menu
+			img.img-menu(src=path + image1, alt="#{alt1}")
+			h3.text-center #{name}
+			p
+				| Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+				| Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+			h4.text-center
+				| #{price1}
+				span.petit (petite faim)
+				| #{price2} 
+				span.petit (grande faim)
+			img.info-all(src=path + image2, alt= "#{alt2}")
