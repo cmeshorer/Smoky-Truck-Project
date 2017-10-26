@@ -3,7 +3,6 @@ extends layout-admin
 block css
 	link(rel='stylesheet', type='text/css', href='/stylesheets/login_style.css')
 
-
 block content
 	.container
 		.row
@@ -14,10 +13,10 @@ block content
 	.container
 		.row
 			.col-xs-10.col-xs-offset-1.text-center
-				h2 Bienvenu à l'espace administrateur Smoky truck!
+				h2 Bienvenue sur l'espace administrateur Smoky Truck !
 				form.form-login(method="POST")
 					input(name="login" placeholder="login")
 					br
-					input(name="password" placeholder="password")
+					input(name="password" placeholder="password" type="password")
 					br
 					button(type="submit") Connect
