@@ -20,7 +20,7 @@ router.get('/', function(req, res, next) {
 
 /* GET menu page */
 router.get('/menu', function(req, res, next) {
-	res.render('Menu', { 
+	res.render('menu', { 
 		title: 'Notre menu - Smoky Truck',
 		meta: 'Venez découvrir les délicieuses pizzas du Smoky Truck. Notre food truck vous propose également des entrées et desserts pour ravir toutes les papilles.',
 		page: 'menu'
