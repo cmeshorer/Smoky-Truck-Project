@@ -12,7 +12,7 @@ database : 'groupe1'
 
 /* GET admin page login */
 router.get('/', function(req, res, next) {
-res.render('login');
+res.render('admin-login');
 });
 
 /* Users verification */ // On vérifie si l'utilisateur existe en BDD.
