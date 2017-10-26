@@ -1,0 +1,23 @@
+extends layout-admin
+
+block css
+	link(rel='stylesheet', type='text/css', href='/stylesheets/login_style.css')
+
+
+block content
+	.container
+		.row
+				p.col-xs-4.col-xs-offset-4.text-center
+					img.img-responsive(src='../images/chef.jpg', alt='Photo of chef')
+
+	section#error
+	.container
+		.row
+			.col-xs-10.col-xs-offset-1.text-center
+				h2 Bienvenu à l'espace administrateur Smoky truck!
+				form.form-login(method="POST")
+					input(name="login" placeholder="login")
+					br
+					input(name="password" placeholder="password")
+					br
+					button(type="submit") Connect
