@@ -52,7 +52,8 @@ router.get('/index', function(req, res, next) {
 		res.render('admin_index', { 
 			title: '*ADMIN* (accueil)',	
 			results: results
-		} );
+		});
+	});
 });
 
 router.get('/menu', function(req, res, next) {
@@ -61,7 +62,8 @@ router.get('/menu', function(req, res, next) {
 		res.render('admin_menu', { 
 			title: '*ADMIN* (menu)',
 			results: results
-		} );
+		});
+	});
 });
 
 router.get('/lieux-hor', function(req, res, next) {
@@ -71,7 +73,8 @@ router.get('/lieux-hor', function(req, res, next) {
 		res.render('admin_lieu-hor', { 
 			title: '*ADMIN* (lieux-horaires)',
 			results: results
-		} );
+		});
+	});
 });
 
 
@@ -79,19 +82,19 @@ router.get('/lieux-hor', function(req, res, next) {
 router.get('/editor', function(req, res, next) {
 	res.render('admin_editor', { 
 		title: '*ADMIN* (editeur accueil)'
-	} );
+	});
 });
 
 router.get('/editor', function(req, res, next) {
 	res.render('admin_editor', { 
 		title: '*ADMIN* (editeur menu)'
-	} );
+	});
 });
 
 router.get('/editor', function(req, res, next) {
 	res.render('admin_editor', { 
 		title: '*ADMIN* (editeur lieux-horaires)'
-	} );
+	});
 });
 
 
