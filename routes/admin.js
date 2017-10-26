@@ -41,7 +41,7 @@ router.get('/', function(req, res, next) {
 
 /* Admin routes */
 router.get('/index', function(req, res, next) {
-  res.render('index-admin');
+  res.render('admin-index');
 });
 
 router.get('/editor', function(req, res, next) {
@@ -50,11 +50,11 @@ router.get('/editor', function(req, res, next) {
 
 
 router.get('/menu', function(req, res, next) {
-  res.render('menu-admin');
+  res.render('admin-menu');
 });
 
 router.get('/lieu-hor', function(req, res, next) {
-  res.render('lieu-hor-admin');
+  res.render('admin-lieu-hor');
 });
 
 module.exports = router;
