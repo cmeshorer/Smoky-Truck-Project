@@ -3,8 +3,8 @@ var map;
 function initMap() {
 	map = new google.maps.Map(document.getElementById('map'), {
 		center: {
-			lat: 48.856,
-			lng: 2.352
+			lat: 48.873,
+			lng: 2.358
 		},
 		zoom: 13
 	});
@@ -14,7 +14,7 @@ function initMap() {
 
 function initMap() {
 
-var broadway = {
+var adresse1 = {
 		info: '<strong>Smoky Rive Droite</strong><br>\
 					4 Rue Eugène Spuller<br> Paris, 75003<br>\
 					<a href="https://goo.gl/maps/jKNEDz4SyyH2">Get Directions</a>',
@@ -22,7 +22,7 @@ var broadway = {
 		long: 2.362
 	};
 
-var belmont = {
+var adresse2 = {
 		info: '<strong>Smoky Rive Gauche</strong><br>\
 					11 Rue de Poissy<br> Paris, 75005<br>\
 					<a href="https://goo.gl/maps/ZYHjd6tngxK2">Get Directions</a>',
@@ -30,7 +30,7 @@ var belmont = {
 		long: 2.352
 	};
 
-	var sheridan = {
+	var adresse3 = {
 		info: '<strong>Smoky 104</strong><br>\r\
 					104 Rue dAuberviliers<br> Paris 75005<br>\
 					<a href="https://goo.gl/maps/UYMHaC1NWWq">Get Directions</a>',
@@ -39,14 +39,14 @@ var belmont = {
 	};
 
 var locations = [
-      [broadway.info, broadway.lat, broadway.long, 0],
-      [belmont.info, belmont.lat, belmont.long, 1],
-      [sheridan.info, sheridan.lat, sheridan.long, 2],
+      [adresse1.info, adresse1.lat, adresse1.long, 0],
+      [adresse2.info, adresse2.lat, adresse2.long, 1],
+      [adresse3.info, adresse3.lat, adresse3.long, 2],
     ];
 
 var map = new google.maps.Map(document.getElementById('map'), {
 		zoom: 13,
-		center: new google.maps.LatLng(48.856, 2.352),
+		center: new google.maps.LatLng(48.873, 2.358),
 		mapTypeId: google.maps.MapTypeId.ROADMAP
 	});
 

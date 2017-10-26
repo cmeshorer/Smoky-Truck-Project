@@ -113,8 +113,18 @@ block content
 			br
 
 			.row
-				.col-md-10.col-xs-12.col-md-offset-1
-					img.img-responsive(src='../images/find-us-map.gif', alt='map')
+				.col-xs-10.col-xs-offset-1
+					include map
+
+			br
+			br
+
+			
+			.row
+				.col-md-4.col-md-offset-4.text-center
+					a(href='/admin/editor')
+						button.btn.btn-primary.inter-button(type='button') ADMIN MODIFICATION
+					
 		// /. Nous Trouver
 		// Événements
 		section.evenements
