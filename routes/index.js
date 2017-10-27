@@ -62,8 +62,8 @@ router.post('/submit', function(req, res, next) { // On fait une requête post a
 		transport.sendMail({
 			from: req.body.email,
 			to: "supergrandma@yopmail.com",
-			subject: "Coucou !",
-			text: req.body.message,
+			subject: 'Cher Smoky Truck, ' + req.body.name + ' vous a envoyé un message depuis le site.',
+			text: 'Nom : '+ req.body.name + ' ' + 'Mail : ' + req.body.email + 'Message : ' + req.body.message + '',
 			html: req.body.message
 		}, (error, response) => {
 			if(error){
