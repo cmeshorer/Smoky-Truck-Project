@@ -49,24 +49,12 @@ block content
 				.col-md-12.text-center
 					h2 Nos Actualités
 			#actus_cards
-				.card
-					img(src='images/news-1.jpg', alt='Actualité 1')
-					h4.card-title 
-						a(href="/") Card title
-					p.text-justify
-						| Lorem ipsum dolstnmmkh ztjmjlhljmzr nmlmhzta aztkjmlkor sit amet, consectetur adipiscing elit. Integer sapien velit, consectetur nec dapibus ac lectusztrpmzhtoehtozeyjozyjroyjrmojzroyZRYNMynemlryermylY.
-				.card
-					img(src='images/news-2.jpg', alt='Actualité 2')
-					h4.card-title 
-						a(href="/") Card title
-					p.text-justify
-						| Lorem ipsum dolor sit amet, consectetur adipiscing zatztelit. Integer sapien velit, consectetur nec dapibus ac lectusztrpmzhtoehtozeyjozyjroyjrmojzroyZRYNMynemlryermylY.s
-				.card
-					img(src='images/news-3.jpg', alt='Actualité 3')
-					h4.card-title 
-						a(href="/") Card title
-					p.text-justify
-						| Lorem ipsum dolor sit amet, czatt zakmjmkjonsectetur adipiscing elit. Integer sapien velit, consectetur nec dapibus ac lectusztrpmzhtoehtozeyjozyjroyjrmojzroyZRYNMynemlryermylY.
+				each card in actus
+					.card
+						img(src="/images/" + card.image, alt=card.image)
+						h4.card-title 
+							a(href="/")= card.titre
+						p.text-justify= card.texte
 
 	// Section intermédiaire
 		==================================================

@@ -1,21 +1,34 @@
 var express = require('express');
 var router = express.Router();
+const mysql = require('mysql');
 
-// Connexion MySQL
-/** var connection = mysql.createConnection({
+/* Connexion BDD */
+var connection = mysql.createConnection({
   	host     : 'localhost',
 	user     : 'root',
-	password : 'root',
-	database : 'groupe1'
+	password : 'alroot',
+	database : 'smoky_truck'
+});
+
+connection.connect(function(err) {
+	if (err) {
+		console.error('error connecting: ' + err.stack);
+		return;
+	}
+	console.log('connected as id ' + connection.threadId);
 });
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
-	res.render('index', { 
-		title: 'Bienvenue sur le site du Smoky Truck !',
-		meta: 'Depuis 2017, notre food truck vous propose de déguster de délicieuses pizzas aux 4 coins de la capitale. Venez régaler vos papilles !',
-		page: 'accueil'
-	} );
+router.get('/', function(req, res, next) {  
+  connection.query('SELECT * FROM actus', function (error, results, fields) {
+    if (error) throw error;
+    res.render('index', {
+      title: 'Bienvenue sur le site du Smoky Truck !',
+      meta: 'Depuis 2017, notre food truck vous propose de déguster de délicieuses pizzas aux 4 coins de la capitale. Venez régaler vos papilles !',
+      page: 'accueil', 
+      actus : results
+    });
+  });
 });
 
 /* GET menu page */
