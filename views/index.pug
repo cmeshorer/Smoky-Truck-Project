@@ -4,8 +4,8 @@ block css
 	link(rel='stylesheet', type='text/css', href='/stylesheets/index_style.css')
 
 block content
-	//
-		Caroussel
+
+	// Caroussel
 		==================================================
 	section.main-slider
 		#myCarousel.carousel.slide.carousel-fade(data-ride='carousel')
@@ -27,9 +27,8 @@ block content
 				a.right.carousel-control(href='#myCarousel', role='button', data-slide='next')
 					span.control-icon.next.fa.fa-chevron-right(aria-hidden='true')
 					span.sr-only Next
-	// /. Carousel
-	//
-		Intro Smoky
+
+	// Intro Smoky
 		==================================================
 	section#intro
 		.container
@@ -41,43 +40,35 @@ block content
 				.col-xs-10.col-xs-offset-1
 					p#text-intro.text-justify
 						| Depuis 2017, notre food truck "enfumé" sillone les rues de la capitale pour vous proposer des pizzas fraîches aux inspirations puisées aux 4 coins du monde. Pizza au houmous, pizza teriyaki, pizza kebab... venez déguster nos réalisations cuisinées à partir de produits frais et de qualité.
-	// /. Actualités
-	//
-		Actualités
+
+	// Actualités
 		==================================================
 	section#actus
 		.container
 			.row
 				.col-md-12.text-center
 					h2 Nos Actualités
-			.row
-				.col-md-4
-					.card
-						img.card-img-top.img-responsive(src='images/news-1.jpg', alt='Actualité 1')
-						.card-block.card-holder
-							h4.card-title Card title
-							p.card-text.text-justify
-								| Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sapien velit, consectetur nec dapibus ac lectus.
-							// <a href="#" class="btn btn-primary">Read More</a>
-				.col-md-4
-					.card
-						img.card-img-top.img-responsive(src='images/news-2.jpg', alt='Actualité 2')
-						.card-block
-							h4.card-title Card title
-							p.card-text.text-justify
-								| Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sapien velit, consectetur nec dapibus ac lectus.
-							// <a href="#" class="btn btn-primary">Read More</a>
-				.col-md-4
-					.card
-						img.card-img-top.img-responsive(src='images/news-3.jpg', alt='Actualité 3')
-						.card-block
-							h4.card-title Card title
-							p.card-text.text-justify
-								| Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sapien velit, consectetur nec dapibus ac lectus.
-							// <a href="#" class="btn btn-primary">Read More</a>
-	// /. Actualités
-	//
-		Section intermédiaire
+			#actus_cards
+				.card
+					img(src='images/news-1.jpg', alt='Actualité 1')
+					h4.card-title 
+						a(href="/") Card title
+					p.text-justify
+						| Lorem ipsum dolstnmmkh ztjmjlhljmzr nmlmhzta aztkjmlkor sit amet, consectetur adipiscing elit. Integer sapien velit, consectetur nec dapibus ac lectusztrpmzhtoehtozeyjozyjroyjrmojzroyZRYNMynemlryermylY.
+				.card
+					img(src='images/news-2.jpg', alt='Actualité 2')
+					h4.card-title 
+						a(href="/") Card title
+					p.text-justify
+						| Lorem ipsum dolor sit amet, consectetur adipiscing zatztelit. Integer sapien velit, consectetur nec dapibus ac lectusztrpmzhtoehtozeyjozyjroyjrmojzroyZRYNMynemlryermylY.s
+				.card
+					img(src='images/news-3.jpg', alt='Actualité 3')
+					h4.card-title 
+						a(href="/") Card title
+					p.text-justify
+						| Lorem ipsum dolor sit amet, czatt zakmjmkjonsectetur adipiscing elit. Integer sapien velit, consectetur nec dapibus ac lectusztrpmzhtoehtozeyjozyjroyjrmojzroyZRYNMynemlryermylY.
+
+	// Section intermédiaire
 		==================================================
 	section#menu-horaires.intermediaire
 		.container
@@ -96,9 +87,8 @@ block content
 						.col-md-5.col-md-offset-1.col-xs-12.text-center
 							a(href='/lieux-hor')
 								button.btn.btn-primary.inter-button(type='button') Lieux/Horaires
-	// /. Section intermédiaire
-	//
-		Notre histoire
+
+	// Notre histoire
 		==================================================
 	section#story-section
 		.container
@@ -112,4 +102,3 @@ block content
 						.col-md-8
 							p.text-justify.histo-text
 								| Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec non velit et metus consectetur mollis a ut quam. Aenean ut nunc quis ipsum cursus ultricies. Vestibulum tincidunt ipsum mi, eget porttitor ante tincidunt eget. Pellentesque et quam eget leo suscipit hendrerit et sit amet lacus. Nullam at consequat ipsum, a vulputate diam. Sed ac sollicitudin libero, eget consectetur nisl. Etiam odio ligula, iaculis non ex vel, posuere sodales neque. Suspendisse sollicitudin semper augue, vel sollicitudin erat semper in. In imperdiet felis sit amet nibh sagittis, convallis vulputate ante porta. Curabitur non nulla posuere, tempor massa id, tincidunt justo. Phasellus consequat porttitor facilisis. Suspendisse potenti. Integer varius posuere nulla vitae viverra. Sed consequat erat non eros convallis lobortis.
-	// /. Notre histoire

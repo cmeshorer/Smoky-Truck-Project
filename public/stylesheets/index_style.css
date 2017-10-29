@@ -96,46 +96,54 @@ a.carousel-control.right { right: 0; background: none; border: 0;}
 
 /* Actus */
 
-.card-title {
-	margin: 30px;
-	text-align:center;
-	/*color: #1a265d;*/
-	color: #1946a6;
-	}
-
-.card-text {
-	width: auto;
-}
-
-div.card-block.card-holder{
-	margin: 15px;
+#actus_cards {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	flex-wrap: wrap;
+	overflow: hidden;
+	word-wrap: break-word;
 }
 
 .card {
-	width: auto;
-	padding: 10px;
-	margin: 20px;
-}
-
-/*.card-block a {
+	width: 320px;
+	height: 420px;
 	margin: 10px;
 	padding: 10px;
-	text-transform: uppercase;
-	color: #000000;
-	background-color: #ffffff;
-	border-color: #000000;
-	border-radius: 0;
 }
 
-.card-block a:hover {
+#actus_cards img {
+	width: 300px;
+	height: 200px;
+}
+
+.card-title {
+	margin: 20px;
+	text-align:center;
+	color: #1946a6;
+	}
+
+.btn-primary {
 	color: #ffffff;
-	color: #000000;
-	background-color: #ffffff;
+	background-color: #1946a6;
 	border-color: #000000;
-	transform: scale(1.2);
-	transition: all 900ms;
-	letter-spacing: 2px;
-}*/
+}
+
+.btn-primary:hover {
+	color: #ffffff;
+	background-color: #1946a6;
+	border-color: #000000;
+	opacity: 0.8;
+	transition: .8s ease;
+}
+
+.card a {
+	text-decoration: none;
+}
+
+.card a:hover {
+	text-decoration: none;
+}
 
 /* Intermediary section*/
 
@@ -159,26 +167,17 @@ section#menu-horaires.intermediaire{
 .intermediaire button {
 	width: 150px;
 	margin: 10px;
-	text-transform: uppercase;
-	/*color: #000000;*/
 	color: #ffffff;
-	/*background-color: transparent;*/
 	background-color: #1946a6;
 	border-color: #000000;
-	/*border-color: #1a265d;*/
-	border-radius: 0;
-	/*background-color: white;*/
 }
 
 .intermediaire button:hover {
 	color: #ffffff;
-	/*color: black;*/
-	/*background-color: transparent;*/
-	transform: scale(1.2);
-	transition: all 900ms;
-	letter-spacing: 0.5px;
-	/*background-color: white;*/
 	background-color: #1946a6;
+	border-color: #000000;
+	opacity: 0.8;
+	transition: .8s ease;
 }
 
 /* Story Section */
