@@ -15,15 +15,15 @@ connection.connect(function(err) {
 		console.error('error connecting: ' + err.stack);
 		return;
 	}
-	console.log('connected as id ' + connection.threadId);
+	console.log('connected as id ' + connection.threadId); // Vérifier connexion en console
 });
 
-/* GET home page. */
+/* GET home page */
 router.get('/', function(req, res, next) {  
   connection.query('SELECT * FROM actus', function (error, results, fields) {
     if (error) throw error;
     res.render('index', {
-      title: 'Bienvenue sur le site du Smoky Truck !',
+      title: 'Accueil - Smoky Truck',
       meta: 'Depuis 2017, notre food truck vous propose de déguster de délicieuses pizzas aux 4 coins de la capitale. Venez régaler vos papilles !',
       page: 'accueil', 
       actus : results
@@ -31,13 +31,24 @@ router.get('/', function(req, res, next) {
   });
 });
 
-/* GET menu page */
+/* GET actualités */
+router.get('/actu-:id(\\d+)', function(req, res, next) {
+  connection.query('SELECT * FROM actus where id = ?',[req.params.id] ,function (error, results, fields) {
+    if (error) throw error;
+    res.render('actu', {
+      title: 'Actualités - Smoky Truck',
+      actus : results
+    });
+  });
+});
+
+/* GET menu */
 router.get('/menu', function(req, res, next) {
 	res.render('menu', { 
 		title: 'Notre menu - Smoky Truck',
 		meta: 'Venez découvrir les délicieuses pizzas du Smoky Truck. Notre food truck vous propose également des entrées et desserts pour ravir toutes les papilles.',
 		page: 'menu'
-	} );
+	});
 });
 
 /* GET nous trouver */
@@ -46,7 +57,7 @@ router.get('/lieux-hor', function(req, res, next) {
 		title: 'Nous trouver - Smoky Truck',
 		meta: 'Le Smoky Truck est présent dans différents lieux parisiensle midi et le soir. Consultez notre calendrier et notre carte : nous sommes forcément pas loin de chez vous !',
 		page: 'lieux-hor'
-	} );
+	});
 });
 
 /* GET nous contacter */
@@ -55,7 +66,7 @@ router.get('/contact', function(req, res, next) {
 		title: 'Nous contacter - Smoky Truck',
 		meta: 'Vous souhaitez nous contacter ? N\'hésitez pas à remplir le formulaire ci-dessous. A bientôt !',
 		page: 'contact'
-	} );
+	});
 });
 
 /* GET mentions */
@@ -63,7 +74,7 @@ router.get('/mentions', function(req, res, next) {
 	res.render('mentions', { 
 		title: 'Mentions légales - Smoky Truck',
 		meta: 'Mentions légales du site Smoky Truck.' 
-	} );
+	});
 });
 
 module.exports = router;

@@ -39,7 +39,7 @@ block content
 			.row
 				.col-xs-10.col-xs-offset-1
 					p#text-intro.text-justify
-						| Depuis 2017, notre food truck "enfumé" sillone les rues de la capitale pour vous proposer des pizzas fraîches aux inspirations puisées aux 4 coins du monde. Pizza au houmous, pizza teriyaki, pizza kebab... venez déguster nos réalisations cuisinées à partir de produits frais et de qualité.
+						| Depuis 2017, notre food truck "enfumé" sillone les rues de la capitale pour vous proposer des pizzas fraîches aux inspirations multiples... Venez déguster nos succulentes réalisations !
 
 	// Actualités
 		==================================================
@@ -47,14 +47,17 @@ block content
 		.container
 			.row
 				.col-md-12.text-center
-					h2 Nos Actualités
+					h2 Nos actualités
 			#actus_cards
 				each card in actus
 					.card
 						img(src="/images/" + card.image, alt='' + card.image)
-						h4.card-title 
-							a(href="/")= card.titre
-						p.text-justify= card.texte
+						h4.card-title
+							a(href="/actu-" + card.id)= card.titre
+						p.text-justify= card.sous_titre
+							br
+							p.text-center
+								a(href="/actu-" + card.id) Voir plus
 
 	// Section intermédiaire
 		==================================================
@@ -67,7 +70,7 @@ block content
 					.row
 						.col-md-12.col-xs-12
 							p.text-justify.menu-text
-								| Nec minus feminae quoque calamitatum participes fuere similium. nam ex hoc quoque sexu peremptae sunt originis altae conplures, adulteriorum flagitiis obnoxiae vel stuprorum. inter quas notiores...
+								| Le Smoky Truck vous propose de déguster toute l'année des pizzas cuisinées à partir de produits frais et de qualité. Nous faisons appel à notre créativité pour vous proposer régulièrement de nouvelles recettes ainsi que des entrées et desserts. Venez découvrir notre carte du moment ! 
 					.row
 						.col-md-5.col-md-offset-1.col-xs-12.text-center
 							a(href='/menu')
@@ -81,12 +84,10 @@ block content
 	section#story-section
 		.container
 			.row
-				.col-md-12.text-center
-					h2 Notre Histoire
-				.col-md-12
-					.row
-						.col-md-4
-							img.img-responsive(src='images/story.jpg', alt='')
-						.col-md-8
-							p.text-justify.histo-text
-								| Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec non velit et metus consectetur mollis a ut quam. Aenean ut nunc quis ipsum cursus ultricies. Vestibulum tincidunt ipsum mi, eget porttitor ante tincidunt eget. Pellentesque et quam eget leo suscipit hendrerit et sit amet lacus. Nullam at consequat ipsum, a vulputate diam. Sed ac sollicitudin libero, eget consectetur nisl. Etiam odio ligula, iaculis non ex vel, posuere sodales neque. Suspendisse sollicitudin semper augue, vel sollicitudin erat semper in. In imperdiet felis sit amet nibh sagittis, convallis vulputate ante porta. Curabitur non nulla posuere, tempor massa id, tincidunt justo. Phasellus consequat porttitor facilisis. Suspendisse potenti. Integer varius posuere nulla vitae viverra. Sed consequat erat non eros convallis lobortis.
+				h2.text-center Notre histoire
+			.row
+				.col-xs-5
+					img.img-responsive(src='images/story.jpg', alt='')
+				.col-xs-7
+					p.text-justify.histo-text
+						| Le Smoky Truck est né de la rencontre de 2 chefs : Manolo et Pablo. ALlors qu'il exercent dans un restaurant étoilé parisien, ils souhaitent renouer avec la simplicité de la cuisine en se tournant vers les pizzas, plats aux accents de nostalgie. De même, à travers le format du food truck, ses fondateurs cherchent à apporter à leurs clients plus de simplicité et de convivialité.

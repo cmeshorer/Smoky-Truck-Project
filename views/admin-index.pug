@@ -1,32 +1,47 @@
 extends admin_layout
+
+block css
+  link(rel='stylesheet', type='text/css', href='/stylesheets/admin_index_style.css')
+
 block content
   .container
     .row
-      h2.text-center Smoky Truck : espace administrateur
+      .col-xs-2
+        img.img-responsive(src='../images/smoky_logo.svg', alt='Logo SMoky Truck', id="logo")
+      .col-xs-10
+        h2.text-center Smoky Truck : espace administrateur
     .row
       p.col-xs-4.col-xs-offset-4.text-center
         img.img-responsive(src='../images/chef.jpg', alt='Photo chef')
     .row
       h3.text-center Actualités
     .row
-      table.table.table-striped.table-bordered
+      table.table.table-striped.table-bordered.table-responsive.table-condensed
         tr
           th.text-center #
-          th.text-center Image
           th.text-center Titre
+          th.text-center Sous-titre
           th.text-center Texte
+          th.text-center Image
           th.text-center Action
 
           each card in actus
             tr 
               td.text-center= card.id
+              td.text-center= card.titre
+              td.text-center= card.sous_titre
+              td.text-center= card.text
               td.text-center
                 img(src="/images/" + card.image, alt='' + card.image, width='150')
-              td.text-center= card.titre 
-              td.text-center= card.texte
-              td.text-center 
+              td.text-center
+                a(onclick='myFunction()') Supprimer confirm
+                br
+                br
                 a(href="/admin/supprimer/" + card.id) Supprimer
+                br
+                br
+                a(href="/") Modifier
     .row
-      a(href="/admin/create" class="btn btn-info") Création d'une actualité
+      a(href="/admin/create" class="btn btn-info") Créer une actualité
       br
-      br 
+      br

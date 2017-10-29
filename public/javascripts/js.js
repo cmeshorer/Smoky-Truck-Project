@@ -26,3 +26,14 @@ $(window).scroll(function(){
 			interval: 3000
 		})
 	});
+
+// Boutons confirmation admin
+function myFunction() {
+    var txt;
+    var r = confirm("Voulez-vous supprimer cet élément ?");
+    if (r == true) {
+        window.location="/admin/supprimer/" + card.id
+    } else {
+        txt = "You pressed Cancel!";
+    }
+}

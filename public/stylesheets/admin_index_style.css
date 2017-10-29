@@ -1,16 +1,11 @@
-.container {
-	padding-top: 20px;
-	padding-bottom: 10px;
-}
-
-button {
+.btn-info {
 	margin: 10px;
 	color: #ffffff;
 	background-color: #1946a6;
 	border-color: #000000;
 }
 
-button:hover {
+.btn-info:hover {
 	color: #ffffff;
 	background-color: #1946a6;
 	border-color: #000000;

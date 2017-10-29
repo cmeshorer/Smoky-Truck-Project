@@ -14,12 +14,14 @@ var connection = mysql.createConnection({
 });
 
 connection.connect(function(err) {
-  console.log('connected as id ' + connection.threadId);
+  console.log('connected as id ' + connection.threadId); // Vérification de la connexion
 });
 
-/* GET admin page login */
+/* GET page login admin */
 router.get('/', function(req, res, next) {
-res.render('admin_login');
+  res.render('admin_login', {
+    title: 'Login administrateur'
+  });
 });
 
 /* GET page administrateur */
@@ -32,18 +34,17 @@ router.get('/index', function(req, res, next) {
   });
 });
 
-/* GET formulaire de création d'une actu */
+/* GET création d'une actu */
 router.get('/create', function(req, res, next) {
     res.render('admin-create-actu', {title : 'Création d\'une actualité'});
 });
 
-/* Post formulaire création d'une actu */
+/* POST création d'une actu */
 router.post('/create', upload.single('image'), function(req, res, next) {
   // Gestion des images
   if(req.file){}
   if ((req.file.mimetype == 'image/png' || req.file.mimetype == 'image/jpeg') && (req.file.size < 3145728)){
     fs.rename('tmp/' + req.file.filename, 'public/images/' + req.file.originalname, function(){
-      res.redirect('/admin/index');  
     });
   } else {
     fs.unlink(req.file.path, function(){
@@ -51,13 +52,12 @@ router.post('/create', upload.single('image'), function(req, res, next) {
     });  
   }
   // Ajout d'une actualité
-    connection.query('INSERT INTO actus VALUES (null, ?, ?, ?)',[req.file.originalname, req.body.title,req.body.text] ,function (error, results, fields) {
-
-        res.redirect('/admin/index');
+    connection.query('INSERT INTO actus VALUES (null, ?, ?, ?, ?)',[req.file.originalname, req.body.title, req.body.sous_titre, req.body.text] ,function (error, results, fields) {
+      res.redirect('/admin/index');
     });
-});
+  });
 
-/* DELECTE Supprimer une actualité */
+/* DELETE Supprimer une actualité */
 router.get('/supprimer/:id', function(req, res, next) {
   connection.query('DELETE FROM actus where id = ?',[req.params.id] ,function (error, results, fields) {
     res.redirect('/admin/index');
