@@ -51,7 +51,7 @@ block content
 			#actus_cards
 				each card in actus
 					.card
-						img(src="/images/" + card.image, alt=card.image)
+						img(src="/images/" + card.image, alt='' + card.image)
 						h4.card-title 
 							a(href="/")= card.titre
 						p.text-justify= card.texte

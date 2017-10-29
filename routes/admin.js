@@ -1,151 +1,67 @@
 var express = require('express');
 var router = express.Router();
-//const mysql = require('mysql');
-//const multer  = require('multer');
-//const fs = require('fs');
-//const upload = multer({ dest: 'tmp/' })
+const mysql = require('mysql');
+const multer  = require('multer');
+const fs = require('fs');
+const upload = multer({ dest: 'tmp/' })
 
-/* Database connexion */
-/* const connection = mysql.createConnection({
- 	host     : 'localhost',
-	user     : 'root',
-	password : 'root',
-	database : 'groupe1'
-}); */
+/* Connexion BDD */
+var connection = mysql.createConnection({
+    host     : 'localhost',
+  user     : 'root',
+  password : 'alroot',
+  database : 'smoky_truck'
+});
 
-//connection.connect(); // Camille: Je pense qu'on a oublié ça ?
-
+connection.connect(function(err) {
+  console.log('connected as id ' + connection.threadId);
+});
 
 /* GET admin page login */
 router.get('/', function(req, res, next) {
 res.render('admin_login');
 });
 
-/* Users verification */ // On vérifie si l'utilisateur existe dans la BDD.
-/* router.post('/', function(req, res, next) {
-	let login = req.body.login;
-	let password = req.body.password;
-	connection.query(`select * from users where username="${login}" and password="${password}"`, function (error, results, fields) {
-	  if (error) throw error; 
-	  if (results.length === 0) {
-	  	res.send("Cet utilisateur n'existe pas"); // Si la requête SQL ne renvoit pas de résultat l'utilisateur n'existe pas. On lui envoie un message pour l'informer.
-	  } else {
-	  	req.session.connect = true;
-	  	res.redirect('/admin/index'); // Si l'utilisateur existe on ouvre la session et on le redirige sur l'espace admin.
-	  }
-	});	
-}); */
-
-/* User redirection */ // On redirige l'utilisateur connecté sur l'espace admin.
-/*router.get('/admin/index', function(req, res, next) {
-	if (req.session.connect){
-		res.render('admin/index'); // Si l'utilisateur est connecté il accède à l'espace d'administration sur l'index.
-	} else {
-		res.redirect('/'); // Sinon il retourne au login
-	}
-}); */
-
-/* Admin routes */
-router.get('/index', function(req, res, next) {
-	connection.query('SELECT * FROM news', function (error, results, fields) {
-	  	if (error) throw error;
-		res.render('admin_index', { 
-			title: '*ADMIN* (accueil)',	
-			results: results
-		});
-	});
+/* GET page administrateur */
+router.get('/index', function(req, res, next) {  
+  connection.query('SELECT * FROM actus', function (error, results, fields) {
+    res.render('admin-index', {
+      title: 'Espace administration',
+      actus : results
+    });
+  });
 });
 
-router.get('/menu', function(req, res, next) {
-	connection.query('SELECT * FROM menu', function (error, results, fields) {
-	  	if (error) throw error;
-		res.render('admin_menu', { 
-			title: '*ADMIN* (menu)',
-			results: results
-		});
-	});
+/* GET formulaire de création d'une actu */
+router.get('/create', function(req, res, next) {
+    res.render('admin-create-actu', {title : 'Création d\'une actualité'});
 });
 
-router.get('/lieux-hor', function(req, res, next) {
-	connection.query('SELECT * FROM places', function (error, results, fields) {
-//Il faudrait aussi selectioner dans lieux-hor le tableau events??
-	  	if (error) throw error;
-		res.render('admin_lieu-hor', { 
-			title: '*ADMIN* (lieux-horaires)',
-			results: results
-		});
-	});
+/* Post formulaire création d'une actu */
+router.post('/create', upload.single('image'), function(req, res, next) {
+  // Gestion des images
+  if(req.file){}
+  if ((req.file.mimetype == 'image/png' || req.file.mimetype == 'image/jpeg') && (req.file.size < 3145728)){
+    fs.rename('tmp/' + req.file.filename, 'public/images/' + req.file.originalname, function(){
+      res.redirect('/admin/index');  
+    });
+  } else {
+    fs.unlink(req.file.path, function(){
+      res.send('Format jpg ou png, 3mo max'); 
+    });  
+  }
+  // Ajout d'une actualité
+    connection.query('INSERT INTO actus VALUES (null, ?, ?, ?)',[req.file.originalname, req.body.title,req.body.text] ,function (error, results, fields) {
+
+        res.redirect('/admin/index');
+    });
 });
 
-
-/* Admin editors (SI on crée 3 pages editor, mettre les bons nom des liens/fichiers ci-dessous...)*/
-router.get('/editor', function(req, res, next) {
-	res.render('admin_editor', { 
-		title: '*ADMIN* (editeur accueil)'
-	});
+/* DELECTE Supprimer une actualité */
+router.get('/supprimer/:id', function(req, res, next) {
+  connection.query('DELETE FROM actus where id = ?',[req.params.id] ,function (error, results, fields) {
+    res.redirect('/admin/index');
+  });
 });
-
-router.get('/editor', function(req, res, next) {
-	res.render('admin_editor', { 
-		title: '*ADMIN* (editeur menu)'
-	});
-});
-
-router.get('/editor', function(req, res, next) {
-	res.render('admin_editor', { 
-		title: '*ADMIN* (editeur lieux-horaires)'
-	});
-});
-
-
-
-
-
-
-
-
-
-
-/* MODEL DOJO: EDITEUR SITE (GET/POST) 
---> Il faudra peut-être intégrer ça dans chaque route.get des editors.
-
-
-// GET /admin/create-product 
-router.get('/create-product', function(req, res, next) {
-	connection.query('SELECT * FROM products', function (error, results, fields) {
-		res.render('admin-create', {categories: results});
-	});
-});
-
-// POST /admin/create-product 
-router.post('/create-product', upload.single('product_picture'), function(req, res, next) {
-	// Ajouter un produit dans la table 'products'
-	
-	if(req.file){} // si req.file existe
-
-	if (req.file.size < (3*1024*1024) && (req.file.mimetype == 'image/png' || req.file.mimetype == 'image/jpg') ) {
-		fs.rename(req.file.path,'public/images/'+req.body.product_namereq.file.originalname);
-	} else {
-		res.send('Vous avez fait une erreur dans le téléchargement')
-	}
-	connection.query('INSERT INTO products VALUES (null, ?, ?, ?, ?)',[req.body.product_name,req.body.product_description,  req.file.originalname,req.body.product_price] ,function (error, results, fields) {
-	  	if (error) throw error;
-	  	console.log(req.body.product_name);
-	  	// connected!
-	  	//res.render('admin-index', results);
-	  	res.redirect('/admin');
-		console.log(results);
-	});
-});
-
-// GET /admin/delete-product 
-router.get('/delete-product', function(req, res, next) {
-	// Supprimer le produit en recupérant l'id dans la query 
-
-	connection.query('delete from products where id = ?',[req.query.id] ,function (error, results, fields) {
-		res.redirect('/admin');
-	});
-}); */
-
 
 module.exports = router;
