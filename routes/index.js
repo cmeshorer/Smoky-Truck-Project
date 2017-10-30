@@ -1,10 +1,11 @@
+/* Appels des modules */
 var express = require('express');
 var router = express.Router();
 const mysql = require('mysql');
 
 /* Connexion BDD */
 var connection = mysql.createConnection({
-  	host     : 'localhost',
+  host     : 'localhost',
 	user     : 'root',
 	password : 'alroot',
 	database : 'smoky_truck'
@@ -15,13 +16,15 @@ connection.connect(function(err) {
 		console.error('error connecting: ' + err.stack);
 		return;
 	}
-	console.log('connected as id ' + connection.threadId); // Vérifier connexion en console
+	console.log('connected as id ' + connection.threadId); // Vérification de la connexion en console
 });
 
 /* GET home page */
 router.get('/', function(req, res, next) {  
-  connection.query('SELECT * FROM actus', function (error, results, fields) {
-    if (error) throw error;
+  connection.query('select * from actus order by id desc limit 3;', function (error, results, fields) {
+		if (error) {
+			console.log(error);
+		}
     res.render('index', {
       title: 'Accueil - Smoky Truck',
       meta: 'Depuis 2017, notre food truck vous propose de déguster de délicieuses pizzas aux 4 coins de la capitale. Venez régaler vos papilles !',
@@ -34,9 +37,12 @@ router.get('/', function(req, res, next) {
 /* GET actualités */
 router.get('/actu-:id(\\d+)', function(req, res, next) {
   connection.query('SELECT * FROM actus where id = ?',[req.params.id] ,function (error, results, fields) {
-    if (error) throw error;
+		if (error) {
+			console.log(error);
+		}
     res.render('actu', {
       title: 'Actualités - Smoky Truck',
+      meta: 'Retrouvez les dernières actualités du SMoky Truck',
       actus : results
     });
   });
@@ -55,7 +61,7 @@ router.get('/menu', function(req, res, next) {
 router.get('/lieux-hor', function(req, res, next) {
 	res.render('lieux-hor', { 
 		title: 'Nous trouver - Smoky Truck',
-		meta: 'Le Smoky Truck est présent dans différents lieux parisiensle midi et le soir. Consultez notre calendrier et notre carte : nous sommes forcément pas loin de chez vous !',
+		meta: 'Le Smoky Truck est présent dans différents lieux parisiens le midi et le soir. Consultez notre calendrier et notre carte : nous sommes forcément pas loin de chez vous !',
 		page: 'lieux-hor'
 	});
 });

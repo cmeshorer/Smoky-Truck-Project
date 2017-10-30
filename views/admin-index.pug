@@ -6,15 +6,16 @@ block css
 block content
   .container
     .row
-      .col-xs-2
-        img.img-responsive(src='../images/smoky_logo.svg', alt='Logo SMoky Truck', id="logo")
-      .col-xs-10
         h2.text-center Smoky Truck : espace administrateur
     .row
-      p.col-xs-4.col-xs-offset-4.text-center
-        img.img-responsive(src='../images/chef.jpg', alt='Photo chef')
+      img.img-responsive(src='../images/smoky_logo.svg', alt='Logo SMoky Truck', id="logo")
     .row
       h3.text-center Actualités
+    .row
+      a(href="/admin/create" class="btn btn-info") Créer une actualité
+      br
+      p
+        span.warning Attention seules les 3 dernières actualités apparaîtront sur la page d'accueil du site, par ordre descendant.
     .row
       table.table.table-striped.table-bordered.table-responsive.table-condensed
         tr
@@ -25,23 +26,36 @@ block content
           th.text-center Image
           th.text-center Action
 
-          each card in actus
+          each row in actus
             tr 
-              td.text-center= card.id
-              td.text-center= card.titre
-              td.text-center= card.sous_titre
-              td.text-center= card.text
+              td.text-center= row.id
+              td.text-center= row.titre
+              td.text-center= row.sous_titre
+              td.text-center= row.text
               td.text-center
-                img(src="/images/" + card.image, alt='' + card.image, width='150')
+                img(src="/images/" + row.image, alt='' + row.image, width='150')
               td.text-center
-                a(onclick='myFunction()') Supprimer confirm
+                a(href="/admin/supprimer/" + row.id onclick="return confirm('Voulez-vous supprimer cet élément ?');") Supprimer
                 br
                 br
-                a(href="/admin/supprimer/" + card.id) Supprimer
-                br
-                br
-                a(href="/") Modifier
+                a(href="/admin/modifier/" + row.id) Modifier
     .row
-      a(href="/admin/create" class="btn btn-info") Créer une actualité
+      h3.text-center Menu
+    .row
+      a(href="/admin/create-menu" class="btn btn-info") Créer une entrée / plat / dessert
       br
-      br
+      p
+        span.warning Attention, l'affichage est limité à 4 cartes pour les entrées et desserts et à 6 pour les pizzas.
+    .row
+      table.table.table-striped.table-bordered.table-responsive.table-condensed
+        tr
+          th.text-center #
+          th.text-center Catégorie
+          th.text-center Titre
+          th.text-center Descriptif
+          th.text-center Prix
+          th.text-center Infos nutritionnelles
+          th.text-center Image
+          th.text-center Action
+    .row
+      h3.text-center Adresses
