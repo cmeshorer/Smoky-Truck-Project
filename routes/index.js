@@ -2,14 +2,10 @@
 var express = require('express');
 var router = express.Router();
 const mysql = require('mysql');
+const config = require('../config.js');
 
 /* Connexion BDD */
-var connection = mysql.createConnection({
-  host     : 'localhost',
-	user     : 'root',
-	password : 'root',
-	database : 'smoky_truck'
-});
+const connection = mysql.createConnection(config);
 
 connection.connect(function(err) {
 	if (err) {
