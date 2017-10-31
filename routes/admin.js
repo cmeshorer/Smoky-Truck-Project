@@ -92,24 +92,35 @@ router.get('/modifier/:id(\\d+)',function(req, res){
   });
 });
 
-router.post('/modifier/:id(\\d+)',upload.single('image'), function(req, res){
-  // Gestion des images
-  if ((req.file.mimetype == 'image/png' || req.file.mimetype == 'image/jpeg') && (req.file.size < 3145728)){
-    fs.rename('tmp/' + req.file.filename, 'public/images/' + req.file.originalname, function(){
-    });
-  } else {
-    fs.unlink(req.file.path, function(){
-      res.send('Format jpg ou png, 3mo max'); 
-    });  
-  }
-  // Modification d'une actualité
-  connection.query('UPDATE actus SET titre = ?, sous_titre = ?, text = ?, image = ? WHERE id = ?', [req.body.title, req.body.sous_titre, req.body.text, req.file.originalname, req.params.id], function(error){
-    if (error) {
-      console.log(error);
+router.post('/modifier/:id(\\d+)', upload.single('image') ,function(req, res, next) {
+  
+  if(req.file) { // S'il y'a une nouvelle image, requête SQL avec la modification du nom de l'image
+    if ((req.file.mimetype == 'image/png' || req.file.mimetype == 'image/jpeg') && (req.file.size < 3145728)){
+      fs.rename('tmp/' + req.file.filename, 'public/images/' + req.file.originalname, function(){
+      });
     } else {
-      res.redirect('/admin/index');
+      fs.unlink(req.file.path, function(){
+      res.send('Format jpg ou png, 3mo max'); 
+      });
     }
-  })
+
+    connection.query('UPDATE actus SET titre = ?, sous_titre = ?, text = ?, image = ? WHERE id = ?', [req.body.title, req.body.sous_titre, req.body.text, req.file.originalname, req.params.id], function(error){
+      if (error) {
+      console.log(error);
+      }
+    })
+
+
+  } else { // S'il n'y a pas de nouvelle image requête SQL sans le nom de l'image
+    connection.query('UPDATE actus SET titre = ?, sous_titre = ?, text = ? WHERE id = ?', [req.body.title, req.body.sous_titre, req.body.text, req.params.id], function(error){
+      if (error) {
+      console.log(error);
+      }
+    })  
+  }
+
+  res.redirect('/admin/index'); // Dans tous les cas redirection vers l'admin.
+
 });
 
 module.exports = router;
