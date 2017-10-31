@@ -19,28 +19,6 @@ connection.connect(function(err) {
 });
 
 
-/* GET login admin */
-router.get('/', function(req, res, next) {
-  res.render('admin_login', {
-    title: 'Login administrateur'
-  });
-});
-
-/* POST login admin */
-router.post('/', function(req, res, next) {
-	let login= req.body.login;
-	let password = req.body.password;
-	connection.query(`select * from user where username="${login}" and password="${password}"`, function (error, results, fields) {
-	 	if (results.length==0) {
-	 	 	res.redirect('/admin');
-	 	} else {
-	 	 	req.connect=true;
-	 	 	res.redirect('/admin/index');
-	 	}
-	});
-});
-
-
 /* GET page administrateur */
 router.get('/index', function(req, res, next) {  
   connection.query('SELECT * FROM actus ORDER BY id desc', function (error, results, fields) {

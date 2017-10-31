@@ -15,6 +15,28 @@ connection.connect(function(err) {
 	console.log('connected as id ' + connection.threadId); // Vérification de la connexion en console
 });
 
+/* GET login admin */
+router.get('/login', function(req, res, next) {
+  res.render('admin_login', {
+    title: 'Login administrateur'
+  });
+});
+
+/* POST login admin */
+router.post('/login', function(req, res, next) {
+	let login= req.body.login;
+	let password = req.body.password;
+	connection.query(`select * from user where username="${login}" and password="${password}"`, function (error, results, fields) {
+	 	if (results.length==0) {
+	 	 	res.redirect('/login');
+	 	} else {
+	 	 	req.session.connected=true;
+	 		console.log(req.session);
+	 	 	res.redirect('/admin/index');
+	 	}
+	});
+});
+
 /* GET home page */
 router.get('/', function(req, res, next) {  
   connection.query('select * from actus order by id desc limit 3;', function (error, results, fields) {
