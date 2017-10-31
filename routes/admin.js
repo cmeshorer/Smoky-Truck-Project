@@ -5,6 +5,7 @@ const mysql = require('mysql');
 const multer  = require('multer');
 const fs = require('fs');
 const upload = multer({ dest: 'tmp/' })
+const config = require('../config.js');
 
 /* Connexion BDD */
 const connection = mysql.createConnection(config);

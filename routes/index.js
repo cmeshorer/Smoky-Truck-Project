@@ -2,6 +2,7 @@
 var express = require('express');
 var router = express.Router();
 const mysql = require('mysql');
+const config = require('../config.js');
 
 /* Connexion BDD */
 const connection = mysql.createConnection(config);
