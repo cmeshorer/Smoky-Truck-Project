@@ -10,6 +10,30 @@ var admin = require('./routes/admin');
 
 var app = express();
 
+// sessions
+const Session = require('express-session');
+const FileStore = require('session-file-store')(Session);
+
+app.use(Session({
+    store: new FileStore({
+        path: path.join(__dirname, '/tmp'),
+        encrypt: true
+    }),
+    secret: 'Super Secret !',
+    resave: true,
+    saveUninitialized: true,
+    name : 'sessionId'
+}));
+
+app.use('/admin', function (req, res, next) {
+	if (req.session.connected){
+		return next();
+	} else {
+		return res.redirect('/');
+	}
+});
+app.use('/admin', admin);
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
