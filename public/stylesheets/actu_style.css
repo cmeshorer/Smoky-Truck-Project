@@ -1,16 +1,18 @@
-.container {
-	padding-top: 20px;
+section#actus img {
+	padding-top: 80px;
 	padding-bottom: 10px;
+	width: 500px;
 }
 
-button {
+a.text-center {
 	margin: 10px;
 	color: #ffffff;
 	background-color: #1946a6;
 	border-color: #000000;
+	font-size: 1.2em
 }
 
-button:hover {
+a.text-center:hover {
 	color: #ffffff;
 	background-color: #1946a6;
 	border-color: #000000;

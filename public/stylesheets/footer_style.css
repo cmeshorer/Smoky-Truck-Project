@@ -11,6 +11,12 @@ footer a {
 	color: #021738;
 }
 
+footer a:hover {
+	text-decoration: none;
+	opacity: 0.8;
+	transition: .8s ease;
+}
+
 footer .row{
 	margin-right: 0;
 	margin-left: 0;
