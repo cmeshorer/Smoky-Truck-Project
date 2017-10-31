@@ -120,7 +120,7 @@ router.post('/modifier/:id(\\d+)', upload.single('image') ,function(req, res, ne
       });
     }
 
-    connection.query('UPDATE actus SET titre = ?, sous_titre = ?, text = ?, image = ? WHERE id = ?', [req.body.title, req.body.sous_titre, req.body.text, req.file.originalname, req.params.id], function(error){
+    connection.query('UPDATE actus SET titre = ?, sous_titre = ?, texte = ?, image = ? WHERE id = ?', [req.body.title, req.body.sous_titre, req.body.text, req.file.originalname, req.params.id], function(error){
       if (error) {
       console.log(error);
       }
