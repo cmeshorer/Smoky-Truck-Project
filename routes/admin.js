@@ -7,12 +7,7 @@ const fs = require('fs');
 const upload = multer({ dest: 'tmp/' })
 
 /* Connexion BDD */
-var connection = mysql.createConnection({
-  host     : 'localhost',
-  user     : 'root',
-  password : 'root',
-  database : 'smoky_truck'
-});
+const connection = mysql.createConnection(config);
 
 connection.connect(function(err) {
   if (err) {
