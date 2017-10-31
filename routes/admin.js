@@ -33,14 +33,14 @@ router.get('/', function(req, res, next) {
 /* POST login admin */
 router.post('/', function(req, res, next) {
 	let login= req.body.login;
-	let password = req.body.password ;
-	connection.query(`select * from user where username= "${login}" and password="${password}"`, function (error, results, fields) {
+	let password = req.body.password;
+	connection.query(`select * from user where username="${login}" and password="${password}"`, function (error, results, fields) {
 	 	if (results.length==0) {
-	 	 	res.redirect('/');
+	 	 	res.redirect('/admin');
 	 	} else {
-	 	 	req.session.connect=true;
-	 	 	res.redirect('/index');
-	 	}	 
+	 	 	req.connect=true;
+	 	 	res.redirect('/admin/index');
+	 	}
 	});
 });
 
