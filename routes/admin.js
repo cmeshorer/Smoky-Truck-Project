@@ -10,7 +10,7 @@ const upload = multer({ dest: 'tmp/' })
 var connection = mysql.createConnection({
   host     : 'localhost',
   user     : 'root',
-  password : 'alroot',
+  password : 'root',
   database : 'smoky_truck'
 });
 
@@ -22,12 +22,28 @@ connection.connect(function(err) {
   console.log('connected as id ' + connection.threadId); // Vérification de la connexion en console
 });
 
+
 /* GET login admin */
 router.get('/', function(req, res, next) {
   res.render('admin_login', {
     title: 'Login administrateur'
   });
 });
+
+/* POST login admin */
+router.post('/', function(req, res, next) {
+	let login= req.body.login;
+	let password = req.body.password;
+	connection.query(`select * from user where username="${login}" and password="${password}"`, function (error, results, fields) {
+	 	if (results.length==0) {
+	 	 	res.redirect('/admin');
+	 	} else {
+	 	 	req.connect=true;
+	 	 	res.redirect('/admin/index');
+	 	}
+	});
+});
+
 
 /* GET page administrateur */
 router.get('/index', function(req, res, next) {  
