@@ -1,0 +1,23 @@
+#logo {
+	width: 10%;
+}
+
+.warning {
+	color: red;
+	font-weight: 700;
+}
+
+.btn-info {
+	margin: 10px;
+	color: #ffffff;
+	background-color: #1946a6;
+	border-color: #000000;
+}
+
+.btn-info:hover {
+	color: #ffffff;
+	background-color: #1946a6;
+	border-color: #000000;
+	opacity: 0.8;
+	transition: .8s ease;
+}

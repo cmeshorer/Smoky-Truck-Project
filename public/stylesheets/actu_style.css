@@ -1,0 +1,21 @@
+section#actus img {
+	padding-top: 80px;
+	padding-bottom: 10px;
+	width: 500px;
+}
+
+a.text-center {
+	margin: 10px;
+	color: #ffffff;
+	background-color: #1946a6;
+	border-color: #000000;
+	font-size: 1.2em
+}
+
+a.text-center:hover {
+	color: #ffffff;
+	background-color: #1946a6;
+	border-color: #000000;
+	opacity: 0.8;
+	transition: .8s ease;
+}

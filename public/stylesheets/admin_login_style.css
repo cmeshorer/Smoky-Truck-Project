@@ -1,0 +1,19 @@
+.container {
+	padding-top: 20px;
+	padding-bottom: 10px;
+}
+
+button {
+	margin: 10px;
+	color: #ffffff;
+	background-color: #1946a6;
+	border-color: #000000;
+}
+
+button:hover {
+	color: #ffffff;
+	background-color: #1946a6;
+	border-color: #000000;
+	opacity: 0.8;
+	transition: .8s ease;
+}

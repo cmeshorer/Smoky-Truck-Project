@@ -1,0 +1,41 @@
+extends layout
+
+block css
+	link(rel='stylesheet', type='text/css', href='/stylesheets/contact_style.css')
+
+block content
+
+	.container
+		.row
+			.col-xs-10.col-xs-offset-1
+				img.contact-image.img-responsive(src='/images/contact.png', alt='contact image')
+	section.contact-section
+		.container
+			.row
+				.col-xs-12
+					h2.text-center Nous contacter
+					form#contact.form-horizontal(method='post', action='', name='contact')
+						fieldset
+							// Text input NAME
+							.form-group.name-form-input
+								.col-md-10.col-md-offset-1
+									input#contact_name.form-control.input-md(name='textinput form-control name', type='text', placeholder='Nom*', required='')
+									// Text input><span class="error">SVP nom et prénom</span>
+							// Text input
+							.form-group.surname-form-input
+								.col-md-10.col-md-offset-1
+									input#contact_email.form-control.input-md.champ(name='textinput form-control email', type='email', placeholder='Email*', required='')
+									// <span class="error">A valid email address is required</span>
+							// Textarea
+							.form-group.message-form-input
+								.col-md-10.col-md-offset-1
+									textarea#contact_message.form-control(placeholder='Message*', name='textarea contenu message', required='')
+									// <span class="error">This field is required</span>
+							// Button
+				.row
+					.col-md-4.col-md-offset-7
+						.g-recaptcha(data-sitekey='6Ld4MTUUAAAAAI6rwEVLpeSTA1DifCRGjj7OYAIh')
+				#contact_submit.form-group
+					.col-md-4.col-md-offset-8
+						button.form-button(type='submit')
+							| Envoyer

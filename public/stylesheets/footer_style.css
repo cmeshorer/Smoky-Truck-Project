@@ -1,0 +1,55 @@
+footer {
+	margin-top : 40px;
+	background-color: #f2f2f2 ;
+	color: #021738;
+	padding-top: 6px;
+	padding-bottom: 6px;
+	background-color: #f5fbff;
+}
+
+footer a {
+	color: #021738;
+}
+
+footer a:hover {
+	text-decoration: none;
+	opacity: 0.8;
+	transition: .8s ease;
+}
+
+footer .row{
+	margin-right: 0;
+	margin-left: 0;
+}
+.divlogol{
+	padding-top: 15px;
+}
+
+.trylogo{
+	width: 100px;
+	height: 100px;
+	background: url('/images/smoky_logo.svg') no-repeat;
+	background-size: contain;
+}
+
+footer ul {
+	list-style-type: none;
+	margin-bottom: 0px;
+}
+
+#mentions {
+	padding-top: 30px;
+}
+
+#mentions a {
+	font-weight: 700;
+}
+
+@media screen and (max-width: 768px) {
+	footer .row {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items :center;
+	}
+}

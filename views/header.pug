@@ -1,0 +1,65 @@
+header
+	.container-fluid
+		// Barre de navigation
+		nav#navbar.row
+			.col-xs-2.text-center
+				a(href='/')
+					img#logo(src='/images/smoky_logo.svg', alt='Logo Smoky Truck')
+			ul#links.col-xs-2.list-inline.text-center
+				li.list-inline-item
+					a(href='/')
+						i.fa.fa-map-marker(aria-hidden='true')
+				li.list-inline-item
+					a(href='/')
+						i.fa.fa-instagram(aria-hidden='true')
+				li.list-inline-item
+					a(href='/')
+						i.fa.fa-facebook-official(aria-hidden='true')
+			ul#menu.list-inline.col-xs-8.text-right
+				li.list-inline-item
+					- if (page == 'accueil')
+						a.navactive(href='/') Accueil
+					- else
+						a(href='/') Accueil
+				li.list-inline-item
+					- if (page =='menu')
+						a.navactive(href='/menu') Notre menu
+					- else
+						a(href='/menu') Notre menu
+				li.list-inline-item
+					- if (page =='lieux-hor')
+						a.navactive(href='/lieux-hor') Nous trouver
+					- else
+						a(href='/lieux-hor') Nous trouver
+				li.list-inline-item
+					- if (page == 'contact')
+						a.navactive(href='/contact') Nous contacter
+					- else
+						a(href='/contact') Nous contacter
+		// Burger menu
+		#burger_icon.text-center
+			i.fa.fa-bars(aria-hidden='true')
+		.menuburger
+			li
+				a.close(href='#') x
+			ul#burgernav
+				li
+					p.text-center
+						a.navactive(href='/') Accueil
+				li
+					p.text-center
+						a(href='/menu') Notre menu
+				li
+					p.text-center
+						a(href='lieux-hor') Nous trouver
+				li
+					p.text-center
+						a(href='/contact') Nous contacter
+			ul
+				li#links_burger
+					a(href='/')
+						i.fa.fa-map-marker(aria-hidden='true')
+					a(href='/')
+						i.fa.fa-instagram(aria-hidden='true')
+					a(href='/')
+						i.fa.fa-facebook-official(aria-hidden='true')

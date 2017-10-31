@@ -1,0 +1,117 @@
+extends layout
+
+block css
+	link(rel='stylesheet', type='text/css' href='/stylesheets/lieux-hor_style.css')
+
+block content
+
+	// Nous Trouver
+	.container
+		br
+		section.noustrouver
+			.row
+				.col-md-12.text-center
+					h2 Nous Trouver
+
+			
+			br
+			.row
+				.col-xs-10.col-xs-offset-1.table-style
+					table.table.table-striped.table-responsive.hidden-xs
+						thead
+							tr.hauttableau
+
+								th
+								th
+									| Lundi
+								th
+									| Mardi
+								th
+									| Mercredi
+								th
+									| Jeudi
+								th
+									| Vendredi
+						tbody
+							tr
+								- var Adresse1 = "Adresse 1"
+								- var Adresse2 = "Adresse 2"
+								- var Adresse3 = "Adresse 3"
+								- var Adresse4 = "Adresse 4"
+								- var Adresse5 = "Adresse 5"  
+								td
+									| Midi (11h-15h)
+								td
+									| #{Adresse2}
+								td
+									| #{Adresse1}
+								td
+									| #{Adresse3}
+								td
+									| #{Adresse1}
+								td
+									| #{Adresse2}
+							tr
+								td
+									| Soir (18h-22h)
+								td
+									| #{Adresse1}
+								td
+									| #{Adresse2}
+								td
+									| #{Adresse1}
+								td
+									| #{Adresse4}
+								td
+									| #{Adresse1}
+									
+					table.table.table-striped.table-responsive.visible-xs
+						thead
+							tr.hauttableau
+								th
+								th
+									| Midi (11h-15h)
+								th
+									| Soir (18h-22h)
+						tbody
+							tr
+								td
+									| Lundi
+								td
+									| Adresse 2
+								td
+									| Adresse 1
+							tr
+								td
+									| Mardi
+								td
+									| Adresse 1
+								td
+									| Adresse 2
+							tr
+								td
+									| Mercredi
+								td
+									| Adresse 3
+								td
+									| Adresse 1
+							tr
+								td
+									| Jeudi
+								td
+									| Adresse 1
+								td
+									| Adresse 4
+							tr
+								td
+									| Vendredi
+								td
+									| Adresse 2
+								td
+									| Adresse 1
+			br
+			br
+
+			.row
+				.col-xs-10.col-xs-offset-1
+					include map

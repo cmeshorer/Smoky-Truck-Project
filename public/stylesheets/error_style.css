@@ -1,0 +1,25 @@
+.container {
+	padding-top: 30px;
+	padding-bottom: 10px;
+}
+
+button {
+	width: 200px;
+	margin: 10px;
+	background-color: #1946a6;
+	border-color: #000000;
+}
+
+button:hover {
+	transition: all 900ms;
+	letter-spacing: 0.5px;
+	background-color: #1946a6;
+}
+
+a {
+	color:white;
+}
+
+a:hover {
+	color:white;
+}
