@@ -31,7 +31,6 @@ router.post('/login', function(req, res, next) {
 	 	 	res.redirect('/login');
 	 	} else {
 	 	 	req.session.connected=true;
-	 		console.log(req.session);
 	 	 	res.redirect('/admin/index');
 	 	}
 	});
