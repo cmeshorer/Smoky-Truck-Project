@@ -2,6 +2,11 @@
 	width: 10%;
 }
 
+.warning {
+	color: red;
+	font-weight: 700;
+}
+
 .btn-info {
 	margin: 10px;
 	color: #ffffff;

@@ -25,7 +25,7 @@ block content
           label(for='text') Texte*
           textarea#text.form-control(placeholder='Texte de l\'article' name="text" required)
         .form-group
-          label(for='image') Image* - Fichier jpg ou png de 3 mo max, largeur max : 200 px, format conseillé : 300px * 200 px
+          label.warning(for='image') Image* - Fichier jpg ou png de 3 mo max, largeur max : 200 px, format conseillé : 300px * 200 px
           input#image.form-control(type='file' name="image" required accept="image/*")
         p * Champ obligatoire
         button.btn.btn-default(type='submit') Enregistrer

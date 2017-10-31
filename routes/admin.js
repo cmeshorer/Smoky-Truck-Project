@@ -31,7 +31,7 @@ router.get('/', function(req, res, next) {
 
 /* GET page administrateur */
 router.get('/index', function(req, res, next) {  
-  connection.query('SELECT * FROM actus', function (error, results, fields) {
+  connection.query('SELECT * FROM actus ORDER BY id desc', function (error, results, fields) {
     if (error) {
       console.log(error);
     }

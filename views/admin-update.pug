@@ -25,7 +25,7 @@ block content
           label(for='text') Texte*
           textarea#text.form-control(placeholder='Texte de l\'article' name="text" )= actus.text
         .form-group
-          label(for='image') Image* - Fichier jpg ou png de 3 mo max, format conseillé : 300px * 200 px
+          label.warning(for='image') Image* - Fichier jpg ou png de 3 mo max, format conseillé : 300px * 200 px
           br
           img(src="/images/" + actus.image, alt='' + actus.image, width='100')
           br
