@@ -37,6 +37,11 @@ h4 {
 	font-size: 0.8em;
 }
 
+.warning {
+	color: red;
+	font-weight: 700;
+}
+
 .img-responsive {
 	margin: 0 auto;
 }

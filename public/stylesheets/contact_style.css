@@ -7,65 +7,30 @@
 	padding-top: 66px;
 }
 
-.name-form-input input {
-	height: 50px;
-}
-
-.surname-form-input input {
+.form-input input {
 	height: 50px;
 }
 
 textarea.form-control {
 	height: 170px;
-	margin-bottom: 20px;
-}
-
-button.form-button {
-	width: 150px;
-	margin: 10px;
-	text-transform: uppercase;
-	text-transform: uppercase;
-	color: #ffffff;
-	/*background-color: transparent;*/
-	background-color: #1946a6;
-	border-color: #000000;
-	/*border-color: #1a265d;*/
-	border-radius: 0;
-	/*background-color: white;*/
-}
-
-button.form-button:hover {
-	color: #ffffff;
-	/*color: black;*/
-	/*background-color: transparent;*/
-	transform: scale(1.2);
-	transition: all 900ms;
-	letter-spacing: 0.5px;
-	/*background-color: white;*/
-	background-color: #1946a6;
-}
-
-.form-button {
-	width: 100px;
-	margin: 10px;
-	text-transform: uppercase;
-	color: #000000;
-	background-color: transparent;
-	border-color: #000000;
-	border-radius: 0;
-	padding: 3px;
-}
-
-.form-button:hover {
-	color: #ffffff;
-	color: black;
-	background-color: transparent;
-	border-color: #000000;
-	transform: scale(1.2);
-	transition: all 600ms;
-	letter-spacing: 0.5px;
 }
 
 textarea {
 	resize: none;
+}
+
+button {
+	width: 10%;
+	padding: 8px;
+	color: #ffffff;
+	background-color: #1946a6;
+	border-color: #000000;
+}
+
+button:hover {
+	color: #ffffff;
+	background-color: #1946a6;
+	border-color: #000000;
+	opacity: 0.8;
+	transition: .8s ease;
 }

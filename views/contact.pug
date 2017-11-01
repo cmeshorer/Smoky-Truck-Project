@@ -4,36 +4,47 @@ block css
 	link(rel='stylesheet', type='text/css', href='/stylesheets/contact_style.css')
 
 block content
-
 	.container
 		.row
 			.col-xs-10.col-xs-offset-1
 				img.contact-image.img-responsive(src='/images/contact.png', alt='contact image')
-	section.contact-section
-		.container
-			.row
-				.col-xs-12
+		section.contact-section
+				.row
 					h2.text-center Nous contacter
-					p= error
+				.row
+					p.warning= error
+				.row
+					.col-xs-10.col-xs-offset-1
+						p.text-justify
+							| Vous souhaitez nous contacter ? Remplissez le formulaire ci-dessous. L'équipe du Smoky Truck est à disposition pour répondre à toutes vos interrogations
+							br
+							| A bientôt, et Yummy !
+							br
+							br
+				.row
 					form#contact.form-horizontal(action='/submit', method='post', name='contact')
-						fieldset
-							// Name
-							.form-group.name-form-input
-								.col-md-10.col-md-offset-1
-									input#contact_name.form-control.input-md(name='name', type='text', placeholder='Nom*')
-							// E-mail
-							.form-group.surname-form-input
-								.col-md-10.col-md-offset-1
-									input#contact_email.form-control.input-md.champ(name='email', type='email', placeholder='Email*')
-							// Message
-							.form-group.message-form-input
-								.col-md-10.col-md-offset-1
-									textarea#contact_message.form-control(placeholder='Message* - 300 caractères max', name='message', type= 'text')
-							// Bouton validation
-							.row
-								.col-md-4.col-md-offset-7
-									.g-recaptcha(data-sitekey='6Ld4MTUUAAAAAI6rwEVLpeSTA1DifCRGjj7OYAIh')
-							#contact_submit.form-group
-								.col-md-4.col-md-offset-8
-									button.form-button(type='submit')
-										| Envoyer
+						// Name
+						.form-group.form-input
+							.col-md-10.col-md-offset-1
+								label(for='name') Votre nom*
+								input.form-control(name='name', type='text', placeholder='Clémence', required)
+						// E-mail
+						.form-group.form-input
+							.col-md-10.col-md-offset-1
+								label(for='email') Votre e-mail*
+								input.form-control(name='email', type='email', placeholder='clemence@yopmail.com', required)
+						// Message
+						.form-group.form-input
+							.col-md-10.col-md-offset-1
+								label(for='message') L'objet de votre message* - 600 caractères maximum
+								textarea.form-control(placeholder='Vous pizzas sont délicieuses !', name='message', type= 'text', maxlength="600", required)
+						// Bouton validation
+						#contact_submit.form-group
+							.col-md-10.col-md-offset-1
+								p.text-left.warning
+									| * Tous les champs sont obligatoires.
+							.col-md-10.col-md-offset-1
+								.g-recaptcha(data-sitekey='6Ld4MTUUAAAAAI6rwEVLpeSTA1DifCRGjj7OYAIh')
+						p.text-center
+							button(type='submit' onclick="return confirm('Voulez-vous envoyer votre message ?');")
+								| Envoyer
