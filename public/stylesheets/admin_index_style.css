@@ -3,7 +3,7 @@
 }
 
 .warning {
-	color: red;
+	color: orange;
 	font-weight: 700;
 }
 
@@ -23,4 +23,14 @@
 	border-color: #000000;
 	opacity: 0.8;
 	transition: .8s ease;
+}
+
+.logout {
+	color: red;
+	font-weight: 700;
+	font-size: 15px;
+}
+
+.logout:hover {
+	color: #bf0000;
 }
