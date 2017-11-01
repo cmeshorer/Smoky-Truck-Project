@@ -1,6 +1,6 @@
 /* Chapô */
 #text-intro {
-	font-size : 1.2em;
+	font-size : 1.3em;
 }
 
 /* Carousel */
@@ -96,46 +96,56 @@ a.carousel-control.right { right: 0; background: none; border: 0;}
 
 /* Actus */
 
-.card-title {
-	margin: 30px;
-	text-align:center;
-	/*color: #1a265d;*/
-	color: #1946a6;
-	}
-
-.card-text {
-	width: auto;
-}
-
-div.card-block.card-holder{
-	margin: 15px;
+#actus_cards {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	flex-wrap: wrap;
+	overflow: hidden;
+	word-wrap: break-word;
 }
 
 .card {
-	width: auto;
-	padding: 10px;
+	width: 320px;
+	height: 380px;
+	padding: 15px;
+}
+
+#actus_cards img {
+	width: 300px;
+	height: 200px;
+}
+
+.card-title {
 	margin: 20px;
-}
+	text-align:center;
+	color: #1946a6;
+	}
 
-/*.card-block a {
-	margin: 10px;
-	padding: 10px;
-	text-transform: uppercase;
-	color: #000000;
-	background-color: #ffffff;
-	border-color: #000000;
-	border-radius: 0;
-}
-
-.card-block a:hover {
+.btn-primary {
 	color: #ffffff;
-	color: #000000;
-	background-color: #ffffff;
+	background-color: #1946a6;
 	border-color: #000000;
-	transform: scale(1.2);
-	transition: all 900ms;
-	letter-spacing: 2px;
-}*/
+}
+
+.btn-primary:hover {
+	color: #ffffff;
+	background-color: #1946a6;
+	border-color: #000000;
+	opacity: 0.8;
+	transition: .8s ease;
+}
+
+.card a {
+	text-decoration: none;
+	color: #021738;
+}
+
+.card a:hover {
+	text-decoration: none;
+	opacity: 0.8;
+	transition: .8s ease;
+}
 
 /* Intermediary section*/
 
@@ -147,38 +157,29 @@ div.card-block.card-holder{
 section#menu-horaires.intermediaire{
 	background-color: #e4e4e4;
 	margin: 0;
-	padding: 90px;
 }
 
 .menu-text {
 	margin-top: 35px;
-	margin-bottom: 60px;
-	padding: 35px 35px 20px 0;
+	margin-bottom: 30px;
+	padding: 35px 0 0 0;
 }
 
 .intermediaire button {
-	width: 150px;
+	width: 180px;
 	margin: 10px;
-	text-transform: uppercase;
-	/*color: #000000;*/
 	color: #ffffff;
-	/*background-color: transparent;*/
 	background-color: #1946a6;
 	border-color: #000000;
-	/*border-color: #1a265d;*/
-	border-radius: 0;
-	/*background-color: white;*/
+	font-size: 1.2em;
 }
 
 .intermediaire button:hover {
 	color: #ffffff;
-	/*color: black;*/
-	/*background-color: transparent;*/
-	transform: scale(1.2);
-	transition: all 900ms;
-	letter-spacing: 0.5px;
-	/*background-color: white;*/
 	background-color: #1946a6;
+	border-color: #000000;
+	opacity: 0.8;
+	transition: .8s ease;
 }
 
 /* Story Section */
@@ -189,12 +190,13 @@ div.col-md-10.text-center{
 }
 
 .histo-text{
-	padding: 40px 37px 0 70px;
+	padding: 35px 0 0 0;
+	margin:auto;
 }
 
 /* Media Queries Story */
 
-@media screen and (max-width: 992px) {
+/*@media screen and (max-width: 992px) {
 	.histo-text {
 		padding-top: 30px;
 		padding-left: 0px;
@@ -208,4 +210,4 @@ div.col-md-10.text-center{
 	section#menu-horaires.intermediaire .img-responsive{
 		padding-top: 40px;
 	}
-}
+}*/

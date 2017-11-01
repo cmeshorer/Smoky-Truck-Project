@@ -1,0 +1,14 @@
+extends layout
+
+block css
+  link(rel='stylesheet', type='text/css', href='/stylesheets/actu_style.css')
+
+block content
+  each card in actus
+    .container
+      section#actus
+        img.img-responsive(src="/images/" + card.image, alt='' + card.image)
+        h2.text-center=card.titre
+        p.text-center= card.text
+        P.text-center
+          a.text-center(href="/" class="btn btn-info") <- Retour à l'accueil
