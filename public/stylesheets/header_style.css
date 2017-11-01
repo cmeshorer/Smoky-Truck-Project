@@ -77,7 +77,7 @@ header {
 }
 
 .menuburger {
-	background-color: white;
+	background-color: #f5fbff;
 	height: 100vh;
 	position : fixed;
 	width: 200px;
@@ -100,6 +100,7 @@ header {
 
 .menuburger ul {
 	padding : 15px;
+	margin-top: 30px;
 	margin-bottom: 0px;
 }
 
@@ -123,6 +124,7 @@ header {
 	text-decoration: none;
 }
 
+
 #burgernav .navactive {
 	color : #b3b3b3;
 }
@@ -138,11 +140,13 @@ header {
 }
 
 .menuburger li a.close {
-	position: relative;
-	top: 10;
-	right: 10;
-	font-size: 15px;
-	color: #012051;
+	/*position: relative;*/
+	/*top: 10;*/
+	/*right: 10;*/
+	font-size: 45px;
+	/*color: #012051;*/
+	padding: 18px 18px 0 0;
+	text-transform: uppercase;
 }
 
 /* Media Queries header */
