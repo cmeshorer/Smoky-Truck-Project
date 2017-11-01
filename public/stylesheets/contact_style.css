@@ -1,4 +1,4 @@
-.contact-section h2 {
+.contact-section h2, .contact_ok {
 	padding-top: 30px;
 	padding-bottom: 10px;
 }
@@ -28,6 +28,21 @@ button {
 }
 
 button:hover {
+	color: #ffffff;
+	background-color: #1946a6;
+	border-color: #000000;
+	opacity: 0.8;
+	transition: .8s ease;
+}
+
+.btn-info {
+	margin: 10px;
+	color: #ffffff;
+	background-color: #1946a6;
+	border-color: #000000;
+}
+
+.btn-info:hover {
 	color: #ffffff;
 	background-color: #1946a6;
 	border-color: #000000;

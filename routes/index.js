@@ -40,17 +40,31 @@ router.get('/contact', function(req, res, next) {
 });
 
 /* Validation du formulaire et envoi du mail à l'administrateur */
-router.post('/submit', function(req, res, next) { // On fait une requête post au submit.
-	// On vérifie les champs - Pour l'instant un seul champ est vérifié il faut voir comment cumuler les vérifications
+router.post('/submit', function(req, res, next) { // Requête post au submit.
+	// Vérification du fomulaire avec validator.
 	let error = '';
-	if (validator.isEmpty(req.body.name)) { // Si le champ est vide on le renvoie sur la page contact.
+	if (validator.isEmpty(req.body.name)) {
 		error = 'Veuillez renseigner votre nom';
 		res.render('contact', { 
 			title: 'Nous contacter - Smoky Truck',
 			meta: 'Vous souhaitez nous contacter ? N\'hésitez pas à remplir le formulaire ci-dessous. A bientôt !',
 			page: 'contact',
 			error : error
-		}); } else { // Sinon on envoie le mail contenant le message à l'administrateur.
+		}); } if (validator.isEmpty(req.body.email)) {
+		error = 'Veuillez renseigner votre e-mail';
+		res.render('contact', { 
+			title: 'Nous contacter - Smoky Truck',
+			meta: 'Vous souhaitez nous contacter ? N\'hésitez pas à remplir le formulaire ci-dessous. A bientôt !',
+			page: 'contact',
+			error : error
+		}); } if (validator.isEmpty(req.body.message)) {
+		error = 'Veuillez renseigner un message';
+		res.render('contact', { 
+			title: 'Nous contacter - Smoky Truck',
+			meta: 'Vous souhaitez nous contacter ? N\'hésitez pas à remplir le formulaire ci-dessous. A bientôt !',
+			page: 'contact',
+			error : error
+		}); } else { // Si tout est OK on envoie sur Node mailer
 		var transport = nodemailer.createTransport({
 			host: "smtp.mailtrap.io",
 			port: 2525,
@@ -61,15 +75,15 @@ router.post('/submit', function(req, res, next) { // On fait une requête post a
 		});
 		transport.sendMail({
 			from: req.body.email,
-			to: "supergrandma@yopmail.com",
+			to: "smoky_truck@yopmail.com",
 			subject: 'Cher Smoky Truck, ' + req.body.name + ' vous a envoyé un message depuis le site.',
-			text: 'Nom : '+ req.body.name + ' ' + 'Mail : ' + req.body.email + 'Message : ' + req.body.message + '',
-			html: req.body.message
+			text: 'Nom : ' + req.body.name + '\n' + 'Mail : ' + req.body.email + '\n' + 'Message : ' + req.body.message,
+			html: '<p>' + '<b>' + 'Nom : ' + '</b>'+ req.body.name + '<p>' + '<b>' + 'Mail : ' + '</b>' + req.body.email + '<p>' + '<b>' + 'Message : ' + '</b>' + req.body.message + '</p>'
 		}, (error, response) => {
 			if(error){
 				console.log(error);
-			}else{
-				res.redirect('/contact');
+			} else{
+				res.render('contact-OK');
 			}
 		});	
 	}

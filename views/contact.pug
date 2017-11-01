@@ -12,32 +12,35 @@ block content
 				.row
 					h2.text-center Nous contacter
 				.row
-					p.warning= error
-				.row
-					.col-xs-10.col-xs-offset-1
+					.col-md-10.col-md-offset-1
 						p.text-justify
 							| Vous souhaitez nous contacter ? Remplissez le formulaire ci-dessous. L'équipe du Smoky Truck est à disposition pour répondre à toutes vos interrogations
+							br
 							br
 							| A bientôt, et Yummy !
 							br
 							br
+				.row
+					.col-md-10.col-md-offset-1
+						p.warning= error
+						br
 				.row
 					form#contact.form-horizontal(action='/submit', method='post', name='contact')
 						// Name
 						.form-group.form-input
 							.col-md-10.col-md-offset-1
 								label(for='name') Votre nom*
-								input.form-control(name='name', type='text', placeholder='Clémence', required)
+								input.form-control(name='name', type='text', placeholder='Clémence')
 						// E-mail
 						.form-group.form-input
 							.col-md-10.col-md-offset-1
 								label(for='email') Votre e-mail*
-								input.form-control(name='email', type='email', placeholder='clemence@yopmail.com', required)
+								input.form-control(name='email', type='email', placeholder='clemence@yopmail.com')
 						// Message
 						.form-group.form-input
 							.col-md-10.col-md-offset-1
-								label(for='message') L'objet de votre message* - 600 caractères maximum
-								textarea.form-control(placeholder='Vous pizzas sont délicieuses !', name='message', type= 'text', maxlength="600", required)
+								label(for='message') Votre message* - 600 caractères maximum
+								textarea.form-control(placeholder='Vous pizzas sont délicieuses !', name='message', type= 'text', maxlength="600")
 						// Bouton validation
 						#contact_submit.form-group
 							.col-md-10.col-md-offset-1
