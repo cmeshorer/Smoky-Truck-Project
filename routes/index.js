@@ -17,6 +17,7 @@ connection.connect(function(err) {
 
 /* GET login admin */
 router.get('/login', function(req, res, next) {
+  req.session.destroy();
   res.render('admin_login', {
     title: 'Login administrateur'
   });
