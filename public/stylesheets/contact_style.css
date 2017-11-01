@@ -19,30 +19,16 @@ textarea {
 	resize: none;
 }
 
-button {
-	width: 10%;
-	padding: 8px;
-	color: #ffffff;
-	background-color: #1946a6;
-	border-color: #000000;
-}
-
-button:hover {
-	color: #ffffff;
-	background-color: #1946a6;
-	border-color: #000000;
-	opacity: 0.8;
-	transition: .8s ease;
-}
-
-.btn-info {
+.btn {
+	width: 200px;
 	margin: 10px;
 	color: #ffffff;
 	background-color: #1946a6;
 	border-color: #000000;
+	font-size: 1.2em;
 }
 
-.btn-info:hover {
+.btn:hover {
 	color: #ffffff;
 	background-color: #1946a6;
 	border-color: #000000;
