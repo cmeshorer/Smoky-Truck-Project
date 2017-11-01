@@ -24,7 +24,7 @@ DROP TABLE IF EXISTS `actus`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `actus` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `image` varchar(50) DEFAULT NULL,
+  `image` varchar(80) DEFAULT NULL,
   `titre` varchar(50) DEFAULT NULL,
   `sous_titre` varchar(50) DEFAULT NULL,
   `texte` varchar(200) DEFAULT NULL,

@@ -7,7 +7,8 @@ const fs = require('fs');
 const upload = multer({ dest: 'tmp/' })
 const config = require('../config.js');
 
-/* Connexion BDD */
+
+/* -----------Connexion BDD */
 const connection = mysql.createConnection(config);
 
 connection.connect(function(err) {
@@ -19,7 +20,7 @@ connection.connect(function(err) {
 });
 
 
-/* GET page administrateur */
+/*------------- GET page administrateur */
 router.get('/index', function(req, res, next) {  
   connection.query('SELECT * FROM actus ORDER BY id desc', function (error, results, fields) {
     if (error) {
@@ -32,7 +33,7 @@ router.get('/index', function(req, res, next) {
   });
 });
 
-/* Création d'une actu */
+/*-------------- Création d'une actu */
 router.get('/create', function(req, res, next) {
     res.render('admin-create', {
       title : 'Création d\'une actualité'
@@ -41,17 +42,20 @@ router.get('/create', function(req, res, next) {
 
 router.post('/create', upload.single('image'), function(req, res, next) {
   // Gestion des images
+  console.log('hello')
   if ((req.file.mimetype == 'image/png' || req.file.mimetype == 'image/jpeg') && (req.file.size < 3145728)){
     fs.rename('tmp/' + req.file.filename, 'public/images/' + req.file.originalname, function(){
-    });
-  } else {
-    fs.unlink(req.file.path, function(){
-      res.send('Format jpg ou png, 3mo max'); 
-      res.redirect('/admin/index');
-    });  
-  }
+     });
+   } else {
+     fs.unlink(req.file.path, function(){
+       res.send('Format jpg ou png, 3mo max'); 
+       res.redirect('/admin/index');
+     });  
+   }
   // Ajout d'une actualité
-    connection.query('INSERT INTO actus VALUES (null, ?, ?, ?, ?)',[req.file.originalname, req.body.title, req.body.sous_titre, req.body.text] ,function (error, results, fields) {
+    connection.query('INSERT INTO actus VALUES (null, ?, ?, ?, ?)',[req.file.originalname, req.body.title, req.body.sous_titre, req.body.texte] ,function (error, results, fields) {
+      console.log(results);
+      console.log(req.body);
       if (error) {
         console.log(error);
       }
