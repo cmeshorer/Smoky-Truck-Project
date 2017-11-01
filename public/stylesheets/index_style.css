@@ -157,13 +157,12 @@ a.carousel-control.right { right: 0; background: none; border: 0;}
 section#menu-horaires.intermediaire{
 	background-color: #e4e4e4;
 	margin: 0;
-	padding: 90px;
 }
 
 .menu-text {
 	margin-top: 35px;
-	margin-bottom: 60px;
-	padding: 35px 35px 20px 0;
+	margin-bottom: 30px;
+	padding: 35px 0 0 0;
 }
 
 .intermediaire button {
@@ -191,13 +190,13 @@ div.col-md-10.text-center{
 }
 
 .histo-text{
-	padding: 70px 37px 0 70px;
+	padding: 35px 0 0 0;
 	margin:auto;
 }
 
 /* Media Queries Story */
 
-@media screen and (max-width: 992px) {
+/*@media screen and (max-width: 992px) {
 	.histo-text {
 		padding-top: 30px;
 		padding-left: 0px;
@@ -211,4 +210,4 @@ div.col-md-10.text-center{
 	section#menu-horaires.intermediaire .img-responsive{
 		padding-top: 40px;
 	}
-}
+}*/
