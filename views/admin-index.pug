@@ -34,7 +34,7 @@ block content
               td.text-center= row.id
               td.text-center= row.titre
               td.text-center= row.sous_titre
-              td.text-center= row.text
+              td.text-center!= row.texte
               td.text-center
                 img(src="/images/" + row.image, alt='' + row.image, width='150')
               td.text-center

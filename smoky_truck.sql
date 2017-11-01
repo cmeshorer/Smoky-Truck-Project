@@ -1,8 +1,8 @@
--- MySQL dump 10.13  Distrib 5.7.20, for macos10.12 (x86_64)
+-- MySQL dump 10.13  Distrib 5.7.19, for osx10.11 (x86_64)
 --
 -- Host: localhost    Database: smoky_truck
 -- ------------------------------------------------------
--- Server version	5.7.20
+-- Server version	5.7.19
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -16,14 +16,6 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Current Database: `smoky_truck`
---
-
-CREATE DATABASE /*!32312 IF NOT EXISTS*/ `smoky_truck` /*!40100 DEFAULT CHARACTER SET latin1 */;
-
-USE `smoky_truck`;
-
---
 -- Table structure for table `actus`
 --
 
@@ -34,6 +26,7 @@ CREATE TABLE `actus` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `image` varchar(50) DEFAULT NULL,
   `titre` varchar(50) DEFAULT NULL,
+  `sous_titre` varchar(50) DEFAULT NULL,
   `texte` varchar(200) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
@@ -45,7 +38,7 @@ CREATE TABLE `actus` (
 
 LOCK TABLES `actus` WRITE;
 /*!40000 ALTER TABLE `actus` DISABLE KEYS */;
-INSERT INTO `actus` VALUES (1,'news-1.jpg','Titre 1','bla bla bla bla bla bla bla bla bla bla bla'),(2,'news-2.jpg','Titre 2','bla bla bla bla bla bla bla bla bla bla bla bla');
+INSERT INTO `actus` VALUES (1,'news-1.jpg','Titre 1',NULL,'bla bla bla bla bla bla bla bla bla bla bla'),(2,'news-2.jpg','Titre 2',NULL,'bla bla bla bla bla bla bla bla bla bla bla bla');
 /*!40000 ALTER TABLE `actus` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -164,4 +157,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-10-31 15:57:20
+-- Dump completed on 2017-11-01 18:59:43

@@ -23,7 +23,7 @@ block content
           input#sous-titre.form-control(type='text' name="sous_titre" maxlength="100" value=actus.sous_titre)
         .form-group
           label(for='text') Texte*
-          textarea#text.form-control(placeholder='Texte de l\'article' name="text" )= actus.text
+          textarea#text.form-control(placeholder='Texte de l\'article' name="texte" )= actus.texte
         .form-group
           label.warning(for='image') Image* - Fichier jpg ou png de 3 mo max, format conseillé : 300px * 200 px
           br
@@ -33,3 +33,6 @@ block content
           input#image.form-control(type='file' name="image" value=actus.image accept="image/*")
         p * Champ obligatoire
         button.btn.btn-default(type='submit' onclick="return confirm('Voulez-vous modifier cet élément ?');") Modifier
+    script(src='https://cloud.tinymce.com/stable/tinymce.min.js')
+    script.
+        tinymce.init({ selector:'textarea'});
