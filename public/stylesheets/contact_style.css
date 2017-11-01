@@ -35,3 +35,8 @@ textarea {
 	opacity: 0.8;
 	transition: .8s ease;
 }
+
+#contact {
+	margin-left: 10px;
+	margin-right: 10px;
+}

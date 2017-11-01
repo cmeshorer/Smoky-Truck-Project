@@ -26,19 +26,21 @@ block content
 						br
 				.row
 					form#contact.form-horizontal(action='/submit', method='post', name='contact')
+					.row
 						// Name
-						.form-group.form-input
-							.col-md-10.col-md-offset-1
+						.col-md-10.col-md-offset-1
+							.form-group.form-input
 								label(for='name') Votre nom*
 								input.form-control(name='name', type='text', placeholder='Clémence')
+					.row
 						// E-mail
-						.form-group.form-input
-							.col-md-10.col-md-offset-1
+						.col-md-10.col-md-offset-1
+							.form-group.form-input
 								label(for='email') Votre e-mail*
 								input.form-control(name='email', type='email', placeholder='clemence@yopmail.com')
+					.row
 						// Message
-						.form-group.form-input
-							.col-md-10.col-md-offset-1
+						.col-md-10.col-md-offset-1
 								label(for='message') Votre message* - 600 caractères maximum
 								textarea.form-control(placeholder='Vos pizzas sont délicieuses !', name='message', type= 'text', maxlength="600")
 						// Bouton validation
