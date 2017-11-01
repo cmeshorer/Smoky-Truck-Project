@@ -1,6 +1,6 @@
 module.exports = {
 	host     : 'localhost',
 	user     : 'root',
-	password : 'yesmysqlyes',
+	password : 'root',
 	database : 'smoky_truck'
 };

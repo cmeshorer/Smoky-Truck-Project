@@ -34,3 +34,7 @@
 .logout:hover {
 	color: #bf0000;
 }
+
+.logoutrow {
+	margin-top: 15px;
+}
