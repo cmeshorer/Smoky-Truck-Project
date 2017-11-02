@@ -16,6 +16,30 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
+-- Table structure for table `CATEGORY`
+--
+
+DROP TABLE IF EXISTS `CATEGORY`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `CATEGORY` (
+  `idcategory` int(11) NOT NULL AUTO_INCREMENT,
+  `category` varchar(10) DEFAULT NULL,
+  PRIMARY KEY (`idcategory`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `CATEGORY`
+--
+
+LOCK TABLES `CATEGORY` WRITE;
+/*!40000 ALTER TABLE `CATEGORY` DISABLE KEYS */;
+INSERT INTO `CATEGORY` VALUES (1,'entree'),(2,'plat'),(3,'dessert');
+/*!40000 ALTER TABLE `CATEGORY` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `actus`
 --
 
@@ -24,12 +48,12 @@ DROP TABLE IF EXISTS `actus`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `actus` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `image` varchar(80) DEFAULT NULL,
+  `image` varchar(50) DEFAULT NULL,
   `titre` varchar(50) DEFAULT NULL,
   `sous_titre` varchar(50) DEFAULT NULL,
   `texte` varchar(200) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -38,33 +62,8 @@ CREATE TABLE `actus` (
 
 LOCK TABLES `actus` WRITE;
 /*!40000 ALTER TABLE `actus` DISABLE KEYS */;
-INSERT INTO `actus` VALUES (1,'news-1.jpg','Titre 1',NULL,'bla bla bla bla bla bla bla bla bla bla bla'),(2,'news-2.jpg','Titre 2',NULL,'bla bla bla bla bla bla bla bla bla bla bla bla');
+INSERT INTO `actus` VALUES (2,'news-2.jpg','Titre 2',NULL,'bla bla bla bla bla bla bla bla bla bla bla bla');
 /*!40000 ALTER TABLE `actus` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `category`
---
-
-DROP TABLE IF EXISTS `category`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `category` (
-  `idcategory` int(11) NOT NULL AUTO_INCREMENT,
-  `entree` varchar(10) NOT NULL,
-  `plat` varchar(45) NOT NULL,
-  `dessert` varchar(45) NOT NULL,
-  PRIMARY KEY (`idcategory`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `category`
---
-
-LOCK TABLES `category` WRITE;
-/*!40000 ALTER TABLE `category` DISABLE KEYS */;
-/*!40000 ALTER TABLE `category` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -86,7 +85,7 @@ CREATE TABLE `menu` (
   PRIMARY KEY (`idmenu`),
   KEY `category_idx` (`category`),
   CONSTRAINT `category` FOREIGN KEY (`category`) REFERENCES `category` (`idcategory`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -95,6 +94,7 @@ CREATE TABLE `menu` (
 
 LOCK TABLES `menu` WRITE;
 /*!40000 ALTER TABLE `menu` DISABLE KEYS */;
+INSERT INTO `menu` VALUES (1,'pizza','rica pizza',5,'deux','image.png','icon.png',2);
 /*!40000 ALTER TABLE `menu` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -157,4 +157,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-11-01 18:59:43
+-- Dump completed on 2017-11-02 13:04:57

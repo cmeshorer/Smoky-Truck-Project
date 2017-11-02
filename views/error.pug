@@ -10,9 +10,14 @@ block content
 					img.img-responsive(src='images/pizza-not-found.jpg', alt='Image of a delicious pizza')
 	section#error
 	.container
+		h1= message
+		h2= error.status
+		pre #{error.stack}
 		.row
 			.col-xs-10.col-xs-offset-1.text-center
+
 				h2 Hello, pizza lover !
 				h2 We're sorry, we couldn't find this page...
 				button
 					a(href='/') RETOUR A L'ACCUEIL
+					

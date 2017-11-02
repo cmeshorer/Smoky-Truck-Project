@@ -31,7 +31,11 @@ router.get('/index', function(req, res, next) {
       actus : results
     });
   });
+
 });
+
+
+
 
 /*-------------- Création d'une actu */
 router.get('/create', function(req, res, next) {
@@ -116,5 +120,80 @@ router.post('/modifier/:id(\\d+)', upload.single('image') ,function(req, res, ne
   res.redirect('/admin/index'); // Dans tous les cas redirection vers l'admin.
 
 });
+
+
+//---!!!!!!! SECTION MENU -----!!!!! AFFICHAGE + MODIFICATION -------->>>>>>>> 
+
+
+router.get('/menu', function(req, res, next) {  
+  connection.query('SELECT * FROM menu ORDER BY idmenu desc', function (error, results, fields) {
+    if (error) {
+      console.log(error);
+    }
+    res.render('admin-menu', {
+      title: 'Espace administrateur',
+      menu : results
+    });
+  }); 
+});
+
+
+/*------------------ Supprimer une CARD MENU */
+router.get('/supprimermenu/:id(\\d+)', function(req, res, next) {
+  connection.query('DELETE FROM menu where idmenu = ?',[req.params.id] ,function (error, results, fields) {
+    if (error) {
+      console.log(error);
+    }
+    res.redirect('/admin/menu');
+  });
+});
+
+/* Modifier une CARD MENU */
+router.get('/modifiermenu/:id(\\d+)',function(req, res){
+  connection.query('SELECT * FROM menu WHERE idmenu = ?', [req.params.id], function(error, results){
+    if (error) {
+      console.log(error);
+    }
+    res.render('admin-update-menu', {
+      title : 'Modification d\'une card menu',
+      menu: results[0]
+    });
+  });
+});
+
+
+var cpUpload = upload.fields([{ name: 'image', maxCount: 1 }, { name: 'icon', maxCount: 1 }]);
+router.post('/modifiermenu/:id(\\d+)', cpUpload, function(req, res, next) {
+  
+
+  console.log(req.files['image'][0]);
+  console.log(req.files['icon'][0]);
+
+   connection.query('UPDATE menu SET category = ?, name = ?, description = ?, price = ?, pieces= ?, icon = ?, image = ? WHERE idmenu = ?', [req.body.category, req.body.name, req.body.description, req.body.price, req.body.pieces, req.files['icon'][0].path, req.files['image'][0].path, req.params.id], function(error){
+      if (error) {
+      console.log(error);
+      }
+    })
+ res.redirect('/admin/menu'); // Dans tous les cas redirection vers l'admin.
+});
+
+
+router.get('/creationmenu', function (req, res){
+  res.render('admin-createmenu');
+});
+
+var cpUpload = upload.fields([{ name: 'image', maxCount: 1 }, { name: 'icon', maxCount: 1 }]);
+router.post('/creationmenu', cpUpload, function(req, res, next) {
+  
+  //-----------------Gestion des images
+  //------------------ Ajout d'une nouvelle card MENU
+    connection.query('INSERT INTO menu VALUES (null, ?, ?, ?, ?, ?, ?, ?)',[req.body.name,  req.body.price, req.body.description, req.body.pieces, req.files['image'][0].path, req.files['icon'][0].path, req.body.category] ,function (error, results, fields) {
+      console.log(req.body);
+      if (error) {
+        console.log(error);
+      }
+      res.redirect('/admin/menu');
+    });
+  });
 
 module.exports = router;
