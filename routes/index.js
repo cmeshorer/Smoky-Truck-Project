@@ -28,11 +28,14 @@ router.get('/login', function(req, res, next) {
 
 /* POST login admin */
 router.post('/login', function(req, res, next) {
+	let fail = '';
 	let login= req.body.login;
 	let password = req.body.password;
 	connection.query(`select * from user where username="${login}" and password="${password}"`, function (error, results, fields) {
 	 	if (results.length==0) {
-	 	 	res.redirect('/login');
+	 	 	res.render('admin_login', {
+	 	 		fail: 'Identifiant et/ou mot de passe invalides'
+	 	 	});
 	 	} else {
 	 	 	req.session.connected=true;
 	 	 	res.redirect('/admin/index');
