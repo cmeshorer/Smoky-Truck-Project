@@ -22,7 +22,7 @@ connection.connect(function(err) {
 router.get('/login', function(req, res, next) {
   req.session.destroy();
   res.render('admin_login', {
-    title: 'Login administrateur'
+	title: 'Login administrateur'
   });
 });
 
@@ -32,43 +32,57 @@ router.post('/login', function(req, res, next) {
 	let login= req.body.login;
 	let password = req.body.password;
 	connection.query(`select * from user where username="${login}" and password="${password}"`, function (error, results, fields) {
-	 	if (results.length==0) {
-	 	 	res.render('admin_login', {
-	 	 		fail: 'Identifiant et/ou mot de passe invalides'
-	 	 	});
-	 	} else {
-	 	 	req.session.connected=true;
-	 	 	res.redirect('/admin/index');
-	 	}
+		if (results.length==0) {
+			res.render('admin_login', {
+				fail: 'Identifiant et/ou mot de passe invalides'
+			});
+		} else {
+			req.session.connected=true;
+			res.redirect('/admin/index');
+		}
 	});
 });
 
 /* GET home page */
-router.get('/', function(req, res, next) {  
-  connection.query('select * from actus order by id desc limit 3;', function (error, results, fields) {
+router.get('/', function(req, res, next) {
+	let sess = req.session
+	connection.query('select * from actus order by id desc limit 3;', function (error, results, fields) {
+		// Stockage des visites pour page admin
 		if (error) {
 			console.log(error);
+		} if (sess.views) {
+			sess.views++
+		} else {
+			sess.views = 1
 		}
-    res.render('index', {
-      title: 'Accueil - Smoky Truck',
-      meta: 'Depuis 2017, notre food truck vous propose de déguster de délicieuses pizzas aux 4 coins de la capitale. Venez régaler vos papilles !',
-      page: 'accueil', 
-      actus : results
-    });
-  });
+		visites_index = parseInt(sess.views);
+		if (typeof localStorage === "undefined" || localStorage === null) {
+			var LocalStorage = require('node-localstorage').LocalStorage;
+			localStorage = new LocalStorage('./scratch');
+		}
+		localStorage.setItem('visites_index', visites_index);
+		// Fin du stockage
+		res.render('index', {
+			title: 'Accueil - Smoky Truck',
+			meta: 'Depuis 2017, notre food truck vous propose de déguster de délicieuses pizzas aux 4 coins de la capitale. Venez régaler vos papilles !',
+			page: 'accueil', 
+			actus : results
+		});
+	});
 });
 
 /* GET actualités */
 router.get('/actu-:id(\\d+)', function(req, res, next) {
   connection.query('SELECT * FROM actus where id = ?',[req.params.id] ,function (error, results, fields) {
+		// Stockage des visites pour page admin
 		if (error) {
 			console.log(error);
 		}
-    res.render('actu', {
-      title: 'Actualités - Smoky Truck',
-      meta: 'Retrouvez les dernières actualités du SMoky Truck',
-      actus : results
-    });
+	res.render('actu', {
+	  title: 'Actualités - Smoky Truck',
+	  meta: 'Retrouvez les dernières actualités du SMoky Truck',
+	  actus : results
+	});
   });
 });
 

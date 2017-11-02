@@ -5,13 +5,18 @@ block css
 
 block content
   .container
-    .row.logoutrow
-      .col-xs-1.col-xs-offset-11
-        a(href="/login" class="logout") Logout
     .row
-        h2.text-center Smoky Truck : espace administrateur
+      p.text-right
+        a(href="/login" class="logout btn btn-logout") Déconnexion
+    .row
+      h2.text-center Smoky Truck : espace administrateur
     .row
       img.img-responsive(src='../images/smoky_logo.svg', alt='Logo SMoky Truck', id="logo")
+    .row
+      .col-xs-3
+        p.important Nombre visites page d'accueil
+      .col-xs-1
+        p= views_index
     .row
       h3.text-center Actualités
     .row
@@ -60,5 +65,3 @@ block content
           th.text-center Infos nutritionnelles
           th.text-center Image
           th.text-center Action
-    .row
-      h3.text-center Adresses

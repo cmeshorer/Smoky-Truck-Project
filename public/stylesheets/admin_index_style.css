@@ -7,6 +7,10 @@
 	font-weight: 700;
 }
 
+h2 {
+	padding-top: 0;
+}
+
 .table-bordered>tbody>tr>td, .table-bordered>tbody>tr>th, .table-bordered>tfoot>tr>td, .table-bordered>tfoot>tr>th, .table-bordered>thead>tr>td, .table-bordered>thead>tr>th {
     vertical-align: middle;
 }
@@ -17,7 +21,7 @@
 	border-color: #000000;
 }
 
-.btn-info:hover {
+.btn-info:hover,{
 	color: #ffffff;
 	background-color: #1946a6;
 	border-color: #000000;
@@ -25,16 +29,17 @@
 	transition: .8s ease;
 }
 
-.logout {
-	color: red;
-	font-weight: 700;
-	font-size: 15px;
+.btn-logout {
+	color: #ffffff;
+	background-color: orange;
+	border-color: #000000;
+	margin-top: 4px;
 }
 
-.logout:hover {
-	color: #bf0000;
-}
-
-.logoutrow {
-	margin-top: 15px;
+.btn-logout:hover {
+	color: #ffffff;
+	background-color: orange;
+	border-color: #000000;
+	opacity: 0.8;
+	transition: .8s ease;
 }
