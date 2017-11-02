@@ -35,6 +35,17 @@ html(lang='fr')
 
 		include footer
 
+		//- Cookies - Cookies accept message div exists all over the site
+		//- How to send cokiepug var to this template if cookie exists?
+		if cookiepug
+			#cookie-alert.cookie-message-structure.hidden-div
+				span Cookies have been accepted!
+		else
+			#cookie-alert.cookie-message-structure
+				span.disclaimer-alert
+					| En poursuivant votre navigation sur ce site, vous acceptez l’utilisation de Cookies.
+				span#accept-click(onclick="cookieAccepted()")  ✓ OK, tout accepter
+
 		// Appels JS
 		script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js')
 		script(src='https://www.google.com/recaptcha/api.js', async='', defer='')
