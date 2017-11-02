@@ -42,6 +42,13 @@ h4 {
 	font-weight: 700;
 }
 
+.warning-bis {
+	color: red;
+	font-weight: 700;
+	font-size: 1.15em;
+	padding: 4px;
+}
+
 .img-responsive {
 	margin: 0 auto;
 }
