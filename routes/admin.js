@@ -26,9 +26,16 @@ router.get('/index', function(req, res, next) {
     if (error) {
       console.log(error);
     }
+    // Pour récupérer les visites côté client
+    if (typeof localStorage === "undefined" || localStorage === null) {
+      var LocalStorage = require('node-localstorage').LocalStorage;
+      localStorage = new LocalStorage('./scratch');
+    }
     res.render('admin-index', {
       title: 'Espace administrateur',
-      actus : results
+      actus : results,
+      views_index: localStorage.getItem('visites_index'),
+      views_menu: localStorage.getItem('visites_menu'),
     });
   });
 });
