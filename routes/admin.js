@@ -124,6 +124,7 @@ router.post('/modifier/:id(\\d+)', upload.single('image') ,function(req, res, ne
 
 });
 
+/* Adresses */
 router.get('/adresse', function(req, res, next) {  
   connection.query('SELECT * FROM places ORDER BY idplaces asc', function (error, results, fields) {
     if (error) {
@@ -136,6 +137,7 @@ router.get('/adresse', function(req, res, next) {
   }); 
 });
 
+/* Modifier adresses */
 router.get('/modifieradresse/:id(\\d+)',function(req, res){
   connection.query('SELECT * FROM places WHERE idmenu = ?', [req.params.id], function(error, results){
     if (error) {
