@@ -148,14 +148,14 @@ router.get('/modifieradresse/:id(\\d+)',function(req, res){
   });
 });
 
-router.post('/modifieradresse/:id(\\d+)',function(req, res){
+/*router.post('/modifieradresse/:id(\\d+)',function(req, res){
   connection.query('UPDATE places SET adresse = ? WHERE idplaces = ?', [req.body., req.params.id], function(error){
     if (error) {
       console.log(error);
     }
   });
   res.redirect('/admin/adresse');
-});
+});*/
 
 
 module.exports = router;
