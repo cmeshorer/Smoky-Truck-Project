@@ -24,25 +24,24 @@ block content
 					.col-md-10.col-md-offset-1
 						p.warning= error
 						br
+
 				.row
 					form#contact.form-horizontal(action='/submit', method='post', name='contact')
-					.row
 						// Name
-						.col-md-10.col-md-offset-1
-							.form-group.form-input
+						.form-group.form-input
+							.col-md-10.col-md-offset-1
 								label(for='name') Votre nom*
 								input.form-control(name='name', type='text', placeholder='Clémence')
-					.row
 						// E-mail
-						.col-md-10.col-md-offset-1
-							.form-group.form-input
+						.form-group.form-input
+							.col-md-10.col-md-offset-1
 								label(for='email') Votre e-mail*
 								input.form-control(name='email', type='email', placeholder='clemence@yopmail.com')
-					.row
 						// Message
-						.col-md-10.col-md-offset-1
+						.form-group.form-input
+							.col-md-10.col-md-offset-1
 								label(for='message') Votre message* - 600 caractères maximum
-								textarea.form-control(placeholder='Vos pizzas sont délicieuses !', name='message', type= 'text', maxlength="600")
+								textarea.form-control(placeholder='Vous pizzas sont délicieuses !', name='message', type= 'text', maxlength="600")
 						// Bouton validation
 						#contact_submit.form-group
 							.col-md-10.col-md-offset-1
