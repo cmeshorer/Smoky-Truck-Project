@@ -6,26 +6,26 @@ block css
 block content
   .container
     .row
-      h2.text-center Espace administrateur : création d'une actualité
+      h2.text-center Espace administrateur : créer une actualité
     .row
-      img.img-responsive(src='../images/smoky_logo.svg', alt='Logo SMoky Truck', id="logo")
+      img.img-responsive(src='../images/smoky_logo.svg', alt='Logo Smoky Truck', id="logo")
     .row
       a.text-center(href="index/" class="btn btn-info") <- Retour à la liste
     br
     br
-    form(method="POST" enctype="multipart/form-data")
-      .form-group
-        label(for='title') Titre* - 50 caractères max
-        input#title.form-control(type='text' placeholder='Titre (50 caractères maximum)' name="title" maxlength="50" required)
-      .form-group
-        label(for='sous_titre') Sous-titre* - 100 caractères max
-        input#sous-titre.form-control(type='text' placeholder='Sous-titre (100 caractères maximum)' name="sous_titre" maxlength="100" required)
-      .form-group
-        label(for='texte') Texte*
-        textarea#text.form-control(placeholder='Texte de l\'article' name="texte" required)
-      .form-group
-        label.warning(for='image') Image* - Fichier jpg ou png de 3 mo max, largeur max : 200 px, format conseillé : 300px * 200 px
-        input#image.form-control(type='file' name="image" required accept="image/*")
-      p * Champ obligatoire
-      button.btn.btn-default(type='submit') Enregistrer
-  
+    .row
+      form(method="POST" enctype="multipart/form-data")
+        .form-group
+          label(for='title') Titre* - 50 caractères max
+          input#title.form-control(type='text' placeholder='Titre (50 caractères maximum)' name="title" maxlength="50" required)
+        .form-group
+          label(for='sous_titre') Sous-titre* - 100 caractères max
+          input#sous-titre.form-control(type='text' placeholder='Sous-titre (100 caractères maximum)' name="sous_titre" maxlength="100" required)
+        .form-group
+          label(for='texte') Texte*
+          textarea#text.form-control(placeholder='Texte de l\'article' name="texte" required)
+        .form-group
+          label.warning(for='image') Image* - Fichier jpg ou png de 3 mo max, largeur max : 200 px, format conseillé : 300px * 200 px
+          input#image.form-control(type='file' name="image" required accept="image/*")
+        p * Champ obligatoire
+        button.btn.btn-default(type='submit') Enregistrer
