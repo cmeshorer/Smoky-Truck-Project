@@ -21,6 +21,7 @@ block content
 						thead
 							tr.hauttableau
 								th
+									| 
 								th
 									| Midi (11h-15h)
 								th
@@ -29,28 +30,28 @@ block content
 							tr
 								td
 									| Lundi
-								each item in adresse
-									td.text-center= item.adresse
+								td #{adresse[0].adresse}
+								td #{adresse[1].adresse}
 							tr
 								td
 									| Mardi
-								each item in adresse
-									td.text-center= item.adresse
+								td #{adresse[2].adresse}
+								td #{adresse[3].adresse}
 							tr
 								td
 									| Mercredi
-								each item in adresse
-									td.text-center= item.adresse
+								td #{adresse[4].adresse}
+								td #{adresse[5].adresse}
 							tr
 								td
 									| Jeudi
-								each item in adresse
-									td.text-center= item.adresse
+								td #{adresse[6].adresse}
+								td #{adresse[7].adresse}
 							tr
 								td
 									| Vendredi
-								each item in adresse
-									td.text-center= item.adresse
+								td #{adresse[8].adresse}
+								td #{adresse[9].adresse}
 			br
 			br
 

@@ -21,27 +21,47 @@ block content
           th.text-center Midi (11h-15h)
           th.text-center Soir (18h-22h)
         tr
-          td.text-center Lundi
-          each item in adresse
-            td.text-center= item.adresse
-              a(href="/admin/modifieradresse/" + item.idplaces)     Modifier
+          td
+            | Lundi
+          td #{adresse[0].adresse}
+            br
+            a(href="/admin/modifieradresse/1") Modifier
+          td #{adresse[1].adresse}
+            br
+            a(href="/admin/modifieradresse/2") Modifier
         tr
-          td.text-center Mardi
-          each item in adresse
-            td.text-center= item.adresse
-              a(href="/admin/modifieradresse/" + item.idplaces)     Modifier
+          td
+            | Mardi
+          td #{adresse[2].adresse}
+            br
+            a(href="/admin/modifieradresse/3") Modifier
+          td #{adresse[3].adresse}
+            br
+            a(href="/admin/modifieradresse/4") Modifier
         tr
-          td.text-center Mercredi
-          each item in adresse
-            td.text-center= item.adresse
-              a(href="/admin/modifieradresse/" + item.idplaces)     Modifier
+          td
+            | Mercredi
+          td #{adresse[4].adresse}
+            br
+            a(href="/admin/modifieradresse/5") Modifier
+          td #{adresse[5].adresse}
+            br
+            a(href="/admin/modifieradresse/6") Modifier
         tr
-          td.text-center Jeudi
-          each item in adresse
-            td.text-center= item.adresse
-              a(href="/admin/modifieradresse/" + item.idplaces)     Modifier
+          td
+            | Jeudi
+          td #{adresse[6].adresse}
+            br
+            a(href="/admin/modifieradresse/7") Modifier
+          td #{adresse[7].adresse}
+            br
+            a(href="/admin/modifieradresse/8") Modifier
         tr
-          td.text-center Vendredi
-          each item in adresse
-            td.text-center= item.adresse
-              a(href="/admin/modifieradresse/" + item.idplaces)     Modifier
+          td
+            | Vendredi
+          td #{adresse[8].adresse}
+            br
+            a(href="/admin/modifieradresse/9") Modifier
+          td #{adresse[9].adresse}
+            br
+            a(href="/admin/modifieradresse/10") Modifier
