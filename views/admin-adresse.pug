@@ -1,0 +1,47 @@
+extends admin_layout
+
+block css
+  link(rel='stylesheet', type='text/css', href='/stylesheets/admin_index_style.css')
+
+block content
+  .container
+    .row
+      p.text-right
+        a(href="/login" class="logout btn btn-logout") Déconnexion
+    .row
+        h2.text-center Smoky Truck : espace administrateur
+    .row
+      img.img-responsive(src='../images/smoky_logo.svg', alt='Logo SMoky Truck', id="logo")
+    .row
+      h3.text-center Nous Trouver
+    .row
+      table.table.table-striped.table-bordered.table-responsive.table-condensed
+        tr
+          th.text-center
+          th.text-center Midi (11h-15h)
+          th.text-center Soir (18h-22h)
+        tr
+          td.text-center Lundi
+          each item in adresse
+            td.text-center= item.adresse
+              a(href="/admin/modifieradresse/" + item.idplaces)     Modifier
+        tr
+          td.text-center Mardi
+          each item in adresse
+            td.text-center= item.adresse
+              a(href="/admin/modifieradresse/" + item.idplaces)     Modifier
+        tr
+          td.text-center Mercredi
+          each item in adresse
+            td.text-center= item.adresse
+              a(href="/admin/modifieradresse/" + item.idplaces)     Modifier
+        tr
+          td.text-center Jeudi
+          each item in adresse
+            td.text-center= item.adresse
+              a(href="/admin/modifieradresse/" + item.idplaces)     Modifier
+        tr
+          td.text-center Vendredi
+          each item in adresse
+            td.text-center= item.adresse
+              a(href="/admin/modifieradresse/" + item.idplaces)     Modifier

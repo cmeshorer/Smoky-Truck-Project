@@ -1,8 +1,8 @@
--- MySQL dump 10.13  Distrib 5.7.19, for osx10.11 (x86_64)
+-- MySQL dump 10.13  Distrib 5.7.20, for macos10.12 (x86_64)
 --
 -- Host: localhost    Database: smoky_truck
 -- ------------------------------------------------------
--- Server version	5.7.19
+-- Server version	5.7.20
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -14,6 +14,14 @@
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Current Database: `smoky_truck`
+--
+
+CREATE DATABASE /*!32312 IF NOT EXISTS*/ `smoky_truck` /*!40100 DEFAULT CHARACTER SET latin1 */;
+
+USE `smoky_truck`;
 
 --
 -- Table structure for table `actus`
@@ -108,10 +116,8 @@ DROP TABLE IF EXISTS `places`;
 CREATE TABLE `places` (
   `idplaces` int(11) NOT NULL AUTO_INCREMENT,
   `adresse` varchar(45) NOT NULL,
-  `latitude` int(11) NOT NULL,
-  `longitude` int(11) NOT NULL,
   PRIMARY KEY (`idplaces`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -120,6 +126,7 @@ CREATE TABLE `places` (
 
 LOCK TABLES `places` WRITE;
 /*!40000 ALTER TABLE `places` DISABLE KEYS */;
+INSERT INTO `places` VALUES (1,'Smoky Rive Gauche'),(2,'Smoky 104'),(3,'Smoky Rive Droite'),(4,'Smoky Rive Gauche'),(5,'Smoky 104'),(6,'Smoky 104'),(7,'Smoky Rive Gauche'),(8,'Smoky Rive Droite'),(9,'Smoky Rive Droite'),(10,'Smoky Rive Gauche');
 /*!40000 ALTER TABLE `places` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -157,4 +164,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-11-01 18:59:43
+-- Dump completed on 2017-11-03 20:26:47

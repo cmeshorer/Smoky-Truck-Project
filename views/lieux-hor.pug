@@ -17,55 +17,7 @@ block content
 			br
 			.row
 				.col-xs-12.col-md-10.col-md-offset-1.table-style
-					table.table.table-striped.table-responsive.hidden-xs
-						thead
-							tr.hauttableau
-
-								th
-								th
-									| Lundi
-								th
-									| Mardi
-								th
-									| Mercredi
-								th
-									| Jeudi
-								th
-									| Vendredi
-						tbody
-							tr
-								- var Adresse1 = "Adresse 1"
-								- var Adresse2 = "Adresse 2"
-								- var Adresse3 = "Adresse 3"
-								- var Adresse4 = "Adresse 4"
-								- var Adresse5 = "Adresse 5"
-								td
-									| Midi (11h-15h)
-								td
-									| #{Adresse2}
-								td
-									| #{Adresse1}
-								td
-									| #{Adresse3}
-								td
-									| #{Adresse1}
-								td
-									| #{Adresse2}
-							tr
-								td
-									| Soir (18h-22h)
-								td
-									| #{Adresse1}
-								td
-									| #{Adresse2}
-								td
-									| #{Adresse1}
-								td
-									| #{Adresse4}
-								td
-									| #{Adresse1}
-
-					table.table.table-striped.table-responsive.visible-xs
+					table.table.table-striped.table-responsive
 						thead
 							tr.hauttableau
 								th
@@ -77,38 +29,28 @@ block content
 							tr
 								td
 									| Lundi
-								td
-									| Adresse 2
-								td
-									| Adresse 1
+								each item in adresse
+									td.text-center= item.adresse
 							tr
 								td
 									| Mardi
-								td
-									| Adresse 1
-								td
-									| Adresse 2
+								each item in adresse
+									td.text-center= item.adresse
 							tr
 								td
 									| Mercredi
-								td
-									| Adresse 3
-								td
-									| Adresse 1
+								each item in adresse
+									td.text-center= item.adresse
 							tr
 								td
 									| Jeudi
-								td
-									| Adresse 1
-								td
-									| Adresse 4
+								each item in adresse
+									td.text-center= item.adresse
 							tr
 								td
 									| Vendredi
-								td
-									| Adresse 2
-								td
-									| Adresse 1
+								each item in adresse
+									td.text-center= item.adresse
 			br
 			br
 

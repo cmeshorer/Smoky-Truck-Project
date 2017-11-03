@@ -124,4 +124,38 @@ router.post('/modifier/:id(\\d+)', upload.single('image') ,function(req, res, ne
 
 });
 
+router.get('/adresse', function(req, res, next) {  
+  connection.query('SELECT * FROM places ORDER BY idplaces asc', function (error, results, fields) {
+    if (error) {
+      console.log(error);
+    }
+    res.render('admin-adresse', {
+      title: 'Espace administrateur',
+      adresse : results
+    });
+  }); 
+});
+
+router.get('/modifieradresse/:id(\\d+)',function(req, res){
+  connection.query('SELECT * FROM places WHERE idmenu = ?', [req.params.id], function(error, results){
+    if (error) {
+      console.log(error);
+    }
+    res.render('admin-update-adresse', {
+      title : 'Modification d\'une adresse',
+      adresse: results
+    });
+  });
+});
+
+router.post('/modifieradresse/:id(\\d+)',function(req, res){
+  connection.query('UPDATE places SET adresse = ? WHERE idplaces = ?', [req.body., req.params.id], function(error){
+    if (error) {
+      console.log(error);
+    }
+  });
+  res.redirect('/admin/adresse');
+});
+
+
 module.exports = router;
