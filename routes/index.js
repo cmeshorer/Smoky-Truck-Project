@@ -97,11 +97,16 @@ router.get('/menu', function(req, res, next) {
 
 /* GET nous trouver */
 router.get('/lieux-hor', function(req, res, next) {
-	res.render('lieux-hor', { 
-		title: 'Nous trouver - Smoky Truck',
-		meta: 'Le Smoky Truck est présent dans différents lieux parisiens le midi et le soir. Consultez notre calendrier et notre carte : nous sommes forcément pas loin de chez vous !',
-		page: 'lieux-hor'
-	});
+  connection.query('SELECT * FROM places ORDER BY idplaces asc', function (error, results, fields) {
+    if (error) {
+      console.log(error);
+    }
+    res.render('lieux-hor', {
+      title: 'Nous trouver - Smoky Truck',
+      meta: 'Le Smoky Truck est présent dans différents lieux parisiens le midi et le soir. Consultez notre calendrier et notre carte : nous sommes forcément pas loin de chez vous !',
+      adresse : results
+    });
+  }); 
 });
 
 /* GET nous contacter */

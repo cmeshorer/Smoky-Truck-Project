@@ -1,0 +1,27 @@
+extends admin_layout
+
+block css
+  link(rel='stylesheet', type='text/css', href='/stylesheets/admin_create_actu_style.css')
+
+block content
+  .container
+    .row
+      h2.text-center Espace administrateur : mettre à jour adresse
+    .row
+      img.img-responsive(src='/images/smoky_logo.svg', alt='Logo SMoky Truck', id="logo")
+    .row
+      a.text-center(href="/admin/adresse" class="btn btn-info") <- Retour à la liste
+    br
+    br
+    .row
+      form(method="POST" enctype="multipart/form-data" action="")
+        .form-group
+          input(type='radio', name='button', value='Smoky 104')
+          |  Smoky 104
+          br
+          input(type='radio', name='button', value='Smoky Rive Gauche')
+          |  Smoky Rive Gauche
+          br
+          input(type='radio', name='button', value='Smoky Rive Droite')
+          |  Smoky Rive Droite
+        button.btn.btn-default(type='submit') Enregistrer

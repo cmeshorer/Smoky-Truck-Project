@@ -17,60 +17,11 @@ block content
 			br
 			.row
 				.col-xs-12.col-md-10.col-md-offset-1.table-style
-					table.table.table-striped.table-responsive.hidden-xs
+					table.table.table-striped.table-responsive
 						thead
 							tr.hauttableau
-
-								th.pizza-table
-									| &#127829; &#127829; &#127829; &#127829;
 								th
-									| Lundi
-								th
-									| Mardi
-								th
-									| Mercredi
-								th
-									| Jeudi
-								th
-									| Vendredi
-						tbody
-							tr
-								- var Adresse1 = "Adresse 1"
-								- var Adresse2 = "Adresse 2"
-								- var Adresse3 = "Adresse 3"
-								- var Adresse4 = "Adresse 4"
-								- var Adresse5 = "Adresse 5"
-								td
-									| Midi (11h-15h)
-								td
-									| #{Adresse2}
-								td
-									| #{Adresse1}
-								td
-									| #{Adresse3}
-								td
-									| #{Adresse1}
-								td
-									| #{Adresse2}
-							tr
-								td
-									| Soir (18h-22h)
-								td
-									| #{Adresse1}
-								td
-									| #{Adresse2}
-								td
-									| #{Adresse1}
-								td
-									| #{Adresse4}
-								td
-									| #{Adresse1}
-
-					table.table.table-striped.table-responsive.visible-xs
-						thead
-							tr.hauttableau
-								th.pizza-table-two
-									| &#127829; &#127829; &#127829;
+									| 
 								th
 									| Midi (11h-15h)
 								th
@@ -79,38 +30,28 @@ block content
 							tr
 								td
 									| Lundi
-								td
-									| Adresse 2
-								td
-									| Adresse 1
+								td #{adresse[0].adresse}
+								td #{adresse[1].adresse}
 							tr
 								td
 									| Mardi
-								td
-									| Adresse 1
-								td
-									| Adresse 2
+								td #{adresse[2].adresse}
+								td #{adresse[3].adresse}
 							tr
 								td
 									| Mercredi
-								td
-									| Adresse 3
-								td
-									| Adresse 1
+								td #{adresse[4].adresse}
+								td #{adresse[5].adresse}
 							tr
 								td
 									| Jeudi
-								td
-									| Adresse 1
-								td
-									| Adresse 4
+								td #{adresse[6].adresse}
+								td #{adresse[7].adresse}
 							tr
 								td
 									| Vendredi
-								td
-									| Adresse 2
-								td
-									| Adresse 1
+								td #{adresse[8].adresse}
+								td #{adresse[9].adresse}
 			br
 			br
 
