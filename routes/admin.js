@@ -34,8 +34,7 @@ router.get('/index', function(req, res, next) {
     res.render('admin-index', {
       title: 'Espace administrateur',
       actus : results,
-      views_index: localStorage.getItem('visites_index'),
-      views_menu: localStorage.getItem('visites_menu'),
+      views_index: localStorage.getItem('visites_index')
     });
   });
 });
@@ -49,7 +48,6 @@ router.get('/create', function(req, res, next) {
 
 router.post('/create', upload.single('image'), function(req, res, next) {
   // Gestion des images
-  console.log('hello')
   if ((req.file.mimetype == 'image/png' || req.file.mimetype == 'image/jpeg') && (req.file.size < 3145728)){
     fs.rename('tmp/' + req.file.filename, 'public/images/' + req.file.originalname, function(){
      });
@@ -93,8 +91,7 @@ router.get('/modifier/:id(\\d+)',function(req, res){
   });
 });
 
-router.post('/modifier/:id(\\d+)', upload.single('image') ,function(req, res, next) {
-  
+router.post('/modifier/:id(\\d+)', upload.single('image'), function(req, res, next) {
   if(req.file) { // S'il y'a une nouvelle image, requête SQL avec la modification du nom de l'image
     if ((req.file.mimetype == 'image/png' || req.file.mimetype == 'image/jpeg') && (req.file.size < 3145728)){
       fs.rename('tmp/' + req.file.filename, 'public/images/' + req.file.originalname, function(){
@@ -110,8 +107,6 @@ router.post('/modifier/:id(\\d+)', upload.single('image') ,function(req, res, ne
       console.log(error);
       }
     })
-
-
   } else { // S'il n'y a pas de nouvelle image requête SQL sans le nom de l'image
     connection.query('UPDATE actus SET titre = ?, sous_titre = ?, texte = ? WHERE id = ?', [req.body.title, req.body.sous_titre, req.body.texte, req.params.id], function(error){
       if (error) {
@@ -119,9 +114,7 @@ router.post('/modifier/:id(\\d+)', upload.single('image') ,function(req, res, ne
       }
     })  
   }
-
   res.redirect('/admin/index'); // Dans tous les cas redirection vers l'admin.
-
 });
 
 /* Adresses */

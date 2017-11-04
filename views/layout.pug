@@ -38,13 +38,15 @@ html(lang='fr')
 		//- Cookies - Cookies accept message div exists all over the site
 		//- How to send cokiepug var to this template if cookie exists?
 		if cookiepug
-			#cookie-alert.cookie-message-structure.hidden-div
-				span Cookies have been accepted!
+			.row
+				#cookie-alert.cookie-message-structure.hidden-div
+					span Cookies have been accepted!
 		else
-			#cookie-alert.cookie-message-structure
-				span.disclaimer-alert
-					| En poursuivant votre navigation sur ce site, vous acceptez l’utilisation de Cookies.
-				span#accept-click(onclick="cookieAccepted()")  ✓ OK, tout accepter
+			.row
+				#cookie-alert.cookie-message-structure
+					span.disclaimer-alert.col-xs-12.col-sm-8.col-md-8.col-lg-9
+						|	En poursuivant votre navigation sur ce site, vous acceptez l’utilisation de Cookies.
+					span#accept-click.col-xs-10.col-sm-3.col-md-3.col-lg-2(onclick='cookieAccepted()')  ✓ OK, accepter
 
 		// Appels JS
 		script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js')

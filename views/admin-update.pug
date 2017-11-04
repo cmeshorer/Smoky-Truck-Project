@@ -6,9 +6,9 @@ block css
 block content
   .container
     .row
-      h2.text-center Espace administrateur : création d'une actualité
+      h2.text-center Espace administrateur : modifier une actualité
     .row
-      img.img-responsive(src='/images/smoky_logo.svg', alt='Logo SMoky Truck', id="logo")
+      img.img-responsive(src='/images/smoky_logo.svg', alt='Logo Smoky Truck', id="logo")
     .row
       a.text-center(href="/admin/index" class="btn btn-info") <- Retour à la liste
     br
@@ -22,7 +22,7 @@ block content
           label(for='sous_titre') Sous-titre* - 100 caractères max
           input#sous-titre.form-control(type='text' name="sous_titre" maxlength="100" value=actus.sous_titre)
         .form-group
-          label(for='text') Texte*
+          label(for='texte') Texte*
           textarea#text.form-control(placeholder='Texte de l\'article' name="texte" )= actus.texte
         .form-group
           label.warning(for='image') Image* - Fichier jpg ou png de 3 mo max, format conseillé : 300px * 200 px

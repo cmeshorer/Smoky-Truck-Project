@@ -11,7 +11,7 @@ block content
     .row
       h2.text-center Smoky Truck : espace administrateur
     .row
-      img.img-responsive(src='../images/smoky_logo.svg', alt='Logo SMoky Truck', id="logo")
+      img.img-responsive(src='/images/smoky_logo.svg', alt='Logo SMoky Truck', id="logo")
     .row
       .col-xs-3
         p.important Nombre visites page d'accueil
@@ -25,28 +25,29 @@ block content
       p
         span.warning Attention seules les 3 dernières actualités créées apparaîtront sur la page d'accueil du site, par ordre descendant.
     .row
-      table.table.table-striped.table-bordered.table-responsive.table-condensed
-        tr
-          th.text-center #
-          th.text-center Titre
-          th.text-center Sous-titre
-          th.text-center Texte
-          th.text-center Image
-          th.text-center Action
+      figure.fig-table
+        table.table.table-striped.table-bordered.table-responsive.table-condensed
+          tr
+            th.text-center #
+            th.text-center Titre
+            th.text-center Sous-titre
+            th.text-center Texte
+            th.text-center Image
+            th.text-center Action
 
-          each row in actus
-            tr 
-              td.text-center= row.id
-              td.text-center= row.titre
-              td.text-center= row.sous_titre
-              td.text-center!= row.texte
-              td.text-center
-                img(src="/images/" + row.image, alt='' + row.image, width='150')
-              td.text-center
-                a(href="/admin/supprimer/" + row.id onclick="return confirm('Voulez-vous supprimer cet élément ?');") Supprimer
-                br
-                br
-                a(href="/admin/modifier/" + row.id) Modifier
+            each row in actus
+              tr
+                td.text-center= row.id
+                td.text-center= row.titre
+                td.text-center= row.sous_titre
+                td.text-center!= row.texte
+                td.text-center
+                  img(src="/images/" + row.image, alt='' + row.image, width='150')
+                td.text-center
+                  a(href="/admin/supprimer/" + row.id onclick="return confirm('Voulez-vous supprimer cet élément ?');") Supprimer
+                  br
+                  br
+                  a(href="/admin/modifier/" + row.id) Modifier
     .row
       h3.text-center Menu
     .row
@@ -55,13 +56,14 @@ block content
       p
         span.warning Attention, l'affichage est limité à 4 cartes pour les entrées et desserts et à 6 pour les pizzas.
     .row
-      table.table.table-striped.table-bordered.table-responsive.table-condensed
-        tr
-          th.text-center #
-          th.text-center Catégorie
-          th.text-center Titre
-          th.text-center Descriptif
-          th.text-center Prix
-          th.text-center Infos nutritionnelles
-          th.text-center Image
-          th.text-center Action
+      figure.fig-table
+        table.table.table-striped.table-bordered.table-responsive.table-condensed
+          tr
+            th.text-center #
+            th.text-center Catégorie
+            th.text-center Titre
+            th.text-center Descriptif
+            th.text-center Prix
+            th.text-center Infos nutritionnelles
+            th.text-center Image
+            th.text-center Action

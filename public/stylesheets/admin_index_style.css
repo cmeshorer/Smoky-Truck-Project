@@ -12,7 +12,7 @@ h2 {
 }
 
 .table-bordered>tbody>tr>td, .table-bordered>tbody>tr>th, .table-bordered>tfoot>tr>td, .table-bordered>tfoot>tr>th, .table-bordered>thead>tr>td, .table-bordered>thead>tr>th {
-    vertical-align: middle;
+	vertical-align: middle;
 }
 .btn-info {
 	margin: 10px;
@@ -43,3 +43,10 @@ h2 {
 	opacity: 0.8;
 	transition: .8s ease;
 }
+
+.fig-table {
+	max-width: 100%;
+	overflow-x: scroll;
+	white-space: nowrap;
+}
+
