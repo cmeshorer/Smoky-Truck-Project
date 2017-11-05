@@ -32,7 +32,7 @@ router.get('/actus', function(req, res, next) {
       localStorage = new LocalStorage('./scratch');
     }
     res.render('admin-actus', {
-      title: 'Admin (actus)',
+      title: 'Smoky Admin (actus)',
       actus : results,
       views_index: localStorage.getItem('visites_index')
     });
@@ -124,7 +124,7 @@ router.get('/horaires', function(req, res, next) {
       console.log(error);
     }
     res.render('admin-adresse', {
-      title: 'Admin (horaires)',
+      title: 'Smoky Admin (horaires)',
       adresse : results
     });
   }); 
