@@ -38,7 +38,7 @@ router.post('/login', function(req, res, next) {
 			});
 		} else {
 			req.session.connected=true;
-			res.redirect('/admin/index');
+			res.redirect('/admin/actus');
 		}
 	});
 });
