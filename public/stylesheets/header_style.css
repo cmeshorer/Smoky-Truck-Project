@@ -209,12 +209,6 @@ header {
 
 }
 
-@media screen and (min-width: 768px) {
-	.menuburger {
-		display: none;
-	}
-}
-
 @media screen and (min-height: 3px) {
 	.scrolled-nav {
 	background-color : #012051;
