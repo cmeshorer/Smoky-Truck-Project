@@ -19,15 +19,15 @@ block content
         p= views_index
     .row.options
       .col-xs-3.col-xs-offset-1
-        a(href="/admin/actus" class="btn btn-success") Actualités
+        a(href="/admin/actus" class="btn btn-success disabled") Actualités
       .col-xs-3.col-xs-offset-1
         a(href="/admin/menu" class="btn btn-success") Menu
       .col-xs-3.col-xs-offset-1
-        a(href="/admin/adresse" class="btn btn-success") Horraires
+        a(href="/admin/horaires" class="btn btn-success") Horaires
     .row
       h3.text-center Nos actualités
     .row
-      a(href="/admin/create" class="btn btn-info") Créer une actualité
+      a(href="/admin/create-actu" class="btn btn-info") Créer une actualité
       br
       p
         span.warning Attention, seules les 3 dernières actualités créées apparaîtront sur la page d'accueil du site, par ordre descendant.
@@ -51,7 +51,7 @@ block content
                 td.text-center
                   img(src="/images/" + row.image, alt='' + row.image, width='150')
                 td.text-center
-                  a(href="/admin/supprimer/" + row.id onclick="return confirm('Voulez-vous supprimer cet élément ?');") Supprimer
+                  a(href="/admin/delete-actu/" + row.id onclick="return confirm('Voulez-vous supprimer cet élément ?');") Supprimer
                   br
                   br
-                  a(href="/admin/modifier/" + row.id) Modifier
+                  a(href="/admin/modify-actu/" + row.id) Modifier
