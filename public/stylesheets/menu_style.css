@@ -59,6 +59,7 @@
 	margin-bottom: 20px;
 }
 
+
 /* Media queries */
 
 @media screen and (min-width: 450px) and (max-width: 990px) {
@@ -75,5 +76,8 @@
 		width: 50%;
 		margin-left: auto;
 		margin-right: auto;
+	}
+	.card-pizza {
+		width: 100%;
 	}
 }
