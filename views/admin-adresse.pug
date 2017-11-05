@@ -12,6 +12,11 @@ block content
         h2.text-center Smoky Truck : espace administrateur
     .row
       img.img-responsive(src='../images/smoky_logo.svg', alt='Logo SMoky Truck', id="logo")
+    .row.visites
+      .col-xs-4.col-xs-offset-4
+        p.important Nombre visites page d'accueil
+      .col-xs-1
+        p= views_index
     .row.options
       .col-xs-3.col-xs-offset-1
         a(href="/admin/actus" class="btn btn-success") Actualités

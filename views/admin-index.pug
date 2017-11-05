@@ -12,8 +12,8 @@ block content
       h2.text-center Smoky Truck : espace administrateur
     .row
       img.img-responsive(src='/images/smoky_logo.svg', alt='Logo SMoky Truck', id="logo")
-    .row
-      .col-xs-3
+    .row.visites
+      .col-xs-4.col-xs-offset-4
         p.important Nombre visites page d'accueil
       .col-xs-1
         p= views_index
@@ -24,9 +24,6 @@ block content
         a(href="/admin/menu" class="btn btn-success") Menu
       .col-xs-3.col-xs-offset-1
         a(href="/admin/adresse" class="btn btn-success") Horraires
-    .row
-      p.col-xs-6.col-xs-offset-3.text-center
-        img.img-responsive.img-rounded(src='../images/chef.jpg', alt='Photo of chef')  
     .row
       h3.text-center Nos actualités
     .row
