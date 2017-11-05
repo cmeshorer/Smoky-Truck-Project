@@ -17,8 +17,15 @@ block content
         p.important Nombre visites page d'accueil
       .col-xs-1
         p= views_index
+    .row.options
+      .col-xs-3.col-xs-offset-1
+        a(href="/admin/actus" class="btn btn-success") Actualités
+      .col-xs-3.col-xs-offset-1
+        a(href="/admin/menu" class="btn btn-success") Menu
+      .col-xs-3.col-xs-offset-1
+        a(href="/admin/adresse" class="btn btn-success") Adresses  
     .row
-      h3.text-center Actualités
+      h3.text-center Nos actualités
     .row
       a(href="/admin/create" class="btn btn-info") Créer une actualité
       br
@@ -48,22 +55,3 @@ block content
                   br
                   br
                   a(href="/admin/modifier/" + row.id) Modifier
-    .row
-      h3.text-center Menu
-    .row
-      a(href="/admin/create-menu" class="btn btn-info") Créer une entrée / plat / dessert
-      br
-      p
-        span.warning Attention, l'affichage est limité à 4 cartes pour les entrées et desserts et à 6 pour les pizzas.
-    .row
-      figure.fig-table
-        table.table.table-striped.table-bordered.table-responsive.table-condensed
-          tr
-            th.text-center #
-            th.text-center Catégorie
-            th.text-center Titre
-            th.text-center Descriptif
-            th.text-center Prix
-            th.text-center Infos nutritionnelles
-            th.text-center Image
-            th.text-center Action
