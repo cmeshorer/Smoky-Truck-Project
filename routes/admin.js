@@ -123,9 +123,15 @@ router.get('/horaires', function(req, res, next) {
     if (error) {
       console.log(error);
     }
+    // Pour récupérer les visites côté client
+    if (typeof localStorage === "undefined" || localStorage === null) {
+      var LocalStorage = require('node-localstorage').LocalStorage;
+      localStorage = new LocalStorage('./scratch');
+    }
     res.render('admin-adresse', {
       title: 'Smoky Admin (horaires)',
-      adresse : results
+      adresse : results,
+      views_index: localStorage.getItem('visites_index')
     });
   }); 
 });
