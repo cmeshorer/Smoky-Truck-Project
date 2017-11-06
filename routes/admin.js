@@ -236,6 +236,8 @@ var cpUpload = upload.fields([{ name: 'image', maxCount: 1 }, { name: 'icon', ma
 
 router.post('/modifiermenu/:id(\\d+)', cpUpload, function(req, res, next) {
     //-----------------Gestion des images
+    if(req.files['image'] || req.files['icon'] ) {
+
     if ( (req.files['image'][0].mimetype == 'image/gif' || req.files['image'][0].mimetype == 'image/png' || req.files['image'][0].mimetype == 'image/jpeg' || req.files['image'][0].mimetype == 'image/gif') && (req.files['image'][0].size < 3145728)){
         fs.rename('tmp/' + req.files['image'][0].filename, 'public/images/' + req.files['image'][0].originalname, function(){
     });
@@ -258,7 +260,15 @@ router.post('/modifiermenu/:id(\\d+)', cpUpload, function(req, res, next) {
       console.log(error);
     }
   })
-res.redirect('/admin/menu'); // Dans tous les cas redirection vers l'admin.
+} else {
+console.log(req.body) // S'il n'y a pas de nouvelle image requête SQL sans le nom de l'image
+    connection.query('UPDATE menu SET category = ?, name = ?, description = ? price = ?, pieces= ?,  WHERE idmenu = ?', [req.body.button, req.body.name, req.body.description, req.body.price, req.body.pieces, req.params.id], function(error){
+      if (error) {
+      console.log(error);
+      }
+    })  
+  }
+  res.redirect('/admin/menu'); // Dans tous les cas redirection vers l'admin.
 });
 
 
