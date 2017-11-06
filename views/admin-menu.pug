@@ -5,18 +5,29 @@ block css
 
 block content
   .container
-    .row.logoutrow
-      .col-xs-1.col-xs-offset-11
-        a(href="/login" class="logout") Logout
     .row
-        h2.text-center Smoky Truck : espace administrateur
+      p.text-right
+        a(href="/login" class="logout btn btn-logout") Déconnexion
     .row
-      img.img-responsive(src='../images/smoky_logo.svg', alt='Logo SMoky Truck', id="logo")
+      h2.text-center Smoky Truck : espace administrateur
     .row
-      h3.text-center Menu
+      img.img-responsive(src='/images/smoky_logo.svg', alt='Logo SMoky Truck', id="logo")
+    .row.visites
+      .col-xs-4.col-xs-offset-4
+        p.important Nombre visites page d'accueil
+      .col-xs-1
+        p= views_index
+    .row.options
+      .col-xs-4
+        p.text-center
+          a(href="/admin/actus" class="btn btn-success") Actualités
+      .col-xs-4
+        p.text-center
+          a(href="/admin/menu" class="btn btn-success disabled") Menu
+      .col-xs-4
+        p.text-center
+          a(href="/admin/horaires" class="btn btn-success") Horaires
     .row
-      a(href="/admin/creationmenu" class="btn btn-info") Créer une entrée / plat / dessert
-      br
       p
         span.warning Attention, l'affichage est limité à 4 cartes pour les entrées et desserts et à 6 pour les pizzas.
     .row
@@ -49,6 +60,5 @@ block content
                 br
                 br
                 a(href="/admin/modifiermenu/" + row.idmenu) Modifier
-                br
-                br
-                a(href="/admin/creationmenu" class="btn btn-info") Créer une entrée / plat / dessert
+    .row
+      a(href="/admin/creationmenu" class="btn btn-info") Créer une entrée / plat / dessert
