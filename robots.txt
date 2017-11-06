@@ -1,0 +1,7 @@
+# www.robots-txt.com/
+# Allow crawling of all content
+User-agent: *
+Disallow: /admin
+Disallow: /login
+# Specify sitemap location
+Sitemap: http://www.smoky-truck.fr/sitemap.xml

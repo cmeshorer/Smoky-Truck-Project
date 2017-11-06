@@ -24,23 +24,22 @@ block content
 					.col-md-10.col-md-offset-1
 						p.warning= error
 						br
+
 				.row
 					form#contact.form-horizontal(action='/submit', method='post', name='contact')
-					.row
 						// Name
-						.col-md-10.col-md-offset-1
-							.form-group.form-input
+						.form-group.form-input
+							.col-md-10.col-md-offset-1
 								label(for='name') Votre nom*
 								input.form-control(name='name', type='text', placeholder='Clémence')
-					.row
 						// E-mail
-						.col-md-10.col-md-offset-1
-							.form-group.form-input
+						.form-group.form-input
+							.col-md-10.col-md-offset-1
 								label(for='email') Votre e-mail*
 								input.form-control(name='email', type='email', placeholder='clemence@yopmail.com')
-					.row
 						// Message
-						.col-md-10.col-md-offset-1
+						.form-group.form-input
+							.col-md-10.col-md-offset-1
 								label(for='message') Votre message* - 600 caractères maximum
 								textarea.form-control(placeholder='Vos pizzas sont délicieuses !', name='message', type= 'text', maxlength="600")
 						// Bouton validation
@@ -49,7 +48,7 @@ block content
 								p.text-left.warning
 									| * Tous les champs sont obligatoires.
 							.col-md-10.col-md-offset-1
-								.g-recaptcha(data-sitekey='6Ld4MTUUAAAAAI6rwEVLpeSTA1DifCRGjj7OYAIh')
+								.g-recaptcha(data-sitekey='6Lf3GDcUAAAAANDjML8jwu_F-NrqjbEOc1L3MaMn')
 						p.text-center
 							button.btn.btn-primary.inter-button(type='submit' onclick="return confirm('Voulez-vous envoyer votre message ?');")
 								| Envoyer

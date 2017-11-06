@@ -166,8 +166,9 @@ section#menu-horaires.intermediaire{
 }
 
 .intermediaire button {
-	width: 180px;
-	margin: 10px;
+	width: 150px;
+	margin: 0 25px 17px 0;
+	padding: 7px;
 	color: #ffffff;
 	background-color: #1946a6;
 	border-color: #000000;
@@ -211,3 +212,39 @@ div.col-md-10.text-center{
 		padding-top: 40px;
 	}
 }*/
+
+
+/* Media Queries index buttons */
+
+@media screen and (min-width: 1200px){
+	.intermediaire button {
+		margin: 0 25px 17px 7px;
+	}
+}
+
+@media screen and (max-width: 991px) {
+	.intermediaire button {
+		width: 220px;
+		margin: 0 25px 17px 20px;
+		padding: 15px 7px 15px 7px;
+	}
+}
+
+/* Media Queries index intermediate & history text */
+
+@media screen and (min-width: 992px) {
+	.menu-text {
+		margin: 10px 0px 30px 0;
+		padding: 0px 0 0 0;
+	}
+	.histo-text {
+		padding: 17px 0 0 0;
+	}
+}
+
+@media screen and (min-width: 1200px) {
+	.menu-text,
+	.histo-text {
+		margin-top: 50px;
+	}
+}

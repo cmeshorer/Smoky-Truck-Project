@@ -11,6 +11,10 @@ var admin = require('./routes/admin');
 
 var app = express();
 
+// cookies
+app.use(cookieParser());
+//
+
 // sessions
 const Session = require('express-session');
 const FileStore = require('session-file-store')(Session);
@@ -26,6 +30,36 @@ app.use(Session({
     name : 'sessionId'
 }));
 
+// Cookies code
+
+//  for debug only, helps to see if cookies exit
+// app.use('/', function (req, res, next) {
+//   console.log('##########################');
+//   console.log('Cookies: ', req.cookies)
+//   next();
+// });
+
+// set a cookie
+app.use(function (req, res, next) {
+  // check if client sent cookie
+  var cookie = req.cookies.cookieName;
+  if (cookie !== undefined) {
+    // yes, cookie was already present
+    console.log('cookie exists', cookie);
+  } else {
+    // no: set a new cookie
+      var randomNumber=Math.random().toString();
+      randomNumber=randomNumber.substring(2,randomNumber.length);
+      res.cookie('cookieName',randomNumber, { maxAge: 900000, httpOnly: true });
+      console.log('cookie created successfully');
+  }
+  next(); // <-- important!
+});
+
+// Not sure if this last line has to be included ???
+// app.use(express.static(__dirname + '/public'));
+
+
 app.use('/admin', function (req, res, next) {
 	if (req.session.connected){
 		return next();
@@ -33,7 +67,6 @@ app.use('/admin', function (req, res, next) {
 		return res.redirect('/');
 	}
 });
-app.use('/admin', admin);
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -50,6 +83,7 @@ app.use(expressSession({secret : 'max', saveUninitialized: false, resave: false 
 
 app.use('/', index);
 app.use('/admin', admin);
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

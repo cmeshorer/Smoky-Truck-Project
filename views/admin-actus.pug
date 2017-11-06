@@ -1,0 +1,57 @@
+extends admin_layout
+
+block css
+  link(rel='stylesheet', type='text/css', href='/stylesheets/admin_index_style.css')
+
+block content
+  .container
+    .row
+      p.text-right
+        a(href="/login" class="logout btn btn-logout") Déconnexion
+    .row
+      h2.text-center Smoky Truck : espace administrateur
+    .row
+      img.img-responsive(src='/images/smoky_logo.svg', alt='Logo SMoky Truck', id="logo")
+    .row.visites
+      .col-xs-4.col-xs-offset-4
+        p.important Nombre visites page d'accueil
+      .col-xs-1
+        p= views_index
+    .row.options
+      .col-xs-4
+        p.text-center
+          a(href="/admin/actus" class="btn btn-success disabled") Actualités
+      .col-xs-4
+        p.text-center
+          a(href="/admin/menu" class="btn btn-success") Menu
+      .col-xs-4
+        p.text-center
+          a(href="/admin/horaires" class="btn btn-success") Horaires
+    .row
+      p
+        span.warning Attention, seules les 3 dernières actualités créées apparaîtront sur la page d'accueil du site, par ordre descendant.
+    .row
+      figure.fig-table
+        table.table.table-striped.table-bordered.table-responsive.table-condensed
+          tr
+            th.text-center Titre
+            th.text-center Sous-titre
+            th.text-center Texte
+            th.text-center Image
+            th.text-center Action
+
+            each row in actus
+              tr
+                td.text-center= row.titre
+                td.text-center= row.sous_titre
+                td.text-center!= row.texte
+                td.text-center
+                  img(src="/images/" + row.image, alt='' + row.image, width='150')
+                td.text-center
+                  a(href="/admin/delete-actu/" + row.id onclick="return confirm('Voulez-vous supprimer cet élément ?');") Supprimer
+                  br
+                  br
+                  a(href="/admin/modify-actu/" + row.id) Modifier
+    .row
+      a(href="/admin/create-actu" class="btn btn-info") Créer une actualité
+

@@ -16,9 +16,16 @@ block content
       br
       .row
         form(method="POST" enctype="multipart/form-data" )
+
           .form-group
-            label(for='category') Category* - 50 caractères max
-            input#category.form-control(type='number' name="category" maxlength="50")
+            input(type='radio', name='button', value=1)
+            |  Entrée
+            br
+            input(type='radio', name='button', value=2)
+            |  Plat
+            br
+            input(type='radio', name='button', value=3)
+            |  Dessert
 
           .form-group
             label(for='name') Titre* - 50 caractères max
@@ -33,12 +40,12 @@ block content
 
 
           .form-group
-            label(for='price') Price* - 10 caractères max
+            label(for='price') Prix* - 10 caractères max
             input#price.form-control(type='text' name="price" maxlength="10")
 
 
           .form-group
-            label(for='pieces') Pieces* - 10 caractères max
+            label(for='pieces') Nombre de pièces* - 10 caractères max
             input#pieces.form-control(type='text' name="pieces" maxlength="10")
 
 
@@ -53,7 +60,7 @@ block content
             br
             input#image.form-control(type='file' name="image"  accept="image/*")
           p * Champ obligatoire
-          button.btn.btn-default(type='submit' onclick="return confirm('Voulez-vous modifier cet élément ?');") Modifier
+          button.btn.btn-default(type='submit' onclick="return confirm('Voulez-vous créer cet élément ?');") Créer
       script(src='https://cloud.tinymce.com/stable/tinymce.min.js')
       script.
           tinymce.init({ selector:'textarea'});

@@ -13,6 +13,9 @@ block content
 			.col-xs-10.col-xs-offset-1.text-center
 				h2 Bienvenue sur l'espace administrateur du Smoky Truck !
 		.row
+			.col-xs-4.col-xs-offset-4
+				p.warning-bis.text-center= fail
+		.row
 			.col-xs-10.col-xs-offset-1.text-center
 				form.form-login(method="POST" action="/login")
 					// Text input
@@ -30,7 +33,7 @@ block content
 					br
 					// Connexion
 					.form-group
-						p.text-center.warning
+						p.text-center
 							| * Tous les champs sont obligatoires.
 						button.btn.btn-info(type="submit") Connexion
 
