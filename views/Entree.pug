@@ -1,10 +1,10 @@
-mixin entree(image1, alt1, name, price, pieces, image2, alt2)
+mixin entree(image1, alt1, name, description, price, pieces, image2, alt2)
 	- var path = "/images/"
 	.col-md-3
 		.card-menu.col-xs-12.col-sm-5.col-md-12
 			img.img-menu(src=path + image1, alt="#{alt1}")
 			h3.text-center #{name}
-			p Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+			p #{description}
 			h4.text-center
 				| #{price}
 				span.petit #{pieces}
