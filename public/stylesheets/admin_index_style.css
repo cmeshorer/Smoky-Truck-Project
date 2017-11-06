@@ -34,7 +34,7 @@ h2 {
 	color: #ffffff;
 	background-color: red;
 	border-color: #000000;
-	margin-top: 4px;
+	margin: 10px;
 }
 
 .btn-logout:hover {
