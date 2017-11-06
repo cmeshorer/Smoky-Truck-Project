@@ -158,15 +158,13 @@ router.post('/modify-adresse/:id(\\d+)',function(req, res){
   res.redirect('/admin/horaires');
 });
 
-
- //---!!!!!!! SECTION MENU -----!!!!! AFFICHAGE + MODIFICATION -------->>>>>>>> 
-
+/*------------- GET page administrateur menu */
 router.get('/menu', function(req, res, next) { 
   connection.query('SELECT * FROM menu ORDER BY idmenu desc', function (error, results, fields) {
     if (error) {
       console.log(error);
     }
-        // Pour récupérer les visites côté client
+    // Pour récupérer les visites côté client
     if (typeof localStorage === "undefined" || localStorage === null) {
       var LocalStorage = require('node-localstorage').LocalStorage;
       localStorage = new LocalStorage('./scratch');
@@ -180,9 +178,38 @@ router.get('/menu', function(req, res, next) {
 });
 
 
- /*------------------ Supprimer une CARD MENU */
-router.get('/supprimermenu/:id(\\d+)', function(req, res, next) {
-  connection.query('DELETE FROM menu where idmenu = ?',[req.params.id] ,function (error, results, fields) {
+/*------------- Créer un nouvel élément dans le menu */
+
+router.get('/creationmenu', function (req, res){
+  res.render('admin-createmenu');
+});
+
+var cpUpload = upload.fields([{ name: 'image', maxCount: 1 }, { name: 'icon', maxCount: 1 }]);
+
+router.post('/creationmenu', cpUpload, function(req, res, next) {
+  //-----------------Gestion des images
+  if ( (req.files['image'][0].mimetype == 'image/png' || req.files['image'][0].mimetype == 'image/jpeg' || req.files['image'][0].mimetype == 'image/gif') && (req.files['image'][0].size < 3145728) ) {
+    fs.rename('tmp/' + req.files['image'][0].filename, 'public/images/' + req.files['image'][0].originalname, function(){
+    });
+    console.log (req.files['image']);
+  } else if ( (req.files['icon'][0].mimetype == 'image/png' || req.files['icon'][0].mimetype == 'image/jpeg' || req.files['icon'][0].mimetype == 'image/gif') && (req.files['icon'][0].size < 3145728)){
+    fs.rename( 'tmp/' + req.files['icon'][0].filename, 'public/images/' + req.files['icon'][0].originalname, function(){
+    });
+    console.log (req.files['icon']);
+  } else {
+    console.log('Fail')
+    fs.unlink(req.files['image'][0].path, function(){
+      res.send('<p>Format image jpg ou png, 3mo max<p>'); 
+      res.redirect('/admin/menu');
+    }); 
+    fs.unlink(req.files['icon'][0].path, function(){
+      res.send('<p>Format icon jpg ou png, 3mo max<p>'); 
+      res.redirect('/admin/menu');
+    }); 
+  }
+  //------------------ Ajout d'une nouvelle card MENU
+  connection.query('INSERT INTO menu VALUES (null, ?, ?, ?, ?, ?, ?, ?)', [req.body.name, req.body.description, req.body.price, req.body.pieces, req.files['image'][0].originalname, req.files['icon'][0].originalname, req.body.category] ,function (error, results, fields) {
+    console.log(results);
     if (error) {
       console.log(error);
     }
@@ -190,36 +217,33 @@ router.get('/supprimermenu/:id(\\d+)', function(req, res, next) {
   });
 });
 
- /* Modifier une CARD MENU */
+/*------------- Modifier un élément du menu */
 router.get('/modifiermenu/:id(\\d+)',function(req, res){
-  connection.query('SELECT * FROM menu WHERE idmenu = ?', [req.params.id], function(error, results){
-    if (error) {
-      console.log(error);
-    }
+    connection.query('SELECT * FROM menu WHERE idmenu = ?', [req.params.id], function(error, results){
+        if (error) {
+        console.log(error);
+        }
     res.render('admin-update-menu', {
       title : 'Modification d\'une card menu',
       menu: results[0]
     });
-  });
+});
 });
 
+var cpUpload = upload.fields([{ name: 'image', maxCount: 1 }, { name: 'icon', maxCount: 1 }]);
 
- var cpUpload = upload.fields([{ name: 'image', maxCount: 1 }, { name: 'icon', maxCount: 1 }]);
- router.post('/modifiermenu/:id(\\d+)', cpUpload, function(req, res, next) {
-
-
-
-  if ( (req.files['image'][0].mimetype == 'image/gif' || req.files['image'][0].mimetype == 'image/png' || req.files['image'][0].mimetype == 'image/jpeg' || req.files['image'][0].mimetype == 'image/gif') && (req.files['image'][0].size < 3145728)){
-    fs.rename('tmp/' + req.files['image'][0].filename, 'public/images/' + req.files['image'][0].originalname, function(){
+router.post('/modifiermenu/:id(\\d+)', cpUpload, function(req, res, next) {
+    //-----------------Gestion des images
+    if ( (req.files['image'][0].mimetype == 'image/gif' || req.files['image'][0].mimetype == 'image/png' || req.files['image'][0].mimetype == 'image/jpeg' || req.files['image'][0].mimetype == 'image/gif') && (req.files['image'][0].size < 3145728)){
+        fs.rename('tmp/' + req.files['image'][0].filename, 'public/images/' + req.files['image'][0].originalname, function(){
     });
-  }
-  else if ( (req.files['icon'][0].mimetype == 'image/gif' || req.files['icon'][0].mimetype == 'image/png' || req.files['icon'][0].mimetype == 'image/jpeg' || req.files['icon'][0].mimetype == 'image/gif') && (req.files['icon'][0].size < 3145728)){
-    fs.rename( 'tmp/' + req.files['icon'][0].filename, 'public/images/' + req.files['icon'][0].originalname, function(){
+    } else if ( (req.files['icon'][0].mimetype == 'image/gif' || req.files['icon'][0].mimetype == 'image/png' || req.files['icon'][0].mimetype == 'image/jpeg' || req.files['icon'][0].mimetype == 'image/gif') && (req.files['icon'][0].size < 3145728)){
+        fs.rename( 'tmp/' + req.files['icon'][0].filename, 'public/images/' + req.files['icon'][0].originalname, function(){
     });
-  } else {
-    fs.unlink(req.files['image'][0].path, function(){
-      res.send('Format jpg ou png, 3mo max'); 
-      res.redirect('/admin/menu');
+    } else {
+        fs.unlink(req.files['image'][0].path, function(){
+        res.send('Format jpg ou png, 3mo max'); 
+        res.redirect('/admin/menu');
     }); 
     fs.unlink(req.files['icon'][0].path, function(){
       res.send('Format jpg ou png, 3mo max'); 
@@ -236,51 +260,14 @@ res.redirect('/admin/menu'); // Dans tous les cas redirection vers l'admin.
 });
 
 
- router.get('/creationmenu', function (req, res){
-  res.render('admin-createmenu');
-});
-
- var cpUpload = upload.fields([{ name: 'image', maxCount: 1 }, { name: 'icon', maxCount: 1 }]);
- router.post('/creationmenu', cpUpload, function(req, res, next) {
-
-//-----------------Gestion des images
-
-if ( (req.files['image'][0].mimetype == 'image/png' || req.files['image'][0].mimetype == 'image/jpeg' || req.files['image'][0].mimetype == 'image/gif') && (req.files['image'][0].size < 3145728) ) {
-
-  fs.rename('tmp/' + req.files['image'][0].filename, 'public/images/' + req.files['image'][0].originalname, function(){
-  });
-
-  console.log (req.files['image']);
-}
-else if ( (req.files['icon'][0].mimetype == 'image/png' || req.files['icon'][0].mimetype == 'image/jpeg' || req.files['icon'][0].mimetype == 'image/gif') && (req.files['icon'][0].size < 3145728)){
-
-  fs.rename( 'tmp/' + req.files['icon'][0].filename, 'public/images/' + req.files['icon'][0].originalname, function(){
-  });
-
-  console.log (req.files['icon']);
-
-} else {
-
-  console.log('Fail')
-  fs.unlink(req.files['image'][0].path, function(){
-    res.send('<p>Format image jpg ou png, 3mo max<p>'); 
+ /*------------------ Supprimer une CARD MENU */
+router.get('/supprimermenu/:id(\\d+)', function(req, res, next) {
+  connection.query('DELETE FROM menu where idmenu = ?',[req.params.id] ,function (error, results, fields) {
+    if (error) {
+      console.log(error);
+    }
     res.redirect('/admin/menu');
-  }); 
-
-  fs.unlink(req.files['icon'][0].path, function(){
-    res.send('<p>Format icon jpg ou png, 3mo max<p>'); 
-    res.redirect('/admin/menu');
-  }); 
-}
-
-//------------------ Ajout d'une nouvelle card MENU
-connection.query('INSERT INTO menu VALUES (null, ?, ?, ?, ?, ?, ?, ?)', [req.body.name, req.body.description, req.body.price, req.body.pieces, req.files['image'][0].originalname, req.files['icon'][0].originalname, req.body.category] ,function (error, results, fields) {
-  if (error) {
-    console.log(error);
-  }
-  res.redirect('/admin/menu');
+  });
 });
-});
-
 
 module.exports = router;

@@ -16,7 +16,6 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
-<<<<<<< HEAD
 -- Current Database: `smoky_truck`
 --
 
@@ -25,13 +24,13 @@ CREATE DATABASE /*!32312 IF NOT EXISTS*/ `smoky_truck` /*!40100 DEFAULT CHARACTE
 USE `smoky_truck`;
 
 --
--- Table structure for table `CATEGORY`
+-- Table structure for table `category`
 --
 
-DROP TABLE IF EXISTS `CATEGORY`;
+DROP TABLE IF EXISTS `category`;
 /*!40101 SET @saved_cs_client = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `CATEGORY` (
+CREATE TABLE `category` (
 `idcategory` int(11) NOT NULL AUTO_INCREMENT,
 `category` varchar(10) DEFAULT NULL,
 PRIMARY KEY (`idcategory`)
@@ -39,13 +38,13 @@ PRIMARY KEY (`idcategory`)
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `CATEGORY`
+-- Dumping data for table `category`
 --
 
-LOCK TABLES `CATEGORY` WRITE;
-/*!40000 ALTER TABLE `CATEGORY` DISABLE KEYS */;
-INSERT INTO `CATEGORY` VALUES (1,'entree'),(2,'plat'),(3,'dessert');
-/*!40000 ALTER TABLE `CATEGORY` ENABLE KEYS */;
+LOCK TABLES `category` WRITE;
+/*!40000 ALTER TABLE `category` DISABLE KEYS */;
+INSERT INTO `category` VALUES (1,'entree'),(2,'plat'),(3,'dessert');
+/*!40000 ALTER TABLE `category` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --

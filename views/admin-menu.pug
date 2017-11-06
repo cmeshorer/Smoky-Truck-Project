@@ -39,8 +39,8 @@ block content
           th.text-center Descriptif
           th.text-center Prix
           th.text-center Info pièces
-          th.text-center Icônes nutritionnelles
           th.text-center Image
+          th.text-center Icônes nutritionnelles
           th.text-center Action
 
           each row in menu
@@ -52,9 +52,9 @@ block content
               td.text-center= row.price
               td.text-center= row.pieces
               td.text-center
-                img(src="/images/" + row.icon, alt='' + row.icon, width='50')
-              td.text-center
                 img(src="/images/" + row.image, alt='' + row.image, width='150')
+              td.text-center
+                img(src="/images/" + row.icon, alt='' + row.icon, width='50')
               td.text-center
                 a(href="/admin/supprimermenu/" + row.idmenu onclick="return confirm('Voulez-vous supprimer cet élément ?');") Supprimer
                 br

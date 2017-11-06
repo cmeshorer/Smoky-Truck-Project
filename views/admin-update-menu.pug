@@ -32,18 +32,18 @@ block content
 
 
         .form-group
-          label(for='price') Price* - 10 caractères max
+          label(for='price') Prix* - 10 caractères max
           input#sous-titre.form-control(type='text' name="price" maxlength="10" value=menu.price)
 
 
         .form-group
-          label(for='pieces') Pieces* - 10 caractères max
+          label(for='pieces') Nombre de pièces* - 10 caractères max
           input#pieces.form-control(type='text' name="pieces" maxlength="10" value=menu.pieces)
 
 
 
         .form-group
-          label.warning(for='icon') Image* - Fichier jpg ou png de 3 mo max, format conseillé : 300px * 200 px
+          label.warning(for='icon') Icône* - Fichier jpg ou png de 3 mo max, format conseillé : 300px * 200 px
           br
           img(src="/images/" + menu.icon, alt='' + menu.icon, width='100')
           br

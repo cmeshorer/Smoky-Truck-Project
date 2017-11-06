@@ -88,16 +88,24 @@ router.get('/actu-:id(\\d+)', function(req, res, next) {
 
 /* GET menu */
 router.get('/menu', function(req, res, next) {
-	connection.query('SELECT * FROM MENU', function (error, results, fields){
+	connection.query('SELECT * FROM menu order by idmenu desc', function (error, results, fields){
 		if (error){
 			console.log(error);
 		}
-	res.render('menu', { 
-		title: 'Notre menu - Smoky Truck',
-		meta: 'Venez découvrir les délicieuses pizzas du Smoky Truck. Notre food truck vous propose également des entrées et desserts pour ravir toutes les papilles.',
-		page: 'menu',
-		menu : results
-	});
+		res.render('menu', { 
+			title: 'Notre menu - Smoky Truck',
+			meta: 'Venez découvrir les délicieuses pizzas du Smoky Truck. Notre food truck vous propose également des entrées et desserts pour ravir toutes les papilles.',
+			page: 'menu',
+			entree : results.filter(function(b){
+				return b.category ==1;
+			}),
+			pizza : results.filter(function(b){
+				return b.category ==2;
+			}),
+			desserts : results.filter(function(b){
+				return b.category ==3;
+			})
+		});
 	});
 });
 
