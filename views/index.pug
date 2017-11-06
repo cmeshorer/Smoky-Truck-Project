@@ -50,15 +50,15 @@ block content
 					h2 Nos actualités
 			#actus_cards
 				each card in actus
-					.card
+					.card.text-center
 						img(src="/images/" + card.image, alt='' + card.image)
 						h4.card-title
 							a(href="/actu-" + card.id)= card.titre
-						p.text-justify= card.sous_titre
-						p.text-justify= card.texte
+						p=card.sous_titre
+						p.text-justify.overflow-text= card.texte
 							br
 							p.text-center
-								a(href="/actu-" + card.id) Voir plus
+							a(href="/actu-" + card.id) Voir plus
 
 	// Section intermédiaire
 		==================================================

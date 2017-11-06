@@ -147,6 +147,13 @@ a.carousel-control.right { right: 0; background: none; border: 0;}
 	transition: .8s ease;
 }
 
+.overflow-text {
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+	width:300px;
+}
+
 /* Intermediary section*/
 
 .intermediaire {
