@@ -33,7 +33,6 @@ block content
     .row
       table.table.table-striped.table-bordered.table-responsive.table-condensed
         tr
-          th.text-center #
           th.text-center Catégorie
           th.text-center Titre
           th.text-center Descriptif
@@ -45,7 +44,6 @@ block content
 
           each row in menu
             tr 
-              td.text-center= row.idmenu
               td.text-center= row.category
               td.text-center= row.name
               td.text-center!= row.description

@@ -160,7 +160,7 @@ router.post('/modify-adresse/:id(\\d+)',function(req, res){
 
 /*------------- GET page administrateur menu */
 router.get('/menu', function(req, res, next) { 
-  connection.query('SELECT * FROM menu ORDER BY idmenu desc', function (error, results, fields) {
+  connection.query('SELECT * FROM menu ORDER BY category, idmenu desc', function (error, results, fields) {
     if (error) {
       console.log(error);
     }
@@ -169,10 +169,12 @@ router.get('/menu', function(req, res, next) {
       var LocalStorage = require('node-localstorage').LocalStorage;
       localStorage = new LocalStorage('./scratch');
     }
+
     res.render('admin-menu', {
       title: 'Espace administrateur',
       menu : results,
-      views_index: localStorage.getItem('visites_index')
+      views_index: localStorage.getItem('visites_index'),
+
     });
   }); 
 });
@@ -208,7 +210,7 @@ router.post('/creationmenu', cpUpload, function(req, res, next) {
     }); 
   }
   //------------------ Ajout d'une nouvelle card MENU
-  connection.query('INSERT INTO menu VALUES (null, ?, ?, ?, ?, ?, ?, ?)', [req.body.name, req.body.description, req.body.price, req.body.pieces, req.files['image'][0].originalname, req.files['icon'][0].originalname, req.body.category] ,function (error, results, fields) {
+  connection.query('INSERT INTO menu VALUES (null, ?, ?, ?, ?, ?, ?, ?)', [req.body.name, req.body.description, req.body.price, req.body.pieces, req.files['image'][0].originalname, req.files['icon'][0].originalname, req.body.button] ,function (error, results, fields) {
     console.log(results);
     if (error) {
       console.log(error);

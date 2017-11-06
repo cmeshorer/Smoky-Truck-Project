@@ -16,9 +16,16 @@ block content
       br
       .row
         form(method="POST" enctype="multipart/form-data" )
+
           .form-group
-            label(for='category') Category* - 50 caractères max
-            input#category.form-control(type='number' name="category" maxlength="50")
+            input(type='radio', name='button', value=1)
+            |  Entrée
+            br
+            input(type='radio', name='button', value=2)
+            |  Plat
+            br
+            input(type='radio', name='button', value=3)
+            |  Dessert
 
           .form-group
             label(for='name') Titre* - 50 caractères max

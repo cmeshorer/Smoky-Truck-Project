@@ -34,7 +34,6 @@ block content
       figure.fig-table
         table.table.table-striped.table-bordered.table-responsive.table-condensed
           tr
-            th.text-center #
             th.text-center Titre
             th.text-center Sous-titre
             th.text-center Texte
@@ -43,7 +42,6 @@ block content
 
             each row in actus
               tr
-                td.text-center= row.id
                 td.text-center= row.titre
                 td.text-center= row.sous_titre
                 td.text-center!= row.texte
