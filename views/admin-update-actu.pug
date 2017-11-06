@@ -22,8 +22,8 @@ block content
           label(for='sous_titre') Sous-titre* - 100 caractères max
           input#sous-titre.form-control(type='text' name="sous_titre" maxlength="100" value=actus.sous_titre)
         .form-group
-          label(for='texte') Texte*
-          textarea#text.form-control(placeholder='Texte de l\'article' name="texte" )= actus.texte
+          label(for='texte') Texte* - 200 caractères max
+          textarea#text.form-control(name="texte" maxlength="200")= actus.texte
         .form-group
           label.warning(for='image') Image* - Fichier jpg ou png de 3 mo max, format conseillé : 300px * 200 px
           br

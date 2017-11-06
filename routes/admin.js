@@ -138,15 +138,9 @@ router.get('/horaires', function(req, res, next) {
 
 /* Modifier adresses */
 router.get('/modify-adresse/:id(\\d+)',function(req, res){
-  connection.query('SELECT * FROM places WHERE idplaces = ?', [req.params.id], function(error, results){
-    if (error) {
-      console.log(error);
-    }
     res.render('admin-update-adresse', {
       title : 'Modification d\'une adresse',
-      adresse: results
     });
-  });
 });
 
 router.post('/modify-adresse/:id(\\d+)',function(req, res){
