@@ -1,0 +1,64 @@
+extends admin_layout
+
+block css
+  link(rel='stylesheet', type='text/css', href='/stylesheets/admin_index_style.css')
+
+block content
+  .container
+    .row
+      p.text-right
+        a(href="/login" class="logout btn btn-logout") Déconnexion
+    .row
+      h2.text-center Smoky Truck : espace administrateur
+    .row
+      img.img-responsive(src='/images/smoky_logo.svg', alt='Logo SMoky Truck', id="logo")
+    .row.visites
+      .col-xs-4.col-xs-offset-4
+        p.important Nombre visites page d'accueil
+      .col-xs-1
+        p= views_index
+    .row.options
+      .col-xs-4
+        p.text-center
+          a(href="/admin/actus" class="btn btn-success") Actualités
+      .col-xs-4
+        p.text-center
+          a(href="/admin/menu" class="btn btn-success disabled") Menu
+      .col-xs-4
+        p.text-center
+          a(href="/admin/horaires" class="btn btn-success") Horaires
+    .row
+      p
+        span.warning Attention, l'affichage est limité à 4 cartes pour les entrées et desserts et à 6 pour les pizzas.
+    .row
+      table.table.table-striped.table-bordered.table-responsive.table-condensed
+        tr
+          th.text-center #
+          th.text-center Catégorie
+          th.text-center Titre
+          th.text-center Descriptif
+          th.text-center Prix
+          th.text-center Info pièces
+          th.text-center Icônes nutritionnelles
+          th.text-center Image
+          th.text-center Action
+
+          each row in menu
+            tr 
+              td.text-center= row.idmenu
+              td.text-center= row.category
+              td.text-center= row.name
+              td.text-center!= row.description
+              td.text-center= row.price
+              td.text-center= row.pieces
+              td.text-center
+                img(src="/images/" + row.icon, alt='' + row.icon, width='50')
+              td.text-center
+                img(src="/images/" + row.image, alt='' + row.image, width='150')
+              td.text-center
+                a(href="/admin/supprimermenu/" + row.idmenu onclick="return confirm('Voulez-vous supprimer cet élément ?');") Supprimer
+                br
+                br
+                a(href="/admin/modifiermenu/" + row.idmenu) Modifier
+    .row
+      a(href="/admin/creationmenu" class="btn btn-info") Créer une entrée / plat / dessert
