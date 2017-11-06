@@ -44,7 +44,7 @@ block content
           th.text-center Action
 
           each row in menu
-            tr 
+            tr
               td.text-center= row.idmenu
               td.text-center= row.category
               td.text-center= row.name
@@ -56,9 +56,9 @@ block content
               td.text-center
                 img(src="/images/" + row.image, alt='' + row.image, width='150')
               td.text-center
-                a(href="/admin/supprimermenu/" + row.idmenu onclick="return confirm('Voulez-vous supprimer cet élément ?');") Supprimer
+                a(href="/admin/delete-menu/" + row.idmenu onclick="return confirm('Voulez-vous supprimer cet élément ?');") Supprimer
                 br
                 br
-                a(href="/admin/modifiermenu/" + row.idmenu) Modifier
+                a(href="/admin/modify-menu/" + row.idmenu) Modifier
     .row
-      a(href="/admin/creationmenu" class="btn btn-info") Créer une entrée / plat / dessert
+      a(href="/admin/create-menu" class="btn btn-info") Créer une entrée / plat / dessert

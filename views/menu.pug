@@ -10,7 +10,7 @@ block content
 			//Entrées==================================================
 			.container
 				section.menu-section
-				each val in menu 
+				each val in menu
 					.row
 						.col-md-12.line
 							h2.text-center Entrées
@@ -27,7 +27,7 @@ block content
 							h2.text-center Pizzas
 					.row
 						include Pizza.pug
-						.pizzas 
+						.pizzas
 							+pizza(val.image, val.name, val.name, val. description, val.price, val.pieces, val.icon, val.icon)
 							+pizza(val.image, val.name, val.name, val. description, val.price, val.pieces, val.icon, val.icon)
 							+pizza(val.image, val.name, val.name, val. description, val.price, val.pieces, val.icon, val.icon)

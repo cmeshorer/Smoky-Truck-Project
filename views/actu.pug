@@ -9,6 +9,7 @@ block content
       section#actus
         img.img-responsive(src="/images/" + card.image, alt='' + card.image)
         h2.text-center=card.titre
-        p.text-center!= card.texte
+        p.text-center=card.sous_titre
+        p.text-center=card.texte
         P.text-center
           a.text-center(href="/" class="btn btn-info") <- Retour à l'accueil
