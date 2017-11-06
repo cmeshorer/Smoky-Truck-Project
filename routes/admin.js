@@ -252,8 +252,8 @@ router.post('/modifiermenu/:id(\\d+)', cpUpload, function(req, res, next) {
       res.redirect('/admin/menu');
     }); 
   }
-
-  connection.query('UPDATE menu SET category = ?, name = ?, description = ?, price = ?, pieces= ?, icon = ?, image = ? WHERE idmenu = ?', [req.body.category, req.body.name, req.body.description, req.body.price, req.body.pieces, req.files['icon'][0].originalname, req.files['image'][0].originalname, req.params.id], function(error){
+  console.log (req.body)
+  connection.query('UPDATE menu SET category = ?, name = ?, description = ?, price = ?, pieces= ?, icon = ?, image = ? WHERE idmenu = ?', [req.body.button, req.body.name, req.body.description, req.body.price, req.body.pieces, req.files['icon'][0].originalname, req.files['image'][0].originalname, req.params.id], function(error){
     if (error) {
       console.log(error);
     }
