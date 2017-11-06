@@ -7,9 +7,13 @@ block content
   each card in actus
     .container
       section#actus
-        img.img-responsive(src="/images/" + card.image, alt='' + card.image)
-        h2.text-center=card.titre
-        p.text-center=card.sous_titre
-        p.text-center=card.texte
-        P.text-center
-          a.text-center(href="/" class="btn btn-info") <- Retour à l'accueil
+        .row
+          .col-xs-10.col-xs-offset-1
+            img.img-responsive.col-xs-6(src="/images/" + card.image, alt='' + card.image)
+        .row
+          .col-xs-12
+            h2.text-center=card.titre
+            p.text-center=card.sous_titre
+            p.text-justify=card.texte
+            P.text-center
+              a.text-center(href="/" class="btn btn-info") <- Retour à l'accueil

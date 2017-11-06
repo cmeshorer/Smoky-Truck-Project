@@ -65,7 +65,7 @@ router.get('/', function(req, res, next) {
 		res.render('index', {
 			title: 'Accueil - Smoky Truck',
 			meta: 'Depuis 2017, notre food truck vous propose de déguster de délicieuses pizzas aux 4 coins de la capitale. Venez régaler vos papilles !',
-			page: 'accueil', 
+			page: 'accueil',
 			actus : results
 		});
 	});
@@ -92,7 +92,7 @@ router.get('/menu', function(req, res, next) {
 		if (error){
 			console.log(error);
 		}
-	res.render('menu', { 
+	res.render('menu', {
 		title: 'Notre menu - Smoky Truck',
 		meta: 'Venez découvrir les délicieuses pizzas du Smoky Truck. Notre food truck vous propose également des entrées et desserts pour ravir toutes les papilles.',
 		page: 'menu',
@@ -112,12 +112,12 @@ router.get('/lieux-hor', function(req, res, next) {
       meta: 'Le Smoky Truck est présent dans différents lieux parisiens le midi et le soir. Consultez notre calendrier et notre carte : nous sommes forcément pas loin de chez vous !',
       adresse : results
     });
-  }); 
+  });
 });
 
 /* GET nous contacter */
 router.get('/contact', function(req, res, next) {
-	res.render('contact', { 
+	res.render('contact', {
 		title: 'Nous contacter - Smoky Truck',
 		meta: 'Vous souhaitez nous contacter ? N\'hésitez pas à remplir le formulaire ci-dessous. A bientôt !',
 		page: 'contact'
@@ -130,21 +130,21 @@ router.post('/submit', function(req, res, next) { // Requête post au submit.
 	let error = '';
 	if (validator.isEmpty(req.body.name)) {
 		error = 'Veuillez renseigner votre nom';
-		res.render('contact', { 
+		res.render('contact', {
 			title: 'Nous contacter - Smoky Truck',
 			meta: 'Vous souhaitez nous contacter ? N\'hésitez pas à remplir le formulaire ci-dessous. A bientôt !',
 			page: 'contact',
 			error : error
 		}); } if (validator.isEmpty(req.body.email)) {
 		error = 'Veuillez renseigner votre e-mail';
-		res.render('contact', { 
+		res.render('contact', {
 			title: 'Nous contacter - Smoky Truck',
 			meta: 'Vous souhaitez nous contacter ? N\'hésitez pas à remplir le formulaire ci-dessous. A bientôt !',
 			page: 'contact',
 			error : error
 		}); } if (validator.isEmpty(req.body.message)) {
 		error = 'Veuillez renseigner un message';
-		res.render('contact', { 
+		res.render('contact', {
 			title: 'Nous contacter - Smoky Truck',
 			meta: 'Vous souhaitez nous contacter ? N\'hésitez pas à remplir le formulaire ci-dessous. A bientôt !',
 			page: 'contact',
@@ -170,16 +170,16 @@ router.post('/submit', function(req, res, next) { // Requête post au submit.
 			} else{
 				res.render('contact-OK');
 			}
-		});	
+		});
 	}
 
 });
 
 /* GET mentions */
 router.get('/mentions', function(req, res, next) {
-	res.render('mentions', { 
+	res.render('mentions', {
 		title: 'Mentions légales - Smoky Truck',
-		meta: 'Mentions légales du site Smoky Truck.' 
+		meta: 'Mentions légales du site Smoky Truck.'
 	});
 });
 
