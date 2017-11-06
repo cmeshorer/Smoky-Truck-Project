@@ -5,6 +5,6 @@ mixin entree(produit)
 			img.img-menu(src=path + produit.image, alt="produit.name")
 			h3.text-center= produit.name
 			p!= produit.description
-			h4.text-center=produit.price + " €"
-				span.petit= produit.pieces
+			h4.text-center=produit.price + " €" 
+				span.petit= " ( "+ produit.pieces +" )"
 			img.info-all(src=path + produit.icon, alt= "produit.icon")

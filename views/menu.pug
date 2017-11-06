@@ -29,7 +29,23 @@ block content
 						include Pizza.pug
 						.pizzas
 							+pizza(pizza[0])
-
-
+							+pizza(pizza[1])
+							+pizza(pizza[2])
+							
 					.row
 						.pizzas
+							+pizza(pizza[3])
+							+pizza(pizza[4])
+							+pizza(pizza[5])
+					.row
+						.col-md-12 line
+							h2.text-center Desserts
+					.row
+						include Dessert.pug
+						.desserts
+							+dessert(desserts[0])
+							+dessert(desserts[1])
+							+dessert(desserts[2])
+							+dessert(desserts[3])
+
+

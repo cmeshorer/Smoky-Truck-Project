@@ -28,35 +28,35 @@ block content
             |  Dessert
 
           .form-group
-            label(for='name') Titre* - 50 caractères max
-            input#name.form-control(type='text' name="name" maxlength="50")
+            label(for='name') Nom du plat * - 50 caractères max.
+            input#name.form-control(placeholder='Delipizza' type='text' name="name" maxlength="50")
 
 
 
           .form-group
-            label(for='description') Description*
-            textarea#description.form-control(placeholder='Délicieux et sublime' name="description" )
+            label(for='description') Petite description *
+            textarea#description.form-control(placeholder='Délicieux et sublime!' name="description" )
 
 
 
           .form-group
             label(for='price') Prix* - 10 caractères max
-            input#price.form-control(type='text' name="price" maxlength="10")
+            input#price.form-control(type='number' placeholder="1.0" step="0.01" min="0" max='10' name="price" maxlength="10")
 
 
           .form-group
-            label(for='pieces') Nombre de pièces* - 10 caractères max
-            input#pieces.form-control(type='text' name="pieces" maxlength="10")
+            label(for='pieces') Autre info* - 10 caractères max
+            input#pieces.form-control(type='text' placeholder="2 parts" name="pieces" maxlength="10")
 
 
 
           .form-group
-            label.warning(for='icon') Icône* - Fichier jpg ou png de 3 mo max, format conseillé : 300px * 200 px
+            label.warning(for='icon') Icône (info. alimentaire)* - Fichier jpg ou png de 3 mo max, format conseillé : 100px * 100 px
             br
             input#icon.form-control(type='file' name="icon" accept="image/*")
           p * Champ obligatoire
           .form-group
-            label.warning(for='image') Image* - Fichier jpg ou png de 3 mo max, format conseillé : 300px * 200 px
+            label.warning(for='image') Belle photo* - Fichier jpg ou png de 3 mo max, format conseillé : 300px * 200 px
             br
             input#image.form-control(type='file' name="image"  accept="image/*")
           p * Champ obligatoire
