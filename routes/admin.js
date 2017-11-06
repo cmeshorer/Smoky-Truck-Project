@@ -150,14 +150,12 @@ router.get('/modify-adresse/:id(\\d+)',function(req, res){
 });
 
 router.post('/modify-adresse/:id(\\d+)',function(req, res){
-  /*connection.query('UPDATE places SET adresse = ? WHERE idplaces = ?', [req.body.button, req.params.id], function(error){
+  connection.query('UPDATE places SET adresse = ? WHERE idplaces = ?', [req.body.button, req.params.id], function(error){
     if (error) {
       console.log(error);
     }
   });
-  res.redirect('/admin/horaires');*/
-  console.log(req.body);
-  res.send(req.body);
+  res.redirect('/admin/horaires');
 });
 
 
