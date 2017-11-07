@@ -56,3 +56,11 @@
 	font-size: 18px;
 	text-align: justify;
 }
+
+/* Table responsive for sm screens*/
+
+@media screen and (max-width: 400px){
+	.table {
+		font-size: 12px;
+	}
+}

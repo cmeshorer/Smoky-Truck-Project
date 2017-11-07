@@ -272,6 +272,8 @@ div.col-md-10.text-center{
 	}
 }
 
+/* Super small screen responsive*/
+
 @media screen and (max-width: 400px){
 	.card p {
 		font-size: 12px;
