@@ -10,50 +10,60 @@ block content
       .row
         img.img-responsive(src='../images/smoky_logo.svg', alt='Logo SMoky Truck', id="logo")
       .row
-        a.text-center(href="menu/" class="btn btn-info") <- Retour à la liste
-
+        a.text-center(href="index/" class="btn btn-info") <- Retour à la liste
       br
       br
       .row
+      h4.text-center Attention! 4 entrées, 6 plats et 4 desserts sont nécessaires pour l'affichage du Menu. 
+      .row
         form(method="POST" enctype="multipart/form-data" )
-          .form-group
-            label(for='category') Category* - 50 caractères max
-            input#category.form-control(type='number' name="category" maxlength="50")
+
+          .form-group Type de plat *
+            br
+            br
+            input(type='radio', name='button', value=1)
+            |  Entrée
+            br
+            input(type='radio', name='button', value=2)
+            |  Plat
+            br
+            input(type='radio', name='button', value=3)
+            |  Dessert
 
           .form-group
-            label(for='name') Titre* - 50 caractères max
-            input#name.form-control(type='text' name="name" maxlength="50")
-
-
-
-          .form-group
-            label(for='description') Description*
-            textarea#description.form-control(placeholder='Délicieux et sublime' name="description" )
-
-
-
-          .form-group
-            label(for='price') Price* - 10 caractères max
-            input#price.form-control(type='text' name="price" maxlength="10")
-
-
-          .form-group
-            label(for='pieces') Pieces* - 10 caractères max
-            input#pieces.form-control(type='text' name="pieces" maxlength="10")
+            label(for='name') Nom du plat * - 50 caractères max.
+            input#name.form-control(placeholder='Delipizza' type='text' name="name" maxlength="50")
 
 
 
           .form-group
-            label.warning(for='icon') Icône* - Fichier jpg ou png de 3 mo max, format conseillé : 300px * 200 px
+            label(for='description') Description * - 200 caractères max
+            textarea#description.form-control(placeholder='Délicieux et sublime!' name="description" maxlength="200")
+
+
+
+          .form-group
+            label(for='price') Prix €€ * - 10 caractères max
+            input#price.form-control(type='number' placeholder="1.0" step="0.01" min="0" max='10' name="price" maxlength="10")
+
+
+          .form-group
+            label(for='pieces') Autre info * - 10 caractères max
+            input#pieces.form-control(type='text' placeholder="2 parts" name="pieces" maxlength="10")
+
+
+
+          .form-group
+            label.warning(for='icon') Icône ( info. alimentaire ) * - Fichier jpg, png ou gif de 3 mo max, format conseillé : 40px * 40px
             br
             input#icon.form-control(type='file' name="icon" accept="image/*")
           p * Champ obligatoire
           .form-group
-            label.warning(for='image') Image* - Fichier jpg ou png de 3 mo max, format conseillé : 300px * 200 px
+            label.warning(for='image') Belle photo * - Fichier jpg, png ou gif de 3 mo max, formats conseillés : 300px * 300 px pour les entrées et desserts et 350px * 350 px pour les pizzas.
             br
             input#image.form-control(type='file' name="image"  accept="image/*")
           p * Champ obligatoire
-          button.btn.btn-default(type='submit')   Enregistrer
+          button.btn.btn-default(type='submit' onclick="return confirm('Voulez-vous créer cet élément ?');") Créer
       script(src='https://cloud.tinymce.com/stable/tinymce.min.js')
       script.
           tinymce.init({ selector:'textarea'});

@@ -1,11 +1,10 @@
-mixin entree(image1, alt1, name, description, price, pieces, image2, alt2)
+mixin entree(produit)
 	- var path = "/images/"
 	.col-md-3
 		.card-menu.col-xs-12.col-sm-5.col-md-12
-			img.img-menu(src=path + image1, alt="#{alt1}")
-			h3.text-center #{name}
-			p #{description}
-			h4.text-center
-				| #{price}
-				span.petit #{pieces}
-			img.info-all(src=path + image2, alt= "#{alt2}")
+			img.img-menu(src=path + produit.image, alt="produit.name")
+			h3.text-center= produit.name
+			p!= produit.description
+			h4.text-center=produit.price + " €" 
+				span.petit= " ( "+ produit.pieces +" )"
+			img.info-all(src=path + produit.icon, alt= "produit.icon")
