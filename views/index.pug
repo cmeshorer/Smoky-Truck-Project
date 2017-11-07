@@ -54,8 +54,7 @@ block content
 						img(src="/images/" + card.image, alt='' + card.image)
 						h4.card-title
 							a(href="/actu-" + card.id)= card.titre
-						p=card.sous_titre
-						p.text-justify.overflow-text= card.texte
+						p!=card.sous_titre
 							br
 							p.text-center
 							a(href="/actu-" + card.id) Voir plus

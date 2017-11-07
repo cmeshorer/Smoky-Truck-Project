@@ -31,35 +31,32 @@ block content
       p
         span.warning.col-xs-10.col-xs-offset-1 Attention, l'affichage est limité à 4 cartes pour les entrées et desserts et à 6 pour les pizzas.
     .row
-      figure.fig-table
-        table.table.table-striped.table-bordered.table-responsive.table-condensed
-          tr
-            th.text-center #
-            th.text-center Catégorie
-            th.text-center Titre
-            th.text-center Descriptif
-            th.text-center Prix
-            th.text-center Info pièces
-            th.text-center Icônes nutritionnelles
-            th.text-center Image
-            th.text-center Action
+      table.table.table-striped.table-bordered.table-responsive.table-condensed
+        tr
+          th.text-center Catégorie
+          th.text-center Titre
+          th.text-center Descriptif
+          th.text-center Prix
+          th.text-center Info pièces
+          th.text-center Image
+          th.text-center Icônes nutritionnelles
+          th.text-center Action
 
-            each row in menu
-              tr
-                td.text-center= row.idmenu
-                td.text-center= row.category
-                td.text-center= row.name
-                td.text-center!= row.description
-                td.text-center= row.price
-                td.text-center= row.pieces
-                td.text-center
-                  img(src="/images/" + row.icon, alt='' + row.icon, width='50')
-                td.text-center
-                  img(src="/images/" + row.image, alt='' + row.image, width='150')
-                td.text-center
-                  a(href="/admin/delete-menu/" + row.idmenu onclick="return confirm('Voulez-vous supprimer cet élément ?');") Supprimer
-                  br
-                  br
-                  a(href="/admin/modify-menu/" + row.idmenu) Modifier
+          each row in menu
+            tr 
+              td.text-center= row.category
+              td.text-center= row.name
+              td.text-center!= row.description
+              td.text-center= row.price
+              td.text-center= row.pieces
+              td.text-center
+                img(src="/images/" + row.image, alt='' + row.image, width='150')
+              td.text-center
+                img(src="/images/" + row.icon, alt='' + row.icon, width='50')
+              td.text-center
+                a(href="/admin/supprimermenu/" + row.idmenu onclick="return confirm('Voulez-vous supprimer cet élément ?');") Supprimer
+                br
+                br
+                a(href="/admin/modifiermenu/" + row.idmenu) Modifier
     .row
-      a(href="/admin/create-menu" class="btn btn-info") Créer une entrée / plat / dessert
+      a(href="/admin/creationmenu" class="btn btn-info") Créer une entrée / plat / dessert

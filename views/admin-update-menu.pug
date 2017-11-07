@@ -14,36 +14,46 @@ block content
     br
     br
     .row
+      h4.text-center Attention! 4 entrées, 6 plats et 4 desserts sont nécessaires pour l'affichage du Menu. 
+    .row
       form(method="POST" enctype="multipart/form-data" )
-        .form-group
-          label(for='category') Category* - 50 caractères max
-          input#category.form-control(type='number' name="category" maxlength="50" value=menu.category)
+        .form-group Type de plat *
+          br
+          br
+          input(type='radio', name='button', value=1)
+          |  Entrée
+          br
+          input(type='radio', name='button', value=2)
+          |  Plat
+          br
+          input(type='radio', name='button', value=3)
+          |  Dessert
 
         .form-group
-          label(for='name') Titre* - 50 caractères max
-          input#name.form-control(type='text' name="name" maxlength="50" value=menu.name)
-
-
-
-        .form-group
-          label(for='description') Description*
-          textarea#description.form-control(placeholder='Délicieux et sublime' name="description" )= menu.description
-
-
-
-        .form-group
-          label(for='price') Price* - 10 caractères max
-          input#sous-titre.form-control(type='text' name="price" maxlength="10" value=menu.price)
-
-
-        .form-group
-          label(for='pieces') Pieces* - 10 caractères max
-          input#pieces.form-control(type='text' name="pieces" maxlength="10" value=menu.pieces)
+          label(for='name') Nom du plat * - 50 caractères max
+          input#name.form-control(type='text' placeholder='Delipizza' name="name" maxlength="50" value=menu.name)
 
 
 
         .form-group
-          label.warning(for='icon') Image* - Fichier jpg ou png de 3 mo max, format conseillé : 300px * 200 px
+          label(for='description') Description * - 200 caractères max
+          textarea#description.form-control(placeholder='Délicieux et sublime' name="description" maxlength="200")= menu.description
+
+
+
+        .form-group
+          label(for='price') Prix €€ * - 10 caractères max
+          input#sous-titre.form-control(type='number' placeholder="1.0" step="0.01" min="0" max='10' name="price" maxlength="10" value=menu.price)
+
+
+        .form-group
+          label(for='pieces') Autre info * - 10 caractères max
+          input#pieces.form-control(type='text' name="pieces" maxlength="10" placeholder="2 parts" value=menu.pieces)
+
+
+
+        .form-group
+          label.warning(for='icon') Icône ( info. alimentaire ) * - Fichier jpg, png ou gif de 3 mo max, format conseillé : 40px * 40px
           br
           img(src="/images/" + menu.icon, alt='' + menu.icon, width='100')
           br
@@ -51,7 +61,7 @@ block content
           input#icon.form-control(type='file' name="icon" value=menu.icon accept="image/*")
         p * Champ obligatoire
         .form-group
-          label.warning(for='image') Image* - Fichier jpg ou png de 3 mo max, format conseillé : 300px * 200 px
+          label.warning(for='image') Belle photo * - Fichier jpg, png ou gif de 3 mo max, formats conseillés : 300px * 300 px pour les entrées et desserts et 350px * 350 px pour les pizzas.
           br
           img(src="/images/" + menu.image, alt='' + menu.image, width='100')
           br

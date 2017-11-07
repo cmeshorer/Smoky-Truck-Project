@@ -7,43 +7,40 @@ block content
 	doctype html
 	html
 		body
-			//Entrées==================================================
+
 			.container
 				section.menu-section
-				each val in menu
 					.row
 						.col-md-12.line
 							h2.text-center Entrées
 					.row
 						include Entree.pug
 						.entrees
-							+entree(val.image, val.name, val.name, val. description, val.price, val.pieces, val.icon, val.icon)
-							+entree(val.image, val.name, val.name, val. description, val.price, val.pieces, val.icon, val.icon)
-							+entree(val.image, val.name, val.name, val. description, val.price, val.pieces, val.icon, val.icon)
-							+entree(val.image, val.name, val.name, val. description, val.price, val.pieces, val.icon, val.icon)
-					// Pizzas==================================================
+							+entree(entree[0])
+							+entree(entree[1])
+							+entree(entree[2])
+							+entree(entree[3])
 					.row
 						.col-md-12.line
-							h2.text-center Pizzas
+							h2.text-center Pizzas	
 					.row
 						include Pizza.pug
 						.pizzas
-							+pizza(val.image, val.name, val.name, val. description, val.price, val.pieces, val.icon, val.icon)
-							+pizza(val.image, val.name, val.name, val. description, val.price, val.pieces, val.icon, val.icon)
-							+pizza(val.image, val.name, val.name, val. description, val.price, val.pieces, val.icon, val.icon)
+							+pizza(pizza[0])
+							+pizza(pizza[1])
+							+pizza(pizza[2])
 					.row
 						.pizzas
-							+pizza(val.image, val.name, val.name, val. description, val.price, val.pieces, val.icon, val.icon)
-							+pizza(val.image, val.name, val.name, val. description, val.price, val.pieces, val.icon, val.icon)
-							+pizza(val.image, val.name, val.name, val. description, val.price, val.pieces, val.icon, val.icon)
-					// Desserts==================================================
+							+pizza(pizza[3])
+							+pizza(pizza[4])
+							+pizza(pizza[5])
 					.row
-						.col-md-12.line
+						.col-md-12
 							h2.text-center Desserts
 					.row
 						include Dessert.pug
 						.desserts
-							+dessert(val.image, val.name, val.name, val. description, val.price, val.pieces, val.icon, val.icon)
-							+dessert(val.image, val.name, val.name, val. description, val.price, val.pieces, val.icon, val.icon)
-							+dessert(val.image, val.name, val.name, val. description, val.price, val.pieces, val.icon, val.icon)
-							+dessert(val.image, val.name, val.name, val. description, val.price, val.pieces, val.icon, val.icon)
+							+dessert(desserts[0])
+							+dessert(desserts[1])
+							+dessert(desserts[2])
+							+dessert(desserts[3])
