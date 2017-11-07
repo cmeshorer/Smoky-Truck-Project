@@ -1,7 +1,7 @@
 mixin dessert(produit)
 	- var path = "/images/"
 	.col-md-3
-		.card-menu.col-xs-12.col-sm-5.col-md-12
+		.card-menu-2.col-xs-12.col-sm-5.col-md-12
 			img.img-menu(src=path + produit.image, alt="produit.name")
 			h3.text-center= produit.name
 			p!= produit.description
