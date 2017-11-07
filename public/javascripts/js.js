@@ -1,7 +1,7 @@
 // Burger menu
 $('#burger_icon, .close').on('click',function(){
 	 $('.menuburger').toggleClass('open');
-}); 
+});
 
 // Effet menu scroll
 var scrollTop = 0;
@@ -17,8 +17,8 @@ $(window).scroll(function(){
 		$('#menu li a').css('color', '#012051');
 		$('#menu .navactive').css('color', '#b3b3b3');
 		$('nav img').attr('src', '/images/smoky_logo.svg');
-	} 
-}); 
+	}
+});
 
 // Carousel
  $(document).ready(function() {
@@ -26,3 +26,17 @@ $(window).scroll(function(){
 			interval: 3000
 		})
 	});
+
+// Cookies DIV
+
+/*  This function should kickstart the setting of the cookie */
+function cookieAccepted(){
+    console.log('User has accepted cookies');
+    var x = document.getElementById("cookie-alert");
+        if (x.style.display === "none") {
+            x.style.display = "block";
+        } else {
+            x.style.display = "none";
+        }
+};
+/*  end of cookie function  */

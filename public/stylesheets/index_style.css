@@ -147,6 +147,13 @@ a.carousel-control.right { right: 0; background: none; border: 0;}
 	transition: .8s ease;
 }
 
+.overflow-text {
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+	width:300px;
+}
+
 /* Intermediary section*/
 
 .intermediaire {
@@ -157,18 +164,18 @@ a.carousel-control.right { right: 0; background: none; border: 0;}
 section#menu-horaires.intermediaire{
 	background-color: #e4e4e4;
 	margin: 0;
-	padding: 90px;
 }
 
 .menu-text {
 	margin-top: 35px;
-	margin-bottom: 60px;
-	padding: 35px 35px 20px 0;
+	margin-bottom: 30px;
+	padding: 35px 0 0 0;
 }
 
 .intermediaire button {
-	width: 180px;
-	margin: 10px;
+	width: 150px;
+	margin: 0 25px 17px 0;
+	padding: 7px;
 	color: #ffffff;
 	background-color: #1946a6;
 	border-color: #000000;
@@ -191,13 +198,13 @@ div.col-md-10.text-center{
 }
 
 .histo-text{
-	padding: 70px 37px 0 70px;
+	padding: 35px 0 0 0;
 	margin:auto;
 }
 
 /* Media Queries Story */
 
-@media screen and (max-width: 992px) {
+/*@media screen and (max-width: 992px) {
 	.histo-text {
 		padding-top: 30px;
 		padding-left: 0px;
@@ -210,5 +217,41 @@ div.col-md-10.text-center{
 	}
 	section#menu-horaires.intermediaire .img-responsive{
 		padding-top: 40px;
+	}
+}*/
+
+
+/* Media Queries index buttons */
+
+@media screen and (min-width: 1200px){
+	.intermediaire button {
+		margin: 0 25px 17px 7px;
+	}
+}
+
+@media screen and (max-width: 991px) {
+	.intermediaire button {
+		width: 220px;
+		margin: 0 25px 17px 20px;
+		padding: 15px 7px 15px 7px;
+	}
+}
+
+/* Media Queries index intermediate & history text */
+
+@media screen and (min-width: 992px) {
+	.menu-text {
+		margin: 10px 0px 30px 0;
+		padding: 0px 0 0 0;
+	}
+	.histo-text {
+		padding: 17px 0 0 0;
+	}
+}
+
+@media screen and (min-width: 1200px) {
+	.menu-text,
+	.histo-text {
+		margin-top: 50px;
 	}
 }

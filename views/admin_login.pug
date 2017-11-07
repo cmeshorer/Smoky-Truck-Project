@@ -7,16 +7,38 @@ block content
 	.container
 		.row
 			p.col-xs-4.col-xs-offset-4.text-center
-				img.img-responsive(src='../images/chef.jpg', alt='Photo of chef')
+				img.img-responsive.img-rounded(src='../images/chef.jpg', alt='Photo of chef')
 
 		.row
 			.col-xs-10.col-xs-offset-1.text-center
 				h2 Bienvenue sur l'espace administrateur du Smoky Truck !
-				form.form-login(method="POST")
-					input(name="login" placeholder="login")
+		.row
+			.col-xs-4.col-xs-offset-4
+				p.warning-bis.text-center= fail
+		.row
+			.col-xs-10.col-xs-offset-1.text-center
+				form.form-login(method="POST" action="/login")
+					// Text input
+					.form-group
+					label.control-label.text-center(for='login') Identifiant*
+					br
+					input(name="login" placeholder="Bob" type="text" required)
+					br
+					// Login input
+					.form-group
+					label.control-label(for='password') Mot de passe*
+					br
+					input(name="password" placeholder="Mot de passe" type="password" required)
 					br
 					br
-					input(name="password" placeholder="password" type="password")
-					br
-					br
-					button(type="submit") Connect
+					// Connexion
+					.form-group
+						p.text-center
+							| * Tous les champs sont obligatoires.
+						button.btn.btn-info(type="submit") Connexion
+
+
+					p.text-center
+						| En cas d'oubli de votre identifiant et/ou mot de passe, veuillez 
+						a(href='mailto:smokytruck_admin@yopmail.com') contacter
+						|  votre administrateur

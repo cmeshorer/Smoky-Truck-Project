@@ -10,16 +10,17 @@ block content
 			//Entrées==================================================
 			.container
 				section.menu-section
+				each val in menu
 					.row
 						.col-md-12.line
 							h2.text-center Entrées
 					.row
 						include Entree.pug
 						.entrees
-							+entree('entrée1.jpg', 'Entrée 1', 'Smoky Brushettas', '4€', '(2 pièces)', 'picto_vege.png', 'Végétarien')
-							+entree('entrée2.jpg', 'Entrée 2', 'Paname tortilla', '3€', '(1 part)', 'picto_gluten.png', 'Sans gluten')
-							+entree('entrée3.jpg', 'Entrée 3', 'Charcuterie du moment', '6€', '(pour 1)', 'picto_vide.png', 'Picto vide')
-							+entree('entrée4.jpg', 'Entrée 4', 'Brushettas verde', '4€', '(2 pièces)', 'picto_vege.png', 'Picto vide')
+							+entree(val.image, val.name, val.name, val. description, val.price, val.pieces, val.icon, val.icon)
+							+entree(val.image, val.name, val.name, val. description, val.price, val.pieces, val.icon, val.icon)
+							+entree(val.image, val.name, val.name, val. description, val.price, val.pieces, val.icon, val.icon)
+							+entree(val.image, val.name, val.name, val. description, val.price, val.pieces, val.icon, val.icon)
 					// Pizzas==================================================
 					.row
 						.col-md-12.line
@@ -27,14 +28,14 @@ block content
 					.row
 						include Pizza.pug
 						.pizzas
-							+pizza('pizza1.jpg', 'Pizza 1', 'La classique', '4€', '7€', 'picto_gluten.png', 'Sans gluten')
-							+pizza('pizza2.jpg', 'Pizza 2', 'La marinière', '4.5€', '7.5€', 'picto_gluten.png', 'Sans gluten')
-							+pizza('pizza3.jpg', 'Pizza 3', 'Zucchini fever', '3.5€', '5.5€', 'picto_vege.png', 'Végétarien')
+							+pizza(val.image, val.name, val.name, val. description, val.price, val.pieces, val.icon, val.icon)
+							+pizza(val.image, val.name, val.name, val. description, val.price, val.pieces, val.icon, val.icon)
+							+pizza(val.image, val.name, val.name, val. description, val.price, val.pieces, val.icon, val.icon)
 					.row
 						.pizzas
-							+pizza('pizza4.jpg', 'Pizza 4', 'Smoky Tex', '4€', '7€', 'picto_gluten.png', 'Sans gluten')
-							+pizza('pizza5.jpg', 'Pizza 5', 'La calzone du chef', '8.5€', '11€', 'picto_gluten.png', 'Sans gluten')
-							+pizza('pizza6.jpg', 'Pizza 6', 'La veggie', '4€', '7€', 'picto_vege.png', 'Végétarien')
+							+pizza(val.image, val.name, val.name, val. description, val.price, val.pieces, val.icon, val.icon)
+							+pizza(val.image, val.name, val.name, val. description, val.price, val.pieces, val.icon, val.icon)
+							+pizza(val.image, val.name, val.name, val. description, val.price, val.pieces, val.icon, val.icon)
 					// Desserts==================================================
 					.row
 						.col-md-12.line
@@ -42,7 +43,7 @@ block content
 					.row
 						include Dessert.pug
 						.desserts
-							+dessert('dessert1.jpg', 'Dessert 1', 'Gauffre gourmande', '4.8€', 'picto_vide.png', 'Picto vide')
-							+dessert('dessert2.jpg', 'Dessert 2', 'Tiramisu fruits rouges', '6€', 'picto_lactose.png', 'Sans lactose')
-							+dessert('dessert3.jpg', 'Dessert 3', 'Choco brownie', '4€', 'picto_gluten.png', 'Sans gluten')
-							+dessert('dessert4.jpg', 'Dessert 4', 'Smoothie vitaminé', '5€', 'picto_vide.png', 'Picto vide')
+							+dessert(val.image, val.name, val.name, val. description, val.price, val.pieces, val.icon, val.icon)
+							+dessert(val.image, val.name, val.name, val. description, val.price, val.pieces, val.icon, val.icon)
+							+dessert(val.image, val.name, val.name, val. description, val.price, val.pieces, val.icon, val.icon)
+							+dessert(val.image, val.name, val.name, val. description, val.price, val.pieces, val.icon, val.icon)

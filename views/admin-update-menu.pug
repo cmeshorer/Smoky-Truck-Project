@@ -1,0 +1,64 @@
+extends admin_layout
+
+block css
+  link(rel='stylesheet', type='text/css', href='/stylesheets/admin_create_actu_style.css')
+
+block content
+  .container
+    .row
+      h2.text-center Espace administrateur : création menu
+    .row
+      img.img-responsive(src='/images/smoky_logo.svg', alt='Logo SMoky Truck', id="logo")
+    .row
+      a.text-center(href="/admin/menu" class="btn btn-info") <- Retour à la liste
+    br
+    br
+    .row
+      form(method="POST" enctype="multipart/form-data" )
+        .form-group
+          label(for='category') Category* - 50 caractères max
+          input#category.form-control(type='number' name="category" maxlength="50" value=menu.category)
+
+        .form-group
+          label(for='name') Titre* - 50 caractères max
+          input#name.form-control(type='text' name="name" maxlength="50" value=menu.name)
+
+
+
+        .form-group
+          label(for='description') Description*
+          textarea#description.form-control(placeholder='Délicieux et sublime' name="description" )= menu.description
+
+
+
+        .form-group
+          label(for='price') Price* - 10 caractères max
+          input#sous-titre.form-control(type='text' name="price" maxlength="10" value=menu.price)
+
+
+        .form-group
+          label(for='pieces') Pieces* - 10 caractères max
+          input#pieces.form-control(type='text' name="pieces" maxlength="10" value=menu.pieces)
+
+
+
+        .form-group
+          label.warning(for='icon') Image* - Fichier jpg ou png de 3 mo max, format conseillé : 300px * 200 px
+          br
+          img(src="/images/" + menu.icon, alt='' + menu.icon, width='100')
+          br
+          br
+          input#icon.form-control(type='file' name="icon" value=menu.icon accept="image/*")
+        p * Champ obligatoire
+        .form-group
+          label.warning(for='image') Image* - Fichier jpg ou png de 3 mo max, format conseillé : 300px * 200 px
+          br
+          img(src="/images/" + menu.image, alt='' + menu.image, width='100')
+          br
+          br
+          input#image.form-control(type='file' name="image" value=menu.image accept="image/*")
+        p * Champ obligatoire
+        button.btn.btn-default(type='submit' onclick="return confirm('Voulez-vous modifier cet élément ?');") Modifier
+    script(src='https://cloud.tinymce.com/stable/tinymce.min.js')
+    script.
+        tinymce.init({ selector:'textarea'});

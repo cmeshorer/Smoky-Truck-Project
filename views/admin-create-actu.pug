@@ -1,0 +1,31 @@
+extends admin_layout
+
+block css
+  link(rel='stylesheet', type='text/css', href='/stylesheets/admin_create_actu_style.css')
+
+block content
+  .container
+    .row
+      h2.text-center Espace administrateur : créer une actualité
+    .row
+      img.img-responsive(src='../images/smoky_logo.svg', alt='Logo Smoky Truck', id="logo")
+    .row
+      a.text-center(href="/admin/actus" class="btn btn-info") <- Retour à la liste
+    br
+    br
+    .row
+      form(method="POST" enctype="multipart/form-data")
+        .form-group
+          label(for='title') Titre* - 50 caractères max
+          input#title.form-control(type='text' placeholder='Festival' name="title" maxlength="50" required)
+        .form-group
+          label(for='sous_titre') Sous-titre* - 100 caractères max
+          input#sous-titre.form-control(type='text' placeholder='Le Smoky Truck vous dévoile une nouvelle recette' name="sous_titre" maxlength="100" required)
+        .form-group
+          label(for='texte') Texte* - 200 caractères max
+          textarea#text.form-control(placeholder='Notre nouvelle recette...' name="texte" maxlength="200" required)
+        .form-group
+          label.warning(for='image') Image* - Fichier jpg ou png de 3 mo max, largeur max : 200 px, format conseillé : 300px * 200 px
+          input#image.form-control(type='file' name="image" required accept="image/*")
+        p * Champ obligatoire
+        button.btn.btn-default(type='submit') Enregistrer

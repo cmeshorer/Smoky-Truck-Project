@@ -1,4 +1,4 @@
-
+config.js
 # Created by https://www.gitignore.io/api/linux,macos,sublimetext
 
 ### Linux ###
@@ -86,7 +86,7 @@ GitHub.sublime-settings
 .node_repl_history
 
 #NODE MODULES:
- 
+
 node_modules
 package_lock.json
 Gruntfile.js

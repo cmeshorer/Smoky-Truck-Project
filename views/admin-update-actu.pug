@@ -1,0 +1,38 @@
+extends admin_layout
+
+block css
+  link(rel='stylesheet', type='text/css', href='/stylesheets/admin_create_actu_style.css')
+
+block content
+  .container
+    .row
+      h2.text-center Espace administrateur : modifier une actualité
+    .row
+      img.img-responsive(src='/images/smoky_logo.svg', alt='Logo Smoky Truck', id="logo")
+    .row
+      a.text-center(href="/admin/actus" class="btn btn-info") <- Retour à la liste
+    br
+    br
+    .row
+      form(method="POST" enctype="multipart/form-data" )
+        .form-group
+          label(for='title') Titre* - 50 caractères max
+          input#title.form-control(type='text' name="title" maxlength="50" value=actus.titre)
+        .form-group
+          label(for='sous_titre') Sous-titre* - 100 caractères max
+          input#sous-titre.form-control(type='text' name="sous_titre" maxlength="100" value=actus.sous_titre)
+        .form-group
+          label(for='texte') Texte* - 200 caractères max
+          textarea#text.form-control(name="texte" maxlength="200")= actus.texte
+        .form-group
+          label.warning(for='image') Image* - Fichier jpg ou png de 3 mo max, format conseillé : 300px * 200 px
+          br
+          img(src="/images/" + actus.image, alt='' + actus.image, width='100')
+          br
+          br
+          input#image.form-control(type='file' name="image" value=actus.image accept="image/*")
+        p * Champ obligatoire
+        button.btn.btn-default(type='submit' onclick="return confirm('Voulez-vous modifier cet élément ?');") Modifier
+    script(src='https://cloud.tinymce.com/stable/tinymce.min.js')
+    script.
+        tinymce.init({ selector:'textarea'});

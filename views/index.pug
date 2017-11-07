@@ -33,13 +33,13 @@ block content
 	section#intro
 		.container
 			.row
-				h1.text-center
+				h1.col-xs-10.col-xs-offset-1.text-center
 					| Embarquez à bord du
 					span.important  Smoky Truck !
 			.row
 				.col-xs-10.col-xs-offset-1
 					p#text-intro.text-justify
-						| Depuis 2017, notre food truck "enfumé" sillone les rues de la capitale pour vous proposer des pizzas fraîches aux inspirations multiples... Venez déguster nos succulentes réalisations !
+						| Depuis 2017, notre food truck "enfumé" sillonne les rues de la capitale pour vous proposer des pizzas fraîches aux inspirations multiples... Venez déguster nos succulentes réalisations !
 
 	// Actualités
 		==================================================
@@ -50,29 +50,30 @@ block content
 					h2 Nos actualités
 			#actus_cards
 				each card in actus
-					.card
+					.card.text-center
 						img(src="/images/" + card.image, alt='' + card.image)
 						h4.card-title
 							a(href="/actu-" + card.id)= card.titre
-						p.text-justify= card.sous_titre
+						p=card.sous_titre
+						p.text-justify.overflow-text= card.texte
 							br
 							p.text-center
-								a(href="/actu-" + card.id) Voir plus
+							a(href="/actu-" + card.id) Voir plus
 
 	// Section intermédiaire
 		==================================================
 	section#menu-horaires.intermediaire
 		.container
 			.row
-				.col-md-5
+				.col-xs-10.col-xs-offset-1.col-md-5
 					img.img-responsive(src='images/chef.jpg', alt='Our Smoky Truck chef cooking')
-				.col-md-6.col-md-offset-1.col-xs-12
+				.col-xs-10.col-xs-offset-1.col-md-4
 					.row
 						.col-md-12.col-xs-12
 							p.text-justify.menu-text
-								| Le Smoky Truck vous propose de déguster toute l'année des pizzas cuisinées à partir de produits frais et de qualité. Nous faisons appel à notre créativité pour vous proposer régulièrement de nouvelles recettes ainsi que des entrées et desserts. Venez découvrir notre carte du moment ! 
+								| Le Smoky Truck vous propose de déguster toute l'année des pizzas cuisinées à partir de produits frais et de qualité. Nous faisons appel à notre créativité pour vous proposer régulièrement de nouvelles recettes ainsi que des entrées et desserts. Venez découvrir notre carte du moment!
 					.row
-						.col-md-5.col-md-offset-1.col-xs-12.text-center
+						.col-md-5.col-xs-12.text-center
 							a(href='/menu')
 								button.btn.btn-primary.inter-button(type='button') Notre menu
 						.col-md-5.col-md-offset-1.col-xs-12.text-center
@@ -86,8 +87,8 @@ block content
 			.row
 				h2.text-center Notre histoire
 			.row
-				.col-xs-5
+				.col-xs-10.col-xs-offset-1.col-md-5
 					img.img-responsive(src='images/story.jpg', alt='')
-				.col-xs-7
+				.col-xs-10.col-xs-offset-1.col-md-4
 					p.text-justify.histo-text
-						| Le Smoky Truck est né de la rencontre de 2 chefs : Sergio et ROberto. Alors qu'il exercent dans un restaurant étoilé parisien, ils souhaitent renouer avec la simplicité de la cuisine en se tournant vers les pizzas, plats aux accents de nostalgie. De même, à travers le format du food truck, ses fondateurs cherchent à apporter à leurs clients plus de simplicité et de convivialité.
+						| Le Smoky Truck est né de la rencontre de 2 chefs: Alexis et Roberto. Alors qu'ils exercent dans un restaurant étoilé parisien, ils souhaitent renouer avec la simplicité de la cuisine en se tournant vers les pizzas, plats aux accents de nostalgie. De même, à travers le format du food truck, ses fondateurs cherchent à apporter à leurs clients plus de simplicité et de convivialité.

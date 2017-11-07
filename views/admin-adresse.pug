@@ -1,0 +1,80 @@
+extends admin_layout
+
+block css
+  link(rel='stylesheet', type='text/css', href='/stylesheets/admin_index_style.css')
+
+block content
+  .container
+    .row
+      p.text-right
+        a(href="/login" class="logout btn btn-logout") Déconnexion
+    .row
+        h2.text-center Smoky Truck : espace administrateur
+    .row
+      img.img-responsive(src='../images/smoky_logo.svg', alt='Logo SMoky Truck', id="logo")
+    .row.visites
+      .col-xs-6.col-xs-offset-3.col-sm-4.col-sm-offset-4
+        p.important Nombre visites page d'accueil
+      .col-sm-1
+        p= views_index
+    .row.options
+      .col-xs-12.col-sm-4
+        p.text-center
+          a(href="/admin/actus" class="btn btn-success") Actualités
+      .col-xs-12.col-sm-4
+        p.text-center
+          a(href="/admin/menu" class="btn btn-success") Menu
+      .col-xs-12.col-sm-4
+        p.text-center
+          a(href="/admin/horaires" class="btn btn-success disabled") Horaires
+    .row
+      table.table.table-striped.table-bordered.table-responsive.table-condensed
+        tr
+          th.text-center
+          th.text-center Midi (11h-15h)
+          th.text-center Soir (18h-22h)
+        tr
+          td.text-center.important
+            | Lundi
+          td.text-center #{adresse[0].adresse}
+            br
+            a(href="/admin/modify-adresse/1") Modifier
+          td.text-center #{adresse[1].adresse}
+            br
+            a(href="/admin/modify-adresse/2") Modifier
+        tr
+          td.text-center.important
+            | Mardi
+          td.text-center #{adresse[2].adresse}
+            br
+            a(href="/admin/modify-adresse/3") Modifier
+          td.text-center #{adresse[3].adresse}
+            br
+            a(href="/admin/modify-adresse/4") Modifier
+        tr
+          td.text-center.important
+            | Mercredi
+          td.text-center #{adresse[4].adresse}
+            br
+            a(href="/admin/modify-adresse/5") Modifier
+          td.text-center #{adresse[5].adresse}
+            br
+            a(href="/admin/modify-adresse/6") Modifier
+        tr
+          td.text-center.important
+            | Jeudi
+          td.text-center #{adresse[6].adresse}
+            br
+            a(href="/admin/modify-adresse/7") Modifier
+          td.text-center #{adresse[7].adresse}
+            br
+            a(href="/admin/modify-adresse/8") Modifier
+        tr
+          td.text-center.important
+            | Vendredi
+          td.text-center #{adresse[8].adresse}
+            br
+            a(href="/admin/modify-adresse/9") Modifier
+          td.text-center #{adresse[9].adresse}
+            br
+            a(href="/admin/modify-adresse/10") Modifier
