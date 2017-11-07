@@ -255,3 +255,25 @@ div.col-md-10.text-center{
 		margin-top: 50px;
 	}
 }
+
+/*Media queries actus*/
+
+@media screen and (min-width: 1200px){
+	#actus_cards {
+		margin-left: 82px;
+		margin-right: 93px;
+	}
+}
+
+@media screen and (max-width: 1200px){
+	#actus_cards {
+		margin-left: 27px;
+		margin-right: 29px;
+	}
+}
+
+@media screen and (max-width: 400px){
+	.card p {
+		font-size: 12px;
+	}
+}
