@@ -64,7 +64,7 @@ h2 {
 .fig-table {
 	max-width: 100%;
 	overflow-x: scroll;
-	white-space: nowrap;
+	white-space: wrap;
 }
 
 .options {
