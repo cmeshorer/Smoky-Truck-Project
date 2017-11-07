@@ -11,13 +11,16 @@ block content
         img.img-responsive(src='../images/smoky_logo.svg', alt='Logo SMoky Truck', id="logo")
       .row
         a.text-center(href="index/" class="btn btn-info") <- Retour à la liste
-      
       br
       br
       .row
+      h4.text-center Attention! 4 entrées, 6 plats et 4 desserts sont nécessaires pour l'affichage du Menu. 
+      .row
         form(method="POST" enctype="multipart/form-data" )
 
-          .form-group
+          .form-group Type de plat *
+            br
+            br
             input(type='radio', name='button', value=1)
             |  Entrée
             br
