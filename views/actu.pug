@@ -8,12 +8,13 @@ block content
     .container
       section#actus
         .row
-          .col-xs-10.col-xs-offset-1
+          .col-xs-10.col-xs-offset-1.col-sm-6.col-sm-offset-3
             img.img-responsive.col-xs-6(src="/images/" + card.image, alt='' + card.image)
         .row
           .col-xs-12
             h2.text-center=card.titre
             p.text-center=card.sous_titre
+          .col-xs-6.col-xs-offset-3
             p.text-justify=card.texte
             P.text-center
               a.text-center(href="/" class="btn btn-info") <- Retour à l'accueil
