@@ -126,7 +126,7 @@ CREATE TABLE `places` (
 
 LOCK TABLES `places` WRITE;
 /*!40000 ALTER TABLE `places` DISABLE KEYS */;
-INSERT INTO `places` VALUES (1,'Smoky Rive Gauche'),(2,'Smoky 104'),(3,'Smoky Rive Droite'),(4,'Smoky Rive Gauche'),(5,'Smoky 104'),(6,'Smoky 104'),(7,'Smoky Rive Gauche'),(8,'Smoky Rive Droite'),(9,'Smoky Rive Droite'),(10,'Smoky Rive Gauche');
+INSERT INTO `places` VALUES (1,'4 Rue Eugène Spuller Paris, 75003'),(2,'104 Rue d\'Auberviliers Paris, 75019'),(3,'104 Rue d\'Auberviliers Paris, 75019'),(4,'11 Rue de Poissy Paris, 75005'),(5,'4 Rue Eugène Spuller Paris, 75003'),(6,'4 Rue Eugène Spuller Paris, 75003'),(7,'11 Rue de Poissy Paris, 75005'),(8,'104 Rue d\'Auberviliers Paris, 75019'),(9,'104 Rue d\'Auberviliers Paris, 75019'),(10,'4 Rue Eugène Spuller Paris, 75003');
 /*!40000 ALTER TABLE `places` ENABLE KEYS */;
 UNLOCK TABLES;
 
